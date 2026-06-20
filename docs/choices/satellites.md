@@ -2,97 +2,148 @@
 
 ### Constellations
 
-Supported through `CFG-SIGNAL` keys
+The table below highlights a few key aspects of the signals supported by the M10. It omits details such as modulation, code frequency / chipping rate, primary PRN / code length, etc. Nevertheless, GLONASS and B1I are clearly the odd ones because of their differing frequencies and use of FDMA. The other signals have all been designed to co-exist on the same central frequency, simplifying receiver design and improving performance. The BeiDou B1C and Galileo E1 signals also benefit from modern signal designs, including individual data and pilot components.
 
-https://content.u-blox.com/sites/default/files/MAX-M10S_DataSheet_UBX-20035208.pdf
+| Constellation | Signal |        Frequency         | Technique |  Components  |      |
+| ------------- | :----: | :----------------------: | :-------: | :----------: | :--: |
+| GPS           | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |      |
+| GLONASS       |  L1OF  | 1598.0625 - 1605.375 MHz |   FDMA    |     Data     |      |
+| BeiDou        |  B1I   |       1561.098 MHz       |   CDMA    |     Data     |      |
+| BeiDou        |  B1C   |       1575.42 MHz        |   CDMA    | Data + Pilot |      |
+| Galileo       |   E1   |       1575.42 MHz        |   CDMA    | Data + Pilot |      |
+| SBAS          | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |      |
+| QZSS          | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |      |
+| QZSS          |  L1S   |       1575.42 MHz        |   CDMA    |     Data     |      |
 
-Parameter GPS+GAL GPS+GAL+GLO GPS+GAL+BDS B1I (default) GPS+GAL+BDS B1C GPS+GAL+BDS B1C+GLO
-Default 10 Hz 6 Hz 3 Hz 8 Hz 4 Hz 
-High performance  20 Hz 16 Hz 12 Hz 16 Hz 10 Hz
-
-Sky view - https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951
+There is a useful online tool called [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951) which can be used to determine visible GNSS satellites.
 
 
 
-Motion supported GPS + GLONASS + Galileo
+#### GLONASS
+
+BLAH
+
+FDMA, M10 burden, less accurate
 
 
 
 #### BeiDou
 
-The B1I and B1C are both civilian signals broadcast by the BeiDou Navigation Satellite System (BDS). B1I is the legacy signal designed for the older BeiDou-2 system, while B1C is a modernized, high-performance signal introduced with the global BeiDou-3 system.
+The [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf) writes the following about the BeiDou signals.
 
-Here are the key differences between the two signals:
+<u>BeiDou B1I</u>
 
-1. Carrier Frequency
-B1I: Transmits at 1561.098 MHz. This is a unique frequency used by BeiDou.
-B1C: Transmits at 1575.42 MHz. This is the exact same frequency used by GPS L1 and Galileo E1, which allows receivers to process these signals together more easily.
+- Faster TTFF and higher start-up sensitivity. BeiDou B1I signals are acquired significantly faster and at a lower signal level than BeiDou B1C signals.
+- Better availability. Higher start-up sensitivity results in a larger number of BeiDou satellites tracked and used in navigation solution especially at low signal level.
+
+<u>BeiDou B1C</u>
+
+- Concurrent reception of 4 GNSSs with GPS L1 C/A, Galileo E1, BeiDou B1C, and GLONASS L1OF.
+- Lower power consumption. No additional frequency band required for BeiDou B1C in multiGNSS constellations, resulting in a lower power consumption during acquisition and tracking phases.
+
+IMPORTANT - The BeiDou B1I signal cannot be used simultaneously with the BeiDou B1C or GLONASS L1OF signals.
 
 
 
-#### QZSS
+#### Galileo
 
-Asia / Oceania
+BLAH
+
+Accuracy
 
 
 
-### Satellite Based Augmentation Systems (SBAS)
+#### Quasi-Zenith Satellite System (QZSS)
+
+BLAH
+
+
+
+#### Satellite Based Augmentation Systems (SBAS)
 
 - Primarily improves positional accuracy
 - SBAS improves signal accuracy by mitigating some of the ionospheric errors
-- `CFG-SIGNAL` to enable SBAS
+
+
+
+### Configuration
+
+#### Enabling Signals
+
+Individual signals are enabled using `CFG-SIGNAL` keys which are described in the [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites/default/files/documents/u-blox-M10-SPG-5.30_InterfaceDescription_UBXDOC-304424225-20395.pdf).
+
+You need to be sure that your selection will not overwhelm the M10 with too many signals, which also relates to update rates.
+
+
+
+#### Update Rates
+
+The [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) shows the max update rates of some example configurations:
+
+| Constellations / Services                   | Default | High Performance |
+| ------------------------------------------- | :-----: | :--------------: |
+| GPS / GLONASS / BDS B1I / GALILEO / BDS B1C |  18 Hz  |      25 Hz       |
+| GPS+GAL (default)                           |  10 Hz  |      20 Hz       |
+| GPS+GAL+BDS B1C                             |  8 Hz   |      16 Hz       |
+| GPS+GAL+GLO                                 |  6 Hz   |      16 Hz       |
+| GPS+GAL+BDS B1I                             |  3 Hz   |      12 Hz       |
+| GPS+GAL+BDS B1C+GLO                         |  4 Hz   |      10 Hz       |
+
+n.b. These figures are all on the basis of a minimum 98% fix rate under typical conditions.
+
+High performance requires the M10 to be configured to use a higher clock speed:
+
+- The default M10 clock speed is 128 MHz, whereas high performance is 192 MHz.
+- Configuring the M10 for high performance is irreversible, and CANNOT be reverted back to 128 MHz.
+- The configuration required to support the high update rates is described on another page - see [Higher Logging Rates](../performance/high-rates.md).
 
 
 
 ### Filters
 
-High numbers are good, but approaching the limit of 32 may not be ideal:
+High numbers of satellites are good, but approaching the limit of 32 may not be ideal:
 
-- Burden on the MCU
+- Burden on the M10
 - Low elevation satellites have an increased risk of both multipath and increased ionospheric delay / distortion
-- Poor C/N0
-- Diminishing returns
+- Poor C/N₀ from some satellites
 
-Once weak signals are dropped, the engine dynamically balances the highest C/N₀ streams against those providing the lowest math residuals and the best spatial distribution (sky topology).
+It is sometimes worth limiting the number of satellites used for the fix:
 
-You can configure a u-blox chip to limit its navigation solution to a fixed maximum number of satellites, and the receiver will automatically select the best candidates based on internal metrics including C/N₀ and geometric geometry.
-
-However, you cannot manually force the selection to exclusively rank by C/N₀ power alone, because the module must also prioritize Geometric Dilution of Precision (GDOP) and low residual errors to prevent accurate but tightly bunched satellites from degrading your position fix.
+- Once weak signals are dropped, the engine dynamically balances the highest C/N₀ streams against those providing the lowest math residuals and the best spatial distribution (sky topology).
+- You can configure a u-blox chip to limit its navigation solution to a fixed maximum number of satellites, and the receiver will automatically select the best candidates based on internal metrics including C/N₀ and geometric geometry.
+- However, you cannot manually force the selection to exclusively rank by C/N₀ power alone, because the module must also prioritize Geometric Dilution of Precision (GDOP) and low residual errors to prevent accurate but tightly bunched satellites from degrading your position fix.
 
 
 
 #### Number of Satellites
 
-By default, modern multi-constellation modules (like M9 or F9) can use up to 32 (or more) satellites simultaneously. If you lower INFIL_MAXSVS to a specific number (e.g., 16), the chip will truncate its active tracking list. Combined with your C/N₀ filter and its internal mathematical selection, it limits the processing payload.
+By default the M10 can use up to 32 satellites simultaneously. If you lower `INFIL_MAXSVS` to a specific number the chip will truncate its active tracking list. Combined with your C/N₀ filter and its internal mathematical selection, it limits the processing payload.
 
 - `CFG-NAVSPG-INFIL_MAXSVS` - default is 32
 
-Motion = 8 per constellation?
+n.b. The Motion GPS limits the number of satellites to 24 when logging at 5 Hz, and 16 when logging at 10 Hz. It appears to be placing a limit of 8 satellites per constellation, presumably deciding for itself which signals are being used.
 
 
 
 #### Elevation Mask
 
-Minimum elevation for a GNSS satellite to be used in navigation.
+Satellites at a low elevation angle have an increased risk of both multipath, and increased ionospheric delay/distortion.
 
-A low elevation angle means there's an increased risk of both multipath and increased ionospheric delay/distortion.
+Setting an elevation mask of 10° to 15° is common in marine environments. Eliminating these low elevation signals before the internal selection engine even evaluates them leaves it to focus on the more reliable signals.
 
-Setting an elevation mask of 10° to 15° automatically strips out the weakest satellites before the internal selection engine even evaluates them, naturally leaving the receiver to focus on the stronger overhead signal.
-
-  - `CFG-NAVSPG-INFIL_MINELEV` - defaults to 5 degrees
-  - Try 15
+The M10 elevation mask defaults to 5° but can be changed using `CFG-NAVSPG-INFIL_MINELEV`. 15° is likely to be applicable to speed sailing, especially in environments with nearby cliffs, buildings, or ships.
 
 References:
 
-- https://docs.novatel.com/OEM7/Content/Commands/ELEVATIONCUTOFF.htm - considered low elevation if it is between 0 and 15 degrees
-- https://help.fieldsystems.trimble.com/tbc/2359.htm - Trimble applies a default elevation mask of 13°
-- https://help.veripos.com/s/article/Elevation-Mask - Veripos applies a default elevation mask of 10°
+- [NovAtel](https://docs.novatel.com/OEM7/Content/Commands/ELEVATIONCUTOFF.htm) state that a satellite is considered low elevation if it is between 0 and 15° above the horizon
+- [Trimble](https://help.fieldsystems.trimble.com/tbc/2359.htm) say the elevation mask is usually set to 13° by default to avoid interference problems
+- [Veripos](https://help.veripos.com/s/article/Elevation-Mask) apply a default elevation mask of 10°
 
-https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951 - mask angle 10 degrees
+The online [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html) can also apply a mask angle.
 
 
 
-#### C/N0 Thresholds
+#### C/N₀ Thresholds
 
 Open Sky: Use 30 to 35 dB-Hz. If you have perfect signal conditions, raising the threshold filters out marginal multi-path and weak signals, saving processing power and potentially increasing position accuracy.
 
@@ -110,6 +161,25 @@ Once weak signals are dropped, the engine dynamically balances the highest C/N�
 #### Advanced Filtering
 
 If your application strictly requires an exact number of satellites sorted by C/N₀, you must handle this on your external microcontroller/host software: Enable the UBX-NAV-SAT binary message (or the standard NMEA GSV sentences) to stream data for all tracked satellites. Read the array of Satellites, extracting their C/N₀ and PRN codes. Run a quick sorting algorithm on your host microcontroller to pick your fixed number of top signals. Feed those specific satellite measurements into your custom navigation algorithm or localized filtering loop
+
+
+
+### Existing Devices
+
+Motion
+
+- GPS + TBC
+- GPS + GLONASS + Galileo
+
+ESP
+
+- GPS + Galileo
+- GPS + GLONASS
+- GPS + GLONASS + Galileo
+- GPS + Galileo + BeiDou B1C
+- GPS + GLONASS + Galileo + BeiDou B1C
+
+
 
 
 

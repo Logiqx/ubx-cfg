@@ -18,14 +18,16 @@
 
 ### Max Rates
 
-See [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) provides the max navigation update rates.
+The [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) shows the max update rate of the several possible configurations:
 
-| # Systems |  Default  | High Performance |
-| :-------: | :-------: | :--------------: |
-|     4     |   4 Hz    |      10 Hz       |
-|     3     | 3 to 8 Hz |   12 to 16 Hz    |
-|     2     |   10 Hz   |      20 Hz       |
-|     1     |   18 Hz   |      25 Hz       |
+| Constellations / Services                   | Default | High Performance |
+| ------------------------------------------- | ------- | ---------------- |
+| GPS / GLONASS / BDS B1I / GALILEO / BDS B1C | 18 Hz   | 25 Hz            |
+| GPS+GAL (default)                           | 10 Hz   | 20 Hz            |
+| GPS+GAL+BDS B1C                             | 8 Hz    | 16 Hz            |
+| GPS+GAL+GLO                                 | 6 Hz    | 16 Hz            |
+| GPS+GAL+BDS B1I                             | 3 Hz    | 12 Hz            |
+| GPS+GAL+BDS B1C+GLO                         | 4 Hz    | 10 Hz            |
 
 n.b. These figures are all on the basis of a minimum 98% fix rate under typical conditions.
 
@@ -51,7 +53,7 @@ The default time reference system is GPS, but the milliseconds should be identic
 
 Popular update rates include the following:
 
-|       | CFG-RATE-MEAS | CFG-RATE-NAV |
+| Rate  | CFG-RATE-MEAS | CFG-RATE-NAV |
 | :---: | :-----------: | :----------: |
 | 1 Hz  |     1000      |      1       |
 | 2 Hz  |      500      |      1       |
@@ -67,7 +69,7 @@ Popular update rates include the following:
 
 It is worth mentioning the MAX M10 data sheet also refers to update rates that are not divisors of 1000:
 
-|       | CFG-RATE-MEAS | CFG-RATE-NAV |
+| Rate  | CFG-RATE-MEAS | CFG-RATE-NAV |
 | :---: | :-----------: | :----------: |
 | 3 Hz  |      334      |      1       |
 | 6 Hz  |      167      |      1       |
@@ -130,7 +132,7 @@ This is fully documented on a separate page describing [static testing](../testi
 
 It should be noted that it is possible to request 1 Hz output in numerous ways, but it is not clear whether it impacts the Kalman filter.
 
-|      | CFG-RATE-MEAS | CFG-RATE-NAV |
+| Rate | CFG-RATE-MEAS | CFG-RATE-NAV |
 | :--: | :-----------: | :----------: |
 | 1 Hz |      100      |      10      |
 | 1 Hz |      200      |      5       |

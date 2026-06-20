@@ -28,25 +28,56 @@ C:\Users\mwgeo\OneDrive\Projects\GPS\Logs\Organised\ESP-GPS\Salvador, SYRAC-GPS\
 
 ### Combinations
 
-The following configurations are expected to produce the best performance from the M10:
+#### Potential Candidates
 
-| # Systems |     Systems     | Log Rate |   M10   |  ESP32  | Useful? |
-| :-------: | :-------------: | :------: | :-----: | :-----: | :-----: |
-|     4     | GPS+GAL+B1C+GLO |   4 Hz   | 128 MHz | 80 MHz  |    ❓    |
-|     3     |   GPS+GAL+B1C   |   5 Hz   | 128 MHz | 80 MHz  |    ✅    |
-|     4     | GPS+GAL+B1C+GLO |  10 Hz   | 192 MHz | 160 MHz |    ❓    |
-|     3     |   GPS+GAL+B1C   |  10 Hz   | 192 MHz | 160 MHz |    ✅    |
+The following configurations using 3 or 4 constellations are expected to produce the best performances on the M10:
 
-Limiting the M10 to 2 constellations is not expected to perform as well as 3 constellations:
+| Constellations  | Max Log Rate |   M10   |  ESP32  | Useful? |
+| :-------------: | :----------: | :-----: | :-----: | :-----: |
+| GPS+GAL+B1C+GLO |    4 Hz ?    | 128 MHz | 80 MHz  |    ❓    |
+|   GPS+GAL+B1C   |     5 Hz     | 128 MHz | 80 MHz  |    ✅    |
+| GPS+GAL+B1C+GLO |   10 Hz ?    | 192 MHz | 160 MHz |    ❓    |
+|   GPS+GAL+B1C   |    10 Hz     | 192 MHz | 160 MHz |    ✅    |
 
-| # Systems | Systems | Log Rate |   M10   |  ESP32  | Useful? |
-| :-------: | :-----: | :------: | :-----: | :-----: | :-----: |
-|     2     | GPS+B1C |  10 Hz   | 128 MHz | 160 MHz |    -    |
-|     2     | GPS+GAL |  10 Hz   | 128 MHz | 160 MHz |    -    |
-|     2     | GPS+B1C |  20 Hz   | 192 MHz | 240 MHz |    -    |
-|     2     | GPS+GAL |  20 Hz   | 192 MHz | 240 MHz |    -    |
+Notes:
+
+- GPS+GAL+B1C+GLO logging at 4 Hz / 10 Hz is based on the u-blox claim of a minimum 98% fix rate under typical conditions.
+  - It is very likely that GPS+GAL+B1C+GLO can be logged at 8 Hz without dropping frames when the M10 is at 192 MHz.
+
+- GPS+GAL+B1C can potentially log at 8 Hz / 16 Hz, but that is based on the basis of a minimum 98% fix rate under typical conditions.
+  - Propose logging at 5 Hz / 10 Hz since they are the nearest divisors of 1000, and will ensure that points are not dropped.
+
+- It has yet to be determined whether GPS+GAL+B1C+GLO has any performance benefits over GPS+GAL+B1C.
+  - It might be that only two configurations need to be available to end users - GPS+GAL+B1C @ 5 Hz or 10 Hz.
+
+
+
+
+#### Unlikely to be Useful
+
+2 constellations are not expected to perform as well as 3 constellations, so probably not useful:
+
+| Constellations | Max Log Rate |   M10   |  ESP32  | Useful? |
+| :------------: | :----------: | :-----: | :-----: | :-----: |
+|    GPS+B1C     |    10 Hz     | 128 MHz | 160 MHz |    -    |
+|    GPS+GAL     |    10 Hz     | 128 MHz | 160 MHz |    -    |
+|    GPS+B1C     |    20 Hz     | 192 MHz | 240 MHz |    -    |
+|    GPS+GAL     |    20 Hz     | 192 MHz | 240 MHz |    -    |
 
 IMPORTANT: Changing the M10 to 192 MHz is irreversible, and it CANNOT be changed back to 128 MHz. 
+
+
+
+#### Dismissed
+
+- Single constellation configurations logging at 20 Hz or 25 Hz
+  - The fix quality is likely to be much worse than multiple constellations
+- GLONASS in 2 and 3 constellation configurations
+  - Galileo and BeiDou are much better systems, and usually more accurate
+- BeiDou B1I in any configurations
+  - Legacy system, superseded by BeiDou B1C and more intensive for the M10
+- Logging rates that are not a divisor of 1000, such as 15 Hz
+  - Inconsistent timestamps from one second to the next are undesirable
 
 
 
@@ -54,8 +85,8 @@ IMPORTANT: Changing the M10 to 192 MHz is irreversible, and it CANNOT be changed
 
 Suggest implementing the following:
 
-- Maximum number of satellites
-- Elevation mask of 15 degrees
+- Maximum number of satellites, maybe 24 like the Motion
+- Elevation mask of 15 degrees to exclude potentially problematic signals
 
 Not enough info on the following:
 
