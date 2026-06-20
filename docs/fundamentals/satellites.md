@@ -198,7 +198,7 @@ n.b. It is not known whether the Motion uses GPS + Galileo, or GPS + GLONASS whe
 
 ### References
 
-[GPS accuracy: The benefits of tracking all four global GNSS constellations](https://www.u-blox.com/en/blogs/tech/gps-accuracy-four-gnss-constellations) - u-blox, 5 Nov 2020
+- [GPS accuracy: The benefits of tracking all four global GNSS constellations](https://www.u-blox.com/en/blogs/tech/gps-accuracy-four-gnss-constellations) - u-blox, 5 Nov 2020
 
-[Another DIY GPS logger approach](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Another-DIY-GPS-logger-approach?page=54) - veton, 22 May 2025 10:14pm
+- [Another DIY GPS logger approach](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Another-DIY-GPS-logger-approach?page=54) - veton, 22 May 2025 10:14pm
 

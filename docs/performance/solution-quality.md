@@ -1,43 +1,65 @@
 ## Solution Quality
 
+Several configurations and filters might be considered to refine the M10 output.
+
+
+
 ### 2D / 3D Fix
-  - `CFG-NAVSPG-FIXMODE` = 2 (3D only), default = 3 (auto)
-  - `CFG-NAVSPG-INIFIX3D` - default is 0 (false)
+
+There is no particular reason to allow a 2D fix, so might be worth mandating a 3D fix.
+
+  - `CFG-NAVSPG-FIXMODE` = 2 (3D only)
+    - Default is 3 (auto)
+
+  - `CFG-NAVSPG-INIFIX3D` = 1
+    - Default is 0 (false)
+
 
 
 
 ### Dynamic Model
 
-- Affects how the navigation filter captures and smooths speed peaks
-- `CFG-NAVSPG-DYNMODEL` - default may be 9 (wrist)
-  - 0 = Portable
-  - 3 = Pedestrian
-  - 4 = Automotive
-  - 5 = Sea is UNSUITABLE
+The dynamic model affects how the navigation filter captures and smooths speed peaks.
 
-https://base.xsens.com/s/article/How-to-Choose-a-Suitable-u-blox-Dynamic-GNSS-Platform?language=en_US
+- `CFG-NAVSPG-DYNMODEL` - default may be 0 (portable), or 9 (wrist)
+
+|      | Name         | Description                                                  |
+| ---- | ------------ | ------------------------------------------------------------ |
+| 1    | Portable     | Applications with low acceleration, e.g., portable devices. Suitable for most situations.<br />Max speed (<310 m/s), low acceleration |
+| 2    | Stationary   | Velocity restricted to 0 m/s. Zero dynamics assumed.<br />No motion expected |
+| 3    | Pedestrian   | Applications with low acceleration and speed, e.g., how a pedestrian would move.<br />Speeds <30 m/s (~58.3 knots is too low), low acceleration |
+| 4    | Automotive   | Used for applications with equivalent dynamics to those of a passenger car. Low vertical acceleration assumed.<br />Typical road speeds (<100 m/s), higher accelerations than pedestrian |
+| 5    | Sea          | Recommended for applications at sea, with zero vertical velocity. Sea level assumed.<br />Speeds <25 m/s (~ 48.6 knots is too low), no altitude change |
+| 6    | Airborne <1g | Used for applications with a higher dynamic range and greater vertical acceleration than a passenger car.<br />Up to 1g acceleration (3 times a speed sailor), max speed 100 m/s |
+| 7    | Airborne <2g | Recommended for typical airborne environments. <br />Up to 2g acceleration, max speed 250 m/s |
+| 8    | Airborne <4g | Only recommended for extremely dynamic environments.<br />Up to 4g acceleration, max speed 500 m/s |
+| 9    | Wrist        | Only recommended for wrist-worn applications. The receiver will filter out arm motion.<br />Frequent signal loss (body shadowing), low speed |
+
+Aside from "portable" the only dynamic model that may be useful when speed sailing is "automotive", which may be worth testing.
+
+Would need to keep an eye out for any additional dead-reckoning (DR) behaviours!
+
+Further details - [How to Choose a Suitable u-blox Dynamic GNSS Platform](https://base.xsens.com/s/article/How-to-Choose-a-Suitable-u-blox-Dynamic-GNSS-Platform?language=en_US) - Xsense, 4 Dec 2025
 
 
 
 ### Static Hold
 
-Static hold / stationary thresholds
+For speed sailing, static hold thresholds should always be zero.
 
-For speedsurfing, static hold should be OFF — it clamps low speeds to zero and should not affect a moving board.
-- Do not assume the same "off" value across generations; confirm by logging low-speed behaviour.
-- Supported through motion / navigation filter keys such as `CFG-MOT-*`
-
+- `CFG-MOT-GNSSSPEED_THRS` = 0 (default)
+- `CFG-MOT-GNSSDIST_THRS` = 0 (default)
 
 
-### Filters
 
-If you want to filter very poor quality positions and speeds...
+### Input Filters
+
+These could be used to prevent poor quality solutions, when submerged or indoors.
 
 #### Satellites
 
 - `CFG-NAVSPG-INFIL_MINSVS` - default is 3
-  - Julien said the default used to be 5
-  - Maybe need it to match the 2D / 3D
+  - Julien said the default used to be 5, so may need to be increased
 
 
 #### C/No
@@ -46,6 +68,12 @@ If you want to filter very poor quality positions and speeds...
   - Number above threshold
 - `CFG-NAVSPG-INFIL_CNOTHRS` - defaults to 0
   - Might consider 30 to 35 dB-Hz
+
+
+
+### Output Filters
+
+These could be used to discard the enormous spikes from u-blox devices, when submerged or indoors.
 
 #### DOP / Accuracy
 

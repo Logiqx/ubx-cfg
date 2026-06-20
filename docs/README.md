@@ -31,8 +31,8 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
 
 ### UBX Outputs
 
-- UBX-NAV-PVT  - Mandatory
-- UBX-NAV-SAT - C/No
+- UBX-NAV-PVT - Essential
+- UBX-NAV-SAT - C/N₀
 - UBX-NAV-DOP - HDOP
 - UBX-NAV-VELNED - 3D speed
 
@@ -54,4 +54,4 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
 
 #### Articles
 
-[5 tips to enhance position accuracy in standard precision GNSS receivers](https://www.u-blox.com/en/blogs/tech/tips-to-improve-position-accuracy-of-standard-precision-GNSS-receiver) - u-blox, 30 Jan 2026
+- [5 tips to enhance position accuracy in standard precision GNSS receivers](https://www.u-blox.com/en/blogs/tech/tips-to-improve-position-accuracy-of-standard-precision-GNSS-receiver) - u-blox, 30 Jan 2026

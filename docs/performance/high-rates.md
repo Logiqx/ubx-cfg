@@ -6,9 +6,9 @@ The higher logging rates of the M10 will typically require configuration relatin
 
 ### M10 Clock Rate
 
->  u-blox M10 devices are optimized for low power consumption and come with the default CPU clock rate that supports the default navigation update rate stated in the product datasheet. However, it is possible to achieve a higher navigation update rate by configuring the device for a higher clock rate. This supports the high performance navigation update rate with minor increase in power consumption.
+Increasing the clock rate from 128 MHz (default) to 192 MHz (higher) is described in the [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf).
 
-Increasing the clock rate from 128 MHz (default) to 192 MHz (higher) is described in section 2.1.7 of the [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf).
+>  u-blox M10 devices are optimized for low power consumption and come with the default CPU clock rate that supports the default navigation update rate stated in the product datasheet. However, it is possible to achieve a higher navigation update rate by configuring the device for a higher clock rate. This supports the high performance navigation update rate with minor increase in power consumption.
 
 - The higher clock rate can be configured in the device's one-time programmable (OTP) memory.
 - The OTP configuration is only done once, and is subsequently applied automatically at every startup.

@@ -6,19 +6,19 @@
 
 Simple [static testing](../testing/static-5hz-10hz.md) has shown that 10 Hz can sometimes be worse than 5 Hz.
 
-Reducing the number of constellations to allow higher logging rates can be counterproductive.
+It showed that reducing the number of constellations for higher logging rates can be counterproductive.
 
-The best results will likely come from the 3 best services; GPS, Galileo and BeiDou B1C.
+The best results may well come from 3 systems logging at 10 Hz; e.g. GPS, Galileo and BeiDou B1C.
 
 
 
 #### Logging Rates
 
-It might be worth limiting users to a smaller selection; e.g. 1 / 2 / 4 / 5 / 8 / 10 / 16 Hz.
+Systematic testing of various constellations and logging rates should help to clarify the relative performances.
 
-Systematic testing of various constellations and logging rates should clarify the relative performances.
+Static testing is likely to provide early performance insights, prior to embarking on dynamic testing on the water.
 
-Static testing is likely to be highly beneficial, prior to embarking on dynamic testing on the water.
+It may become apparent that a smaller choice of logging rates is desirable, such as 1 / 2 / 4 / 5 / 8 / 10 Hz.
 
 
 
@@ -26,12 +26,12 @@ Static testing is likely to be highly beneficial, prior to embarking on dynamic 
 
 The following configurations using 3 or 4 constellations are expected to produce the best performances on the M10:
 
-|            Constellations            | Max Log Rate |   M10   |  ESP32  | Useful? |
-| :----------------------------------: | :----------: | :-----: | :-----: | :-----: |
-| GPS + Galileo + BeiDou B1C + GLONASS |    4 Hz ?    | 128 MHz | 80 MHz  |    ❓    |
-|      GPS + Galileo + BeiDou B1C      |     5 Hz     | 128 MHz | 80 MHz  |    ✅    |
-| GPS + Galileo + BeiDou B1C + GLONASS |   10 Hz ?    | 192 MHz | 160 MHz |    ❓    |
-|      GPS + Galileo + BeiDou B1C      |    10 Hz     | 192 MHz | 160 MHz |    ✅    |
+|            Constellations            | Max Log Rate  |   M10   |  ESP32  | Useful? |
+| :----------------------------------: | :-----------: | :-----: | :-----: | :-----: |
+| GPS + Galileo + BeiDou B1C + GLONASS |    4 Hz ?     | 128 MHz | 80 MHz  |    ❓    |
+|      GPS + Galileo + BeiDou B1C      |  5 or 8 Hz ?  | 128 MHz | 80 MHz  |    ✅    |
+| GPS + Galileo + BeiDou B1C + GLONASS | 8 or 10 Hz ?  | 192 MHz | 160 MHz |    ❓    |
+|      GPS + Galileo + BeiDou B1C      | 10 or 16 Hz ? | 192 MHz | 160 MHz |    ✅    |
 
 Notes:
 
@@ -42,34 +42,34 @@ Notes:
   - Propose trying 5 Hz / 10 Hz since they are the nearest divisors of 1000, and will ensure that no points are dropped.
 
 - It has yet to be determined whether GPS+GAL+B1C+GLO has any performance benefits over GPS+GAL+B1C.
-  - It might be that constellations can be pre-decided for end users - GPS+GAL+B1C @ 1 / 2 / 4 / 5 / 10 Hz.
-- Changing the M10 to 192 MHz is irreversible, and it CANNOT be reverted back to 128 MHz. 
+  - It may transpire that GPS + Galileo + BeiDou B1C is the most suitable for all end users, thus avoiding the need for choice.
+  
 
 
 
 
 #### Weak Candidates
 
-2 constellations are not expected to perform as well as 3 constellations at a lower logging rate, so probably not useful:
+The following configurations using 2 constellations are not expected to perform as well as the strong candidates:
 
 |  Constellations  | Max Log Rate |   M10   |  ESP32  | Useful? |
 | :--------------: | :----------: | :-----: | :-----: | :-----: |
-| GPS + BeiDou B1C |    10 Hz     | 128 MHz | 160 MHz |    ❌    |
-|  GPS + Galileo   |    10 Hz     | 128 MHz | 160 MHz |    ❌    |
-| GPS + BeiDou B1C |    20 Hz     | 192 MHz | 240 MHz |    ❓    |
-|  GPS + Galileo   |    20 Hz     | 192 MHz | 240 MHz |    ❓    |
+| GPS + BeiDou B1C |   10 Hz ?    | 128 MHz | 160 MHz |    ❌    |
+|  GPS + Galileo   |   10 Hz ?    | 128 MHz | 160 MHz |    ❌    |
+| GPS + BeiDou B1C |   20 Hz ?    | 192 MHz | 240 MHz |    ❓    |
+|  GPS + Galileo   |   20 Hz ?    | 192 MHz | 240 MHz |    ❓    |
 
 The weak candidates should be tested in the same way as the strong candidates, but with lower expectations!
 
-Some other signals and logging rates have been dismissed:
+A variety of other signals and logging rates have also been dismissed:
 
-- GLONASS in 2 and 3 constellation configurations
-  - Galileo and BeiDou are much better systems, and typically more accurate
+- GLONASS in the 2 or 3 constellation configurations
+  - Galileo and BeiDou are much better systems, and should be more accurate
 - BeiDou B1I in any configurations
-  - Legacy system, superseded by BeiDou B1C and requires more M10 power
-- Single constellation (i.e. GPS) logging at 25 Hz
-  - Very likely to be worse than multiple constellations, and ESP32 needs to be 240 MHz
-- Logging rates that are not a divisor of 1000, such as 15 Hz
+  - Legacy system, superseded by BeiDou B1C and requires more power on the M10
+- Single constellations, like GPS alone logging at 25 Hz
+  - Very likely to be worse than multiple constellations, and the ESP32 needs to be 240 MHz
+- Logging rates that are not a divisor of 1000, such as 3, 6, or 15 Hz
   - Inconsistent timestamps from one second to the next are undesirable
 
 
