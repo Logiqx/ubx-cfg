@@ -39,6 +39,14 @@ IIRC to use uBlox's own LPF, you need to compute the resultant vector of the Nor
 
 
 
+### Odd Rates
+
+6 Hz - 1000 / 150
+
+15 Hz = 1000 / 66
+
+
+
 ### Dependencies
 
 Possible dependencies:

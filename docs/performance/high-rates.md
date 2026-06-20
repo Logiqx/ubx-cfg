@@ -1,12 +1,12 @@
 ## High Logging Rates
 
-### High Performance Mode
+### M10 High Performance Mode
 
 Dependent on log rate rate, constellations in use, number of satellites
 
 High-Performance Mode - see integration manual
 
-https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf
+[MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf) - 5-May-2026
 
 >  u-blox M10 devices are optimized for low power consumption and come with the default CPU clock rate that supports the default navigation update rate stated in the product datasheet. However, it is possible to achieve a higher navigation update rate by configuring the device for a higher clock rate. This supports the high performance navigation update rate with minor increase in power consumption.
 
@@ -31,7 +31,7 @@ USE - case is avoiding dropped points, typically at the top of the epoch - betwe
 
 
 
-### Baud rate
+### Baud Rate
 
 Higher rate needed for higher frequency data
 
