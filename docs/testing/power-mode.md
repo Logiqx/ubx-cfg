@@ -8,7 +8,7 @@ In one of the earliest batches of Motion Mini devices using the M10, it was obse
 
 
 
-![test13-new-firmware-619](img/test13-new-firmware-619.png)
+![power-mode-1](img/power-mode-1.png)
 
 
 
@@ -18,7 +18,7 @@ The root cause was identified and attributed to the default power mode of the M1
 
 It is quite conceivable that other M10 devices could be affected by this particular issue. The root cause and the solution were were tricky to identify, because they relate to an undocumented feature of the M10. Full details of the "balanced" power mode are in the page about [signal quality](../performance/signal-quality.md).
 
-![test12-new-firmware-633](img/test12-new-firmware-633.png)
+![power-mode-2](img/power-mode-2.png)
 
 
 ### Note to Self
