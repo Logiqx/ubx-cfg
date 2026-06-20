@@ -1,48 +1,56 @@
 ## High Logging Rates
 
-### M10 High Performance Mode
+The higher logging rates of the M10 will typically require configuration relating to the clock rate(s) and baud rate.
 
-Dependent on log rate rate, constellations in use, number of satellites
 
-High-Performance Mode - see integration manual
 
-[MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf) - 5-May-2026
+### M10 Clock Rate
 
 >  u-blox M10 devices are optimized for low power consumption and come with the default CPU clock rate that supports the default navigation update rate stated in the product datasheet. However, it is possible to achieve a higher navigation update rate by configuring the device for a higher clock rate. This supports the high performance navigation update rate with minor increase in power consumption.
 
-"High CPU clock" is described in 2.1.7 of the integration manual - "High performance navigation update rate configuration"
-- Changes made in the OTP configuration are permanent and cannot be reverted.
-  - The high performance navigation update rate can be configured in the device's one-time programmable (OTP) memory.
-  - The OTP configuration is only done once, and is subsequently applied automatically at every startup.
-  - Changes made in the OTP configuration are permanent and cannot be reverted.  
-  - Can be checked at run time as described in step 5
-- Capping the number of sats makes sense for people with lots of sats visible (e.g. BeiDou in Asia)
+Increasing the clock rate from 128 MHz (default) to 192 MHz (higher) is described in section 2.1.7 of the [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf).
 
-https://portal.u-blox.com/s/question/0D52p0000Dgp2vpCQA/clarify-m10-max-navigation-update-rate
-MCU running at 128 MHz by default, there are configurations to boost this to 192 MHz (High Performance)
+- The higher clock rate can be configured in the device's one-time programmable (OTP) memory.
+- The OTP configuration is only done once, and is subsequently applied automatically at every startup.
+- Changes made in the OTP configuration are permanent and CANNOT be reverted. 
+- The high performance navigation update rate can be checked at run time.
 
-https://portal.u-blox.com/s/question/0D5Oj00000dmmFwKAI/unstable-pvt-output-frequency-on-ublox-m10
-On the M10 there's a method to boost the MCU clock (128 MHz to 192 MHz)
+The M10 may require the higher clock rate when using lots of satellites or high logging rates, otherwise dropped points may become an issue.
 
-https://content.u-blox.com/sites/default/files/MAX-M10_ProductSummary_UBX-20017987.pdf
-The extremely low power consumption of less than 25 mW* in continuous tracking mode ...
-
-USE - case is avoiding dropped points, typically at the top of the epoch - between .000 and .200
+The latest for firmware for the Motion LCD and Motion Mini devices will automatically configure the higher clock rate for 10 Hz logging.
 
 
 
 ### Baud Rate
 
-Higher rate needed for higher frequency data
+Higher logging rates will result in more data being sent to the UART, so it is essential the baud rate is sufficient.
 
-115,200
+The default baud rate will often be 9,600 or 38,400 baud, but use 115,200 baud should be ample for most use cases.
+
+The exact requirements can be calculated from the UBX message sizes.
 
 
 
-### ESP32 Maximum Performance
+### ESP32 Clock Rate
 
-ESP32 CPU Speed
+It may also be necessary to increase the clock rate of the MCU in the ESP32:
 
-- 240 MHz (Maximum performance) - needed for 20 Hz
-- 160 MHz (Default in many Arduino frameworks) - needed for 10 Hz
-- 80 MHz (Lower power mode) - up to 8 Hz
+| Clock Rate | Description                        | Suitability |
+| :--------: | ---------------------------------- | :---------: |
+| 80 MHz     | Lower power mode                   | up to 8 Hz  |
+| 160 MHz    | Default in many Arduino frameworks | up to 16 Hz |
+| 240 MHz    | Maximum performance                | 20 Hz       |
+
+
+
+### References
+
+#### Discussions
+
+- [Clarify M10 max navigation update rate](https://portal.u-blox.com/s/question/0D52p0000Dgp2vpCQA/clarify-m10-max-navigation-update-rate)
+  - "MCU running at 128 MHz by default, there are configurations to boost this to 192 MHz (High Performance)"
+- [Unstable PVT Output Frequency on Ublox M10](https://portal.u-blox.com/s/question/0D5Oj00000dmmFwKAI/unstable-pvt-output-frequency-on-ublox-m10)
+  - "On the M10 there's a method to boost the MCU clock (128 MHz to 192 MHz)"
+- [Another DIY GPS logger approach](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Another-DIY-GPS-logger-approach?page=54) - veton, 22 May 2025 10:14pm
+  - Tables highlight the need for M10 "high performance" mode and the ESP32 requirements
+

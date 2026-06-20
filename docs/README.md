@@ -31,10 +31,10 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
 
 ### UBX Outputs
 
-- NAV-PVT  - Mandatory
-- NAV-SAT - C/No
-- NAV-DOP - HDOP
-- NAV-VELNED - 3D speed
+- UBX-NAV-PVT  - Mandatory
+- UBX-NAV-SAT - C/No
+- UBX-NAV-DOP - HDOP
+- UBX-NAV-VELNED - 3D speed
 
 
 

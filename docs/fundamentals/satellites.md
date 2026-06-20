@@ -134,6 +134,8 @@ By default the M10 can track up to 32 satellites simultaneously and use them for
 
 - `CFG-NAVSPG-INFIL_MAXSVS` - default is 32
 
+Limiting the number of satellites often makes sense for people with lots of satellites visible (e.g. BeiDou in Asia).
+
 n.b. The Motion GPS limits the number of satellites to 24 when logging at 5 Hz, and 16 when logging at 10 Hz. It appears to be placing a limit of 8 satellites per constellation, presumably deciding for itself which signals are being used at any one time.
 
 
