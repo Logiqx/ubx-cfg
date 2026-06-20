@@ -111,16 +111,16 @@ I suspect that u-blox only chose these update rates to illustrate what the MAX M
 
 Some current devices using the M10 support the following logging rates.
 
-|      | Motion | ESP-GPS | LISA GPS |
-| :--: | :----: | :-----: | :------: |
-|  1   |   ✅    |    ✅    |    ✅     |
-|  2   |   ✅    |    ✅    |    ✅     |
-|  4   |   ❌    |    ✅    |    ✅     |
-|  5   |   ✅    |    ✅    |    ✅     |
-|  8   |   ❌    |    ✅    |    ✅     |
-|  10  |   ✅    |    ✅    |    ✅     |
-|  15  |   ❌    |    ✅    |    ❌     |
-|  20  |   ❌    |    ✅    |    ❌     |
+| Rate  | Motion | ESP-GPS | LISA GPS |
+| :---: | :----: | :-----: | :------: |
+| 1 Hz  |   ✅    |    ✅    |    ✅     |
+| 2 Hz  |   ✅    |    ✅    |    ✅     |
+| 4 Hz  |   ❌    |    ✅    |    ✅     |
+| 5 Hz  |   ✅    |    ✅    |    ✅     |
+| 8 Hz  |   ❌    |    ✅    |    ✅     |
+| 10 Hz |   ✅    |    ✅    |    ✅     |
+| 15 Hz |   ❌    |    ✅    |    ❌     |
+| 20 Hz |   ❌    |    ✅    |    ❌     |
 
 n.b. The SYRAC-GPS (an ESP-GPS) also mentions 3 and 6 Hz in the user guide, presumably inspired by u-blox data sheets?
 
