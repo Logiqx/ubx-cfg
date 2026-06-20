@@ -4,7 +4,9 @@
 
 Power saving and low-noise amplifier (LNA) modes were central to an investigation into [noisy data](../troubleshooting/noisy-data.md) from M10 devices.
 
-Some M10 devices will benefit from the "full power" mode, instead of the default "balanced" mode.
+Some M10 devices will benefit hugely from the "full power" mode, instead of the default "balanced" mode.
+
+The page on [power mode testing](../testing/power-mode.md) has a couple of images which show the nature of the issue, and the fix.
 
 
 
@@ -14,7 +16,7 @@ Some M10 devices will benefit from the "full power" mode, instead of the default
 
 The [u-blox_M10_ROM_5.00_Release Notes](https://cdn.sparkfun.com/assets/2/0/d/7/4/u-blox_M10_ROM_5.00_ReleaseNotes_UBX-20050981.pdf) report poor performance with strong signals.
 
-> Some devices may show poor performance with strong signals (40 dBm or better CN0) in the default “balanced” power mode. This degradation can be visible as loss of signals at the same time or reporting signals weaker than they really are.  Workaround: Change to “full power” mode (mode 0) in UBX-CFG-PMS.
+> Some devices may show poor performance with strong signals (40 dBm or better CN0) in the default "balanced" power mode. This degradation can be visible as loss of signals at the same time or reporting signals weaker than they really are.  Workaround: Change to "full power" mode (mode 0) in UBX-CFG-PMS.
 
 The different power modes on the M8 didn't make any difference in testing, so the Motion went with the default.
 
@@ -40,7 +42,7 @@ n.b. The "full" operating mode is referred to as "continuous mode" in MAX-M10 in
 
 See [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites/default/files/documents/u-blox-M10-SPG-5.30_InterfaceDescription_UBXDOC-304424225-20395.pdf) and [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf) for more details.
 
-#### 
+
 
 ### LNA Mode
 

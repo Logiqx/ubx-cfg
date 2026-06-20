@@ -17,7 +17,8 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
   - [Signal Quality](performance/signal-quality.md)
   - [Solution Quality](performance/solution-quality.md)
 - Testing
-  - [Static Testing](testing/static-5hz-10hz.md)
+  - [Power Mode](testing/power-mode.md) - "balanced" vs "full power"
+  - [Static Testing](testing/static-5hz-10hz.md) - 5 Hz vs 10 Hz
   
 - Troubleshooting
   - [Noisy Data](troubleshooting/noisy-data.md)

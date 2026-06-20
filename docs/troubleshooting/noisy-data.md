@@ -2,8 +2,7 @@
 
 ### Issue
 
-- Spikes before PMS and LNA changes
-  - C:\Users\mwgeo\OneDrive\Projects\GPS\Logs\Devices\Motion Mini (WSW)\test02-garden
+The page on [power mode testing](../testing/power-mode.md) has a couple of images which show the nature of this issue, and the fix.
 
 
 
@@ -28,5 +27,4 @@ It was speculated that "balanced" power mode was polluting the inner RF path wit
 Bypassing the internal LNA may increase the battery life of the Motion Mini by an hour or so, but this was never investigated. The "full power" mode and "normal gain" for the internal LNA have been standard in the Motion Mini since firmware 3168.
 
 Further details about the different power modes and internal LNA can be found in the [signal quality](../performance/signal-quality.md) page.
-
 
