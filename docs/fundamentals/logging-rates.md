@@ -1,4 +1,4 @@
-## Logging Rate
+## Logging Rates
 
 ### Introduction
 

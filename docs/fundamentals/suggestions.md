@@ -83,15 +83,15 @@ IMPORTANT: Changing the M10 to 192 MHz is irreversible, and it CANNOT be changed
 
 ### Filters
 
-Suggest implementing the following:
+Suggest experimenting with the following:
 
-- Maximum number of satellites, maybe 24 like the Motion
-- Elevation mask of 15 degrees to exclude potentially problematic signals
+- Maximum number of satellites, no lower than the 24 of the Motion
+- Elevation mask of 10 or 15 degrees
 
-Not enough info on the following:
+Not enough known about the following:
 
-- C/N0 Thresholds
-- Advanced Filtering
+- C/N₀ thresholds
+- Advanced filtering
 
 
 
