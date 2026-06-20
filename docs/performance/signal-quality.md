@@ -4,6 +4,8 @@
 
 Power saving and low-noise amplifier (LNA) modes were central to an investigation into [noisy data](../troubleshooting/noisy-data.md) from M10 devices.
 
+Some M10 devices will benefit from the "full power" mode, instead of the default "balanced" mode.
+
 
 
 ### Power Saving
@@ -14,9 +16,9 @@ The [u-blox_M10_ROM_5.00_Release Notes](https://cdn.sparkfun.com/assets/2/0/d/7/
 
 > Some devices may show poor performance with strong signals (40 dBm or better CN0) in the default “balanced” power mode. This degradation can be visible as loss of signals at the same time or reporting signals weaker than they really are.  Workaround: Change to “full power” mode (mode 0) in UBX-CFG-PMS.
 
-The different power modes on the M8 didn't make any difference in testing, so Motion originally went with the default of "balanced".
+The different power modes on the M8 didn't make any difference in testing, so the Motion went with the default.
 
-Use `UBX-CFG-PMS` to select "full power", instead of the default "balanced" power mode on the M10.
+M10 devices may need to use `UBX-CFG-PMS` to select "full power", instead of the default "balanced" power mode.
 
 n.b. The official M10 documentation and software do not contain `UBX-CFG-PMS` , but it is still available.
 
@@ -48,13 +50,11 @@ M10 receivers feature an internal low-noise amplifier (LNA) with three operation
 - 1 = Low gain
 - 2 = Bypass
 
-This can be changed using `CFG-HW-RF_LNA_MODE` but the default is is "normal gain", and there is no need to change it.
+This can be changed using `CFG-HW-RF_LNA_MODE`, but the default is already "normal gain".
 
-The internal LNA mode can be configured at run time in the BBR and RAM memory using the configuration item `CFG-HW-RF_LNA_MODE` and applying a suitable software reset by sending a `UBX-CFG-RST` message.
+Early prototypes of the Motion Mini using UBX-M10050-KB experimented with the "bypass" mode, but reverted to "normal gain".
 
-Early prototypes of the Motion Mini using UBX-M10050-KB experimented with the "bypass" mode, but reverted to "normal gain". These options were considered during the investigation into performance issues attributed to the "balanced" power mode.
-
-n.b. The internal LNA can't be configured on the M8, because `CFG-HW-RF_LNA_MODE` was introduced in the M10.
+The internal LNA can't be configured on the M8 or M9, because `CFG-HW-RF_LNA_MODE` was introduced in the M10.
 
 See [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites/default/files/documents/u-blox-M10-SPG-5.30_InterfaceDescription_UBXDOC-304424225-20395.pdf) and [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf) for more details.
 
