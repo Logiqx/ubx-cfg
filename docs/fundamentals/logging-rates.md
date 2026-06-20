@@ -31,7 +31,7 @@ The configuration required to support the higher logging rates is described on a
 
 
 
-### 20 Hz and 25 Hz
+#### 20 Hz and 25 Hz
 
 20 Hz can only be achieved with 2 constellations.
 
@@ -42,6 +42,25 @@ The configuration required to support the higher logging rates is described on a
 - 1 constellation @ 25 Hz will probably be worse than 3 or 4 systems @ 5 or 10 Hz
 
 Both rates require the M10 to run in "high performance" mode, which requires more power, and more storage.
+
+
+
+### Existing Devices
+
+Some current devices using the M10 support the following logging rates.
+
+| Rate  | Motion | ESP-GPS | LISA GPS |
+| :---: | :----: | :-----: | :------: |
+| 1 Hz  |   ✅    |    ✅    |    ✅     |
+| 2 Hz  |   ✅    |    ✅    |    ✅     |
+| 4 Hz  |   ❌    |    ✅    |    ✅     |
+| 5 Hz  |   ✅    |    ✅    |    ✅     |
+| 8 Hz  |   ❌    |    ✅    |    ✅     |
+| 10 Hz |   ✅    |    ✅    |    ✅     |
+| 15 Hz |   ❌    |    ✅    |    ❌     |
+| 20 Hz |   ❌    |    ✅    |    ❌     |
+
+n.b. The SYRAC-GPS (an ESP-GPS) also mentions 3 and 6 Hz in the user guide, presumably inspired by u-blox data sheets?
 
 
 
@@ -104,25 +123,6 @@ It is worth mentioning the MAX M10 data sheet also refers to several update rate
 | 18 Hz |      56       |      1       |
 
 I suspect that u-blox only chose these update rates to illustrate what the MAX M10 is capable of achieving 98% of the time.
-
-
-
-### Existing Devices
-
-Some current devices using the M10 support the following logging rates.
-
-| Rate  | Motion | ESP-GPS | LISA GPS |
-| :---: | :----: | :-----: | :------: |
-| 1 Hz  |   ✅    |    ✅    |    ✅     |
-| 2 Hz  |   ✅    |    ✅    |    ✅     |
-| 4 Hz  |   ❌    |    ✅    |    ✅     |
-| 5 Hz  |   ✅    |    ✅    |    ✅     |
-| 8 Hz  |   ❌    |    ✅    |    ✅     |
-| 10 Hz |   ✅    |    ✅    |    ✅     |
-| 15 Hz |   ❌    |    ✅    |    ❌     |
-| 20 Hz |   ❌    |    ✅    |    ❌     |
-
-n.b. The SYRAC-GPS (an ESP-GPS) also mentions 3 and 6 Hz in the user guide, presumably inspired by u-blox data sheets?
 
 
 

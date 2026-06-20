@@ -79,6 +79,22 @@ By all means use SBAS for DGPS, but don't use it as supplementary satellites for
 
 
 
+### Existing Devices
+
+Popular devices within the speed sailing community:
+
+| Constellations / Signals             | Motion | ESP-GPS |
+| ------------------------------------ | :----: | :-----: |
+| GPS + Galileo                        |   ❓    |    ✅    |
+| GPS + GLONASS                        |   ❓    |    ✅    |
+| GPS + GLONASS + Galileo              |   ✅    |    ✅    |
+| GPS + Galileo + BeiDou B1C           |   ❌    |    ✅    |
+| GPS + GLONASS + Galileo + BeiDou B1C |   ❌    |    ✅    |
+
+n.b. It is not known whether the Motion uses GPS + Galileo, or GPS + GLONASS when running at 10 Hz.
+
+
+
 ### Configuration
 
 #### Enabling Signals
@@ -177,22 +193,6 @@ If your application strictly requires an exact number of satellites sorted by C/
 Enable the `UBX-NAV-SAT` binary message to stream data for all tracked satellites. Read the array of Satellites, extracting their C/N₀ and PRN codes. Run a quick sorting algorithm on your host microcontroller to pick your fixed number of top signals. Feed those specific satellite measurements into your custom navigation algorithm or localized filtering loop.
 
 It is possible that the Motion does something along these lines to limit the number of satellites to 24, perhaps allowing 8 per constellation.
-
-
-
-### Existing Devices
-
-Popular devices within the speed sailing community:
-
-| Constellations / Signals             | Motion | ESP-GPS |
-| ------------------------------------ | :----: | :-----: |
-| GPS + Galileo                        |   ❓    |    ✅    |
-| GPS + GLONASS                        |   ❓    |    ✅    |
-| GPS + GLONASS + Galileo              |   ✅    |    ✅    |
-| GPS + Galileo + BeiDou B1C           |   ❌    |    ✅    |
-| GPS + GLONASS + Galileo + BeiDou B1C |   ❌    |    ✅    |
-
-n.b. It is not known whether the Motion uses GPS + Galileo, or GPS + GLONASS when running at 10 Hz.
 
 
 
