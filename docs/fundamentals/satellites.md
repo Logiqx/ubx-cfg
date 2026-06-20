@@ -189,8 +189,8 @@ Popular devices within the speed sailing community:
 | GPS + Galileo                        |   ❓    |    ✅    |
 | GPS + GLONASS                        |   ❓    |    ✅    |
 | GPS + GLONASS + Galileo              |   ✅    |    ✅    |
-| GPS + Galileo + BeiDou B1C           |   -    |    ✅    |
-| GPS + GLONASS + Galileo + BeiDou B1C |   -    |    ✅    |
+| GPS + Galileo + BeiDou B1C           |   ❌    |    ✅    |
+| GPS + GLONASS + Galileo + BeiDou B1C |   ❌    |    ✅    |
 
 n.b. It is not known whether the Motion uses GPS + Galileo, or GPS + GLONASS when running at 10 Hz.
 

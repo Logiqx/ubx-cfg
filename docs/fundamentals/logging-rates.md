@@ -115,12 +115,12 @@ Some current devices using the M10 support the following logging rates.
 | :--: | :----: | :-----: | :------: |
 |  1   |   ✅    |    ✅    |    ✅     |
 |  2   |   ✅    |    ✅    |    ✅     |
-|  4   |   -    |    ✅    |    ✅     |
+|  4   |   ❌    |    ✅    |    ✅     |
 |  5   |   ✅    |    ✅    |    ✅     |
-|  8   |   -    |    ✅    |    ✅     |
+|  8   |   ❌    |    ✅    |    ✅     |
 |  10  |   ✅    |    ✅    |    ✅     |
-|  15  |   -    |    ✅    |    -     |
-|  20  |   -    |    ✅    |    -     |
+|  15  |   ❌    |    ✅    |    ❌     |
+|  20  |   ❌    |    ✅    |    ❌     |
 
 n.b. The SYRAC-GPS (an ESP-GPS) also mentions 3 and 6 Hz in the user guide, presumably inspired by u-blox data sheets?
 
