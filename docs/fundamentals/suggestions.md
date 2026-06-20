@@ -1,22 +1,24 @@
 ## Suggestions
 
-### Constellations
+### Satellites
 
-Use least 3
+#### Constellations
+
+Use least 3 as 2 @ 10 Hz has been proven to be less accurate than 3 @ 10 Hz.
 
 https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951 - mask angle 10 degrees
 
-Consider QZSS + SBAS
+What about QZSS + SBAS?
 
 
 
-### Rates
+#### Logging Rates
 
 It might be worth limiting users to a smaller selection.
 
 e.g. 1, 2, 5, and 10 Hz.
 
-Static test - HDOP better at 5 Hz
+Static test on Motion - HDOP better at 5 Hz
 
 Suggest systematic test *
 Less systems = worse HDOP, translate into worse hAcc and sAcc
@@ -26,9 +28,7 @@ C:\Users\mwgeo\OneDrive\Projects\GPS\Logs\Organised\ESP-GPS\Salvador, SYRAC-GPS\
 
 
 
-### Combinations
-
-#### Potential Candidates
+#### Strong Candidates
 
 The following configurations using 3 or 4 constellations are expected to produce the best performances on the M10:
 
@@ -49,11 +49,12 @@ Notes:
 
 - It has yet to be determined whether GPS+GAL+B1C+GLO has any performance benefits over GPS+GAL+B1C.
   - It might be that only two configurations need to be available to end users - GPS+GAL+B1C @ 5 Hz or 10 Hz.
+- Changing the M10 to 192 MHz is irreversible, and it CANNOT be changed back to 128 MHz. 
 
 
 
 
-#### Unlikely to be Useful
+#### Weak Candidates
 
 2 constellations are not expected to perform as well as 3 constellations, so probably not useful:
 
@@ -64,18 +65,14 @@ Notes:
 |    GPS+B1C     |    20 Hz     | 192 MHz | 240 MHz |    -    |
 |    GPS+GAL     |    20 Hz     | 192 MHz | 240 MHz |    -    |
 
-IMPORTANT: Changing the M10 to 192 MHz is irreversible, and it CANNOT be changed back to 128 MHz. 
+Some signals and logging rates have been dismissed at this time:
 
-
-
-#### Dismissed
-
-- Single constellation configurations logging at 20 Hz or 25 Hz
-  - The fix quality is likely to be much worse than multiple constellations
 - GLONASS in 2 and 3 constellation configurations
   - Galileo and BeiDou are much better systems, and usually more accurate
 - BeiDou B1I in any configurations
   - Legacy system, superseded by BeiDou B1C and more intensive for the M10
+- Single constellation configurations logging at 20 Hz or 25 Hz
+  - The fix quality is likely to be much worse than multiple constellations
 - Logging rates that are not a divisor of 1000, such as 15 Hz
   - Inconsistent timestamps from one second to the next are undesirable
 
@@ -95,3 +92,12 @@ Not enough known about the following:
 
 
 
+### Testing
+
+BLAH
+
+Perhaps the most important things to establish before playing with dynamic models and output filtering.
+
+Do static testing...
+
+Be aware that the software may mislead you... see previous test regarding accuracy
