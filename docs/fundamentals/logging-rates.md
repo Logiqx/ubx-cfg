@@ -6,7 +6,7 @@
 
 Simple [static testing](../testing/static-5hz-10hz.md) has shown that 10 Hz can sometimes be worse than 5 Hz.
 
-Reducing the number of satellites to allow higher logging rates can be counterproductive.
+Reducing the number of constellations to allow higher logging rates can be counterproductive.
 
 The best results will likely come from the best signals (GPS, Galileo and BeiDou B1C) and the available logging rate.
 
