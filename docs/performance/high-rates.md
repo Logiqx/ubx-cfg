@@ -1,4 +1,4 @@
-## High Logging Rates
+## Higher Logging Rates
 
 ### M10 High Performance Mode
 

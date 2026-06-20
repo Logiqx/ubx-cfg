@@ -14,6 +14,10 @@ Sky view - https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951
 
 
 
+Motion supported GPS + GLONASS + Galileo
+
+
+
 #### BeiDou
 
 The B1I and B1C are both civilian signals broadcast by the BeiDou Navigation Satellite System (BDS). B1I is the legacy signal designed for the older BeiDou-2 system, while B1C is a modernized, high-performance signal introduced with the global BeiDou-3 system.

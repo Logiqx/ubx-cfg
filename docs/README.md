@@ -11,9 +11,12 @@ Focuses on the M10
   - [Logging Rate](choices/logging-rate.md)
   - [Suggestions](choices/suggestions.md)
 - Performance
-  - [High Logging Rates](performance/high-rates.md)
+  - [Higher Logging Rates](performance/high-rates.md)
   - [Signal Quality](performance/signal-quality.md)
   - [Solution Quality](performance/solution-quality.md)
+- Testing
+  - [Static Testing](testing/static-5hz-10hz.md)
+  
 - Troubleshooting
   - [Noisy Data](troubleshooting/noisy-data.md)
   - [Dropped Points](troubleshooting/dropped-points.md)
