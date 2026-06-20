@@ -18,16 +18,16 @@
 
 ### Max Rates
 
-The [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) shows the max update rate of the several possible configurations:
+The [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) shows the max update rates of some example configurations:
 
 | Constellations / Services                   | Default | High Performance |
-| ------------------------------------------- | ------- | ---------------- |
-| GPS / GLONASS / BDS B1I / GALILEO / BDS B1C | 18 Hz   | 25 Hz            |
-| GPS+GAL (default)                           | 10 Hz   | 20 Hz            |
-| GPS+GAL+BDS B1C                             | 8 Hz    | 16 Hz            |
-| GPS+GAL+GLO                                 | 6 Hz    | 16 Hz            |
-| GPS+GAL+BDS B1I                             | 3 Hz    | 12 Hz            |
-| GPS+GAL+BDS B1C+GLO                         | 4 Hz    | 10 Hz            |
+| ------------------------------------------- | :-----: | :--------------: |
+| GPS / GLONASS / BDS B1I / Galileo / BDS B1C |  18 Hz  |      25 Hz       |
+| GPS + Galileo (default)                     |  10 Hz  |      20 Hz       |
+| GPS + Galileo + BeiDou B1C                  |  8 Hz   |      16 Hz       |
+| GPS + Galileo + GLONASS                     |  6 Hz   |      16 Hz       |
+| GPS + Galileo + BeiDou B1I                  |  3 Hz   |      12 Hz       |
+| GPS + Galileo + BeiDou B1C + GLONASS        |  4 Hz   |      10 Hz       |
 
 n.b. These figures are all on the basis of a minimum 98% fix rate under typical conditions.
 
