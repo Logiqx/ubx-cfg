@@ -28,21 +28,12 @@ Note: 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz
 
 #### Standard Configuration
 
-**Hardware**
-
 - M10 clocked at 192 MHz - high performance
 - Baud rate of 115,200
 - ESP32 clocked according to the logging rate
   - 80 MHz for 8 Hz
   - 160 MHz to 16 Hz
   - 240 MHz for 20 Hz
-
-**M10**
-
-- Logging rate of 5 Hz
-- Default satellite limit of 32
-- Default elevation mask of 5°
-- Default C/N₀ criteria
 
 #### Data Analysis
 
