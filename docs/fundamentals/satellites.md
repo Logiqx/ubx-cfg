@@ -60,7 +60,7 @@ Galileo is one of the most accurate GNSS systems, and should always be one of th
 
 #### Quasi-Zenith Satellite System (QZSS)
 
-QZSS signals have been designed to be almost identical to GPS, and thus highly compatible.
+Quasi-Zenith Satellite System (QZSS) is a regional navigation satellite system that transmits additional GPS L1 C/A signals for the Pacific region covering Japan and Australia. M10 positioning modules are able to receive and track these signals concurrently with GPS signals, resulting in better availability especially under challenging signal conditions. QZSS signals have been designed to be almost identical to GPS, and thus highly compatible.
 
 
 

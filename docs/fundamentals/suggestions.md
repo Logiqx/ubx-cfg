@@ -74,11 +74,14 @@ A variety of other signals and logging rates have also been dismissed:
 
 
 
-#### TBC
+#### Augmentation Systems
 
-What about QZSS + SBAS?
+What about QZSS and SBAS?
 
-Propose ignoring them for now?
+- QZSS may be useful in the Pacific region, covering Japan and Australia
+- SBAS can improve positional accuracy, but should not used as additional satellites for ranging.
+
+They certainly warrant investigation, but they are not a top priority.
 
 
 
