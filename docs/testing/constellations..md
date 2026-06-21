@@ -119,7 +119,7 @@ Investigate the maximum possible logging rates, recording data for a minimum of 
 | 3.3  | GPS + Galileo + BeiDou B1C | GPS + Galileo | 8 Hz  |
 | 3.4  | GPS + Galileo + BeiDou B1C | GPS + Galileo | 10 Hz |
 | 3.5  | GPS + Galileo + BeiDou B1C | GPS + Galileo | 16 Hz |
-| 3.6  | -                          | GPS + Galileo | 20 Hz |
+| 3.6  | GPS + BeiDou B1C           | GPS + Galileo | 20 Hz |
 
 Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
 
