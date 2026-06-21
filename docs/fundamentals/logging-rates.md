@@ -25,9 +25,17 @@ The [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/doc
 | GPS + Galileo + BeiDou B1I                  |  3 Hz   |      12 Hz       |
 | GPS + Galileo + BeiDou B1C + GLONASS        |  4 Hz   |      10 Hz       |
 
-n.b. These figures are all on the basis of a minimum 98% fix rate under typical conditions.
+Notes:
 
-The configuration required to support the higher logging rates is described on another page - see [Higher Logging Rates](../performance/high-rates.md).
+- These figures are all on the basis of a minimum 98% fix rate under typical conditions, not 100%.
+- The defaults of 1 system at 18 Hz or 2 systems at 10 Hz are identical to the [NEO-M8Q and NEO-M8M](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf).
+- The [NEO-M9M](https://content.u-blox.com/sites/default/files/NEO-M9N-00B_DataSheet_UBX-19014285.pdf) claims to support 25 Hz for all configurations, including 4 constellations.
+
+High performance requires the M10 to be configured to use a higher clock speed:
+
+- The default M10 clock speed is 128 MHz, whereas high performance is 192 MHz.
+- Configuring the M10 for high performance is irreversible, and CANNOT be reverted back to 128 MHz.
+- The configuration required to support the high performance rates is described in [Higher Logging Rates](../performance/high-rates.md).
 
 
 

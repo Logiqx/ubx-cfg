@@ -91,7 +91,7 @@ Popular devices within the speed sailing community:
 | GPS + Galileo + BeiDou B1C           |   ❌    |    ✅    |
 | GPS + GLONASS + Galileo + BeiDou B1C |   ❌    |    ✅    |
 
-n.b. It is not known whether the Motion uses GPS + Galileo, or GPS + GLONASS when running at 10 Hz.
+n.b. It is not known whether the Motion with M10 uses GPS + Galileo, or GPS + GLONASS when running at 10 Hz.
 
 
 
@@ -102,29 +102,6 @@ n.b. It is not known whether the Motion uses GPS + Galileo, or GPS + GLONASS whe
 Individual signals are enabled using `CFG-SIGNAL` keys which are described in the [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites/default/files/documents/u-blox-M10-SPG-5.30_InterfaceDescription_UBXDOC-304424225-20395.pdf).
 
 You need to be sure that your selection will not overwhelm the M10 with too many signals, which also relates to update rates.
-
-
-
-#### Update Rates
-
-The [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) shows the max update rates of some example configurations:
-
-| Constellations / Services                   | Default | High Performance |
-| ------------------------------------------- | :-----: | :--------------: |
-| GPS / GLONASS / BDS B1I / Galileo / BDS B1C |  18 Hz  |      25 Hz       |
-| GPS + Galileo (default)                     |  10 Hz  |      20 Hz       |
-| GPS + Galileo + BeiDou B1C                  |  8 Hz   |      16 Hz       |
-| GPS + Galileo + GLONASS                     |  6 Hz   |      16 Hz       |
-| GPS + Galileo + BeiDou B1I                  |  3 Hz   |      12 Hz       |
-| GPS + Galileo + BeiDou B1C + GLONASS        |  4 Hz   |      10 Hz       |
-
-n.b. These figures are all on the basis of a minimum 98% fix rate under typical conditions.
-
-High performance requires the M10 to be configured to use a higher clock speed:
-
-- The default M10 clock speed is 128 MHz, whereas high performance is 192 MHz.
-- Configuring the M10 for high performance is irreversible, and CANNOT be reverted back to 128 MHz.
-- The configuration required to support the high update rates is described on another page - see [Higher Logging Rates](../performance/high-rates.md).
 
 
 
