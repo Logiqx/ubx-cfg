@@ -55,14 +55,14 @@ Note: 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz
 
 Compare each of the 2 constellation configurations, recording data for a minimum of 2 hours:
 
-| Test | Device 1      | Device 2      | Rate  |
-| :--: | ------------- | ------------- | :---: |
-| 1.1  | GPS + GLONASS | GPS + Galileo | 4 Hz  |
-| 1.2  | GPS + GLONASS | GPS + Galileo | 5 Hz  |
-| 1.3  | GPS + GLONASS | GPS + Galileo | 8 Hz  |
-| 1.4  | GPS + GLONASS | GPS + Galileo | 10 Hz |
-| 1.5  | GPS + GLONASS | GPS + Galileo | 16 Hz |
-| 1.6  | GPS + GLONASS | GPS + Galileo | 20 Hz |
+| Test |  ESP-GPS #1   |  ESP-GPS #2   | Motion Mini | Rate  |
+| :--: | :-----------: | :-----------: | :---------: | :---: |
+| 1.1  | GPS + GLONASS | GPS + Galileo |      ❌      | 4 Hz  |
+| 1.2  | GPS + GLONASS | GPS + Galileo |      ✅      | 5 Hz  |
+| 1.3  | GPS + GLONASS | GPS + Galileo |      ❌      | 8 Hz  |
+| 1.4  | GPS + GLONASS | GPS + Galileo |      ✅      | 10 Hz |
+| 1.5  | GPS + GLONASS | GPS + Galileo |      ❌      | 16 Hz |
+| 1.6  | GPS + GLONASS | GPS + Galileo |      ❌      | 20 Hz |
 
 Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
 
@@ -82,13 +82,13 @@ The 20 Hz tests might result in dropped frames, demonstrating that the CPU bandw
 
 Compare each of the 3 constellation configurations, recording data for a minimum of 2 hours:
 
-| Test | Device 1                | Device 2                   | Rate  |
-| :--: | ----------------------- | -------------------------- | :---: |
-| 2.1  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | 4 Hz  |
-| 2.2  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | 5 Hz  |
-| 2.3  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | 8 Hz  |
-| 2.4  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | 10 Hz |
-| 2.5  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | 16 Hz |
+| Test | ESP-GPS #1              | ESP-GPS #2                 | Motion Mini | Rate  |
+| :--: | :----------------------------------: | :------------------------: | :---------: | :---: |
+| 2.1  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | ❌ | 4 Hz  |
+| 2.2  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | ✅           | 5 Hz  |
+| 2.3  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | ❌ | 8 Hz  |
+| 2.4  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | ✅           | 10 Hz |
+| 2.5  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | ❌ | 16 Hz |
 
 Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
 
@@ -108,12 +108,12 @@ The 16 Hz tests might result in dropped frames, demonstrating that the CPU bandw
 
 Compare 4 constellations against 3 constellations, recording data for a minimum of 2 hours:
 
-| Test | Device 1                             | Device 2                   | Rate  |
-| :--: | ------------------------------------ | -------------------------- | :---: |
-| 3.1  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 4 Hz  |
-| 3.2  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 5 Hz  |
-| 3.3  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 8 Hz  |
-| 3.4  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 10 Hz |
+| Test |              ESP-GPS #1              |         ESP-GPS #2         | Motion Mini | Rate  |
+| :--: | :----------------------------------: | :------------------------: | :---------: | :---: |
+| 3.1  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C |      ❌      | 4 Hz  |
+| 3.2  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C |      ✅      | 5 Hz  |
+| 3.3  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C |      ❌      | 8 Hz  |
+| 3.4  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C |      ✅      | 10 Hz |
 
 Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
 
