@@ -76,12 +76,14 @@ A variety of other signals and logging rates have also been dismissed:
 
 #### Augmentation Systems
 
-What about QZSS and SBAS?
+What about SBAS and QZSS?
 
+- SBAS can potentially improve positional accuracy, but should not be used as additional satellites.
+  - Need to check if it is possible for the M10 to just use SBAS for the ranging corrections.
 - QZSS may be useful in the Pacific region, covering Japan and Australia
-- SBAS can improve positional accuracy, but should not used as additional satellites for ranging.
+  - Use the online [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951) to determine where there QZO (orbiting) satellites are visible.
 
-They certainly warrant investigation, but they are not a top priority.
+SBAS and QZSS certainly warrant investigation, but they are not a top priority.
 
 
 

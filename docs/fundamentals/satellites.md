@@ -15,25 +15,21 @@ The table below highlights a few key aspects of the signals supported by the M10
 | QZSS          | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |      |
 | QZSS          |  L1S   |       1575.42 MHz        |   CDMA    |     Data     |      |
 
-There is a useful online tool called [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951) which can be used to determine visible GNSS satellites from any point on the earth at any given time.
+There is a useful online tool called [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951) which can be used to determine the visible GNSS satellites at any given time.
 
 
 
 #### GLONASS
 
-GLONASS currently uses FDMA, instead of CDMA like the other systems.
+GLONASS currently uses FDMA, instead of CDMA like the other systems. The system is recognised as being less accurate than its rivals; GPS, BeiDou, and Galileo.
 
-The system is recognised as being less accurate than its rivals; GPS, BeiDou, and Galileo.
-
-M10 configurations should probably use GPS + Galileo + BeiDou B1C, instead of GPS + Galileo + GLONASS.
-
-The processing burden is lower for the M10, and the results are likely to be more accurate.
+M10 configurations should probably use GPS + Galileo + BeiDou B1C, instead of GPS + Galileo + GLONASS. The processing burden is lower for the M10, and the results are likely to be more accurate.
 
 
 
 #### BeiDou
 
-The [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf) says the tracking and reacquisition sensitivity for acquired signals is approximately at the same level for BeiDou B1I and B1C.
+The [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_IntegrationManual_UBX-22038241.pdf) claims that tracking and reacquisition sensitivity for acquired signals is approximately at the same level for BeiDou B1I and B1C.
 
 <u>BeiDou B1I</u>
 
@@ -56,30 +52,46 @@ Notes
 
 Galileo is one of the most accurate GNSS systems, and should always be one of the constellations used in addition to GPS.
 
+Suggest GNSS configurations including GPS + Galileo + BeiDou B1C.
 
 
-#### Quasi-Zenith Satellite System (QZSS)
 
-Quasi-Zenith Satellite System (QZSS) is a regional navigation satellite system that transmits additional GPS L1 C/A signals for the Pacific region covering Japan and Australia. M10 positioning modules are able to receive and track these signals concurrently with GPS signals, resulting in better availability especially under challenging signal conditions. QZSS signals have been designed to be almost identical to GPS, and thus highly compatible.
-
-
+### Augmentation Systems
 
 #### Satellite Based Augmentation Systems (SBAS)
 
 SBAS performs two roles, firstly for [Differential GPS (DGPS)](https://en.wikipedia.org/wiki/Differential_GNSS):
 
-- Primarily improves positional accuracy
-- SBAS improves signal accuracy by mitigating some of the ionospheric errors
+- Potentially improves signal accuracy by mitigating some of the ionospheric errors.
+- Primarily improves positional accuracy by providing range corrections.
 
-Secondly, it's geostationary satellites can be used as additional signals to calculate positions.
+Secondly, SBAS satellites (geostationary, not MEO) can also be used to calculate positions.
 
-- This is generally regarded as a bad thing to do and lead to poor accuracy.
+- This is generally regarded as a bad thing to do, and can reduce accuracy.
 
-By all means use SBAS for DGPS, but don't use it as supplementary satellites for position fixes.
+By all means use SBAS for corrections, but don't use it as supplementary satellites for position fixes.
 
 
 
-### Existing Devices
+#### Quasi-Zenith Satellite System (QZSS)
+
+Quasi-Zenith Satellite System (QZSS) is a regional navigation satellite system that transmits additional GPS L1 C/A signals for the Pacific region covering Japan and Australia.
+
+The M10 is able to receive and track these signals concurrently with GPS signals, resulting in better availability, especially under challenging signal conditions. It is akin to a few extra GPS satellites in Japan and Australia.
+
+
+
+### Configuration
+
+#### Enabling Signals
+
+Individual signals are enabled using `CFG-SIGNAL` keys which are described in the [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites/default/files/documents/u-blox-M10-SPG-5.30_InterfaceDescription_UBXDOC-304424225-20395.pdf).
+
+You need to be sure that your selection will not overwhelm the M10 with too many signals, which also relates to update rates.
+
+
+
+#### Existing Devices
 
 Popular devices within the speed sailing community:
 
@@ -92,16 +104,6 @@ Popular devices within the speed sailing community:
 | GPS + GLONASS + Galileo + BeiDou B1C |   ❌    |    ✅    |
 
 n.b. It is not known whether the Motion with M10 uses GPS + Galileo, or GPS + GLONASS when running at 10 Hz.
-
-
-
-### Configuration
-
-#### Enabling Signals
-
-Individual signals are enabled using `CFG-SIGNAL` keys which are described in the [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites/default/files/documents/u-blox-M10-SPG-5.30_InterfaceDescription_UBXDOC-304424225-20395.pdf).
-
-You need to be sure that your selection will not overwhelm the M10 with too many signals, which also relates to update rates.
 
 
 
