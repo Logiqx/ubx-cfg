@@ -163,7 +163,7 @@ It is not yet known whether 3 constellations will be best at 10 Hz or 16 Hz, due
 
 This series of tests aims to identify the optimal configuration - 3 constellations, satellite limits and logging rate.
 
-The testing will take a significant length of time, but at the end of it there should be some definitive results.
+The testing consists of several 12 hour days, but at the end of it there should be some definitive results.
 
 The optimal configuration should then be clearly apparent - e.g. GPS + Galileo + BeiDou B1C @ 10 Hz.
 
