@@ -11,16 +11,16 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
 - Fundamentals
   - [Satellites](fundamentals/satellites.md) - constellations + filters
   - [Logging Rates](fundamentals/logging-rates.md) - max rates + accuracy
-  - [Suggestions](fundamentals/suggestions.md) - constellations + filters + rates
+  - [Suggestions](fundamentals/suggestions.md) - constellations + rates
 - Performance
-  - [High Logging Rates](performance/high-rates.md) - CPU / MPU + baud rates
+  - [High Logging Rates](performance/high-rates.md) - CPU + baud rates
   - [Signal Quality](performance/signal-quality.md) - power savings and LNA
   - [Solution Quality](performance/solution-quality.md) - models + filters
 - Testing
   - [Power Mode](testing/power-mode.md) - "balanced" vs "full power"
   - [Static Testing](testing/static-5hz-10hz.md) - 5 Hz vs 10 Hz
-  - [Fundamentals](testing/fundamentals.md) - optimal satellites + rates
-  - [ESP-GPS](testing/esp-gps.md) - optimal ESP-GPS configuration
+  - [Fundamentals](testing/fundamentals.md) - constellations + rates
+  - [ESP-GPS](testing/esp-gps.md) - optimal configuration
   
 - Troubleshooting
   - [Noisy Data](troubleshooting/noisy-data.md) - power mode
