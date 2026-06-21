@@ -105,8 +105,8 @@ Note: Restricting the number of satellites is one way to prevent points from bei
 
 ### Testing
 
-Constellations and logging rates are the fundamentals, prior to exploring dynamic models and output filtering.
+Constellations and logging rates are fundamentals, prior to exploring dynamic models and output filtering.
 
-[Static testing](../testing/static-5hz-10hz.md) provides a controlled environment to test devices systematically, and is very easy to perform.
+Static testing provides a controlled environment to test devices systematically, and is very easy to perform.
 
-Be aware that the +/- values in the software may mislead you... see previous test comparing 5 Hz and 10 Hz.
+Be aware that the +/- values in the software may mislead you... see [earlier test](../testing/static-5hz-10hz.md) comparing 5 Hz and 10 Hz.
