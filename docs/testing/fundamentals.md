@@ -1,6 +1,6 @@
-## Constellation Testing
+## Fundamentals Testing
 
-Constellations and logging rates are fundamentals, prior to exploring dynamic models and output filtering.
+Choosing the right constellations, satellite limits, and logging rates is a crucial decision.
 
 Static testing provides a controlled environment to test devices systematically, and is very easy to perform.
 
@@ -8,7 +8,21 @@ Be aware that the +/- values in the software may mislead you... see [earlier tes
 
 
 
-### Approach to Testing
+### Overview
+
+There are several phases planned, which can be all be split up over a number of days:
+
+1. Test all of the different constellations - 12 hours, excluding analysis
+2. Test the effect of limiting the maximum number of satellites - 12 hours, excluding analysis
+3. Test the maximum possible logging rates - 12 hours, excluding analysis
+4. Determine the optimal balance between numbers of satellites and logging rates
+5. Test additional configurations against the defaults - elevation mask, minimum C/N₀, etc.
+
+The final outcome should be an optimal configuration for M10 receivers.
+
+
+
+### Approach
 
 #### Standard Configuration
 
@@ -25,8 +39,6 @@ M10
 - Default elevation mask of 5°
 - Default C/N₀ criteria
 
-
-
 #### Data Analysis
 
 - Acquisition times
@@ -38,9 +50,8 @@ M10
   - Speed over Ground (SOG)
   - sAcc
   - HDOP
-- Dropped points
-  - Exceeded the CPU bandwidth?
-
+- Dropped frames
+  - Indication of CPU bandwidth being exceeded
 
 
 
@@ -63,9 +74,7 @@ Ideally after completing these tests they should all be repeated, but with each 
 
 Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
 
-Total duration = 12 hours
-
-
+Total duration = 12 hours, excluding analysis
 
 #### Expectations
 
@@ -96,9 +105,7 @@ Ideally after completing these tests they should all be repeated, but with each 
 
 Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
 
-Total duration = 12 hours
-
-
+Total duration = 12 hours, excluding analysis
 
 #### Expectations
 
@@ -110,7 +117,7 @@ This is important because increasing the logging rate will necessitate a reducti
 
 ### Phase 3
 
-Investigate the maximum possible logging rates, recording data for a minimum of 2 hours:
+Test the maximum possible logging rates with maximum of 32 satellites, recording data for a minimum of 2 hours:
 
 | Test | Unit 1                     | Unit 2        | Rate  |
 | :--: | -------------------------- | ------------- | :---: |
@@ -125,7 +132,7 @@ Ideally after completing these tests they should all be repeated, but with each 
 
 Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
 
-Total duration = 12 hours
+Total duration = 12 hours, excluding analysis
 
 Notes:
 
@@ -135,37 +142,67 @@ Notes:
   - 160 MHz to 16 Hz
   - 240 MHz for 20 Hz
 
-
-
 #### Expectations
 
 20 Hz logging will be impossible with 3 constellations, but these tests should establish the practical limit.
+
+Some of the tests might also result in dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
 
 
 ### Phase 4
 
-The final phase will aim to find the perfect balance between number of satellites and logging rate.
+The fourth phase will aim to identify the perfect balance between number of satellites and logging rate.
+
+- Best constellations - best combinations of 2 and 3 constellations
+- Maximum number of satellites vs possible logging rates
 
 The precise planning of this phase can be done after interpreting the results from phases 2 and 3.
 
+#### Expectations
 
+There may be a point where a 2 constellation performance roughly matches the 3 constellation performance.
+
+Suspect that the accuracy from 2 constellations at 20 Hz may not be able to exceed 3 constellations at 10 Hz.
+
+It yet to be seen whether whether 3 constellations will be best at 10 Hz or 16 Hz, due to required satellite limits.
+
+
+
+### Phase 5
+
+Once the constellations and logging rates have been optimised, additional configurations can be tested against the defaults.
+
+| Test | Configuration  | Parameter                |    Unit 1    |     Unit 2     |
+| :--: | -------------- | ------------------------ | :----------: | :------------: |
+| 5.1  | Elevation mask | CFG-NAVSPG-INFIL_MINELEV |      5°      |      10°       |
+| 5.2  | Elevation mask | CFG-NAVSPG-INFIL_MINELEV |      5°      |      15°       |
+| 5.3  | Minimum C/N₀   | CFG-NAVSPG-INFIL_MINCNO  |    6 dBHz    |    30 dBHz     |
+| 5.4  | Minimum C/N₀   | CFG-NAVSPG-INFIL_MINCNO  |    6 dBHz    |    35 dBHz     |
+| 5.5  | Dynamic model  | CFG-NAVSPG-DYNMODEL      | 1 = portable | 4 = automotive |
+
+Notes:
+
+- Elevation masks and minimum C/N₀ can be investigated with static testing, just like the earlier phases.
+- Dynamic model comparisons need to be done on the water.
 
 #### Expectations
 
-Suspect that accuracy of results from 2 constellations at 20 Hz may not exceed 3 constellations at 10 Hz.
+The minimum elevation mask should be a reliable way to exclude some bad signals from the solutions.
 
-It is not yet known whether 3 constellations will be best at 10 Hz or 16 Hz, due to the required satellite limits.
+Likewise with minimum C/N₀, although it may need to be specific to the receiver / antenna.
+
+The dynamic model is a bit of a long shot, but "automotive" may prove to be suitable for speed sailing.
 
 
 
 ### Summary
 
-This series of tests aims to identify the optimal configuration - 3 constellations, satellite limits and logging rate.
+This series of tests aims to identify the optimal M10 configuration - 3 constellations, satellite limits and logging rate.
 
-The testing consists of several 12 hour days, but at the end of it there should be some definitive results.
+The testing consists of several phases, but in the end there should be some clarity on the best configurations.
 
-The optimal configuration should then be clearly apparent - e.g. GPS + Galileo + BeiDou B1C @ 10 Hz.
+Hopefully the optimal configurations will be unambiguous - e.g. GPS + Galileo + BeiDou B1C @ 10 Hz, 10° elevation
 
 
 

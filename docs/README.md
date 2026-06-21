@@ -9,23 +9,23 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
 ### UBX Config
 
 - Fundamentals
-  - [Satellites](fundamentals/satellites.md)
-  - [Logging Rates](fundamentals/logging-rates.md)
-  - [Suggestions](fundamentals/suggestions.md)
+  - [Satellites](fundamentals/satellites.md) - constellations + filters
+  - [Logging Rates](fundamentals/logging-rates.md) - max rates + accuracy
+  - [Suggestions](fundamentals/suggestions.md) - satellites + filters + rates
 - Performance
-  - [High Logging Rates](performance/high-rates.md)
-  - [Signal Quality](performance/signal-quality.md)
-  - [Solution Quality](performance/solution-quality.md)
+  - [High Logging Rates](performance/high-rates.md) - clock rates + baud rates
+  - [Signal Quality](performance/signal-quality.md) - power savings and LNA
+  - [Solution Quality](performance/solution-quality.md) - models + filters
 - Testing
   - [Power Mode](testing/power-mode.md) - "balanced" vs "full power"
   - [Static Testing](testing/static-5hz-10hz.md) - 5 Hz vs 10 Hz
-  - [Constellations](testing/constellations..md) - WIP
+  - [Fundamentals](testing/fundamentals.md) - satellites + rates
   
 - Troubleshooting
-  - [Noisy Data](troubleshooting/noisy-data.md)
-  - [Dropped Points](troubleshooting/dropped-points.md)
-  - [Timestamp Variations](troubleshooting/timestamp-variations.md)
-  - [Slow Acquisition](troubleshooting/slow-acquisition.md)
+  - [Noisy Data](troubleshooting/noisy-data.md) - power mode
+  - [Dropped Points](troubleshooting/dropped-points.md) - CPU bandwidth
+  - [Timestamp Variations](troubleshooting/timestamp-variations.md) - TBC
+  - [Slow Acquisition](troubleshooting/slow-acquisition.md) - TBC
 
 
 

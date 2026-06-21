@@ -45,16 +45,16 @@ Further details - [How to Choose a Suitable u-blox Dynamic GNSS Platform](https:
 
 ### Static Hold
 
-For speed sailing, static hold thresholds should always be zero.
+For speed sailing, static hold thresholds should left at zero.
 
-- `CFG-MOT-GNSSSPEED_THRS` = 0 (default)
-- `CFG-MOT-GNSSDIST_THRS` = 0 (default)
+- `CFG-MOT-GNSSSPEED_THRS` - default is 0
+- `CFG-MOT-GNSSDIST_THRS` - default is 0
 
 
 
-### Input Filters
+### Navigation Input Filters
 
-These could be used to prevent poor quality solutions, when submerged or indoors.
+Navigation input filters can potentially prevent poor quality solutions from being calculated.
 
 #### Satellites
 
@@ -62,23 +62,23 @@ These could be used to prevent poor quality solutions, when submerged or indoors
   - Julien said the default used to be 5, so may need to be increased
 
 
-#### C/No
+#### C/N₀ Threshold
 
-- `CFG-NAVSPG-INFIL_NCNOTHRS` - defaults to 0
+- `CFG-NAVSPG-INFIL_NCNOTHRS` - default is 0
   - Number above threshold
-- `CFG-NAVSPG-INFIL_CNOTHRS` - defaults to 0
+- `CFG-NAVSPG-INFIL_CNOTHRS` - default is 0
   - Might consider 30 to 35 dB-Hz
 
 
 
-### Output Filters
+### Navigation Output Filters
 
-These could be used to discard the enormous spikes from u-blox devices, when submerged or indoors.
+Navigation output filters can potentially prevent poor quality solutions (e.g. spikes) being output.
 
 #### DOP / Accuracy
 
-- `CFG-NAVSPG-OUTFIL_PDOP` - defaults to 250
-- `CFG-NAVSPG-OUTFIL_TDOP` - defaults to 250
-- `CFG-NAVSPG-OUTFIL_PACC` - defaults to 100 m
-- `CFG-NAVSPG-OUTFIL_TACC` - defaults to 350 m
-- `CFG-NAVSPG-OUTFIL_FACC` -  defaults to 150 m/s
+- `CFG-NAVSPG-OUTFIL_PDOP` - default is 250
+- `CFG-NAVSPG-OUTFIL_TDOP` - default is 250
+- `CFG-NAVSPG-OUTFIL_PACC` - default is 100 m
+- `CFG-NAVSPG-OUTFIL_TACC` - default is 350 m
+- `CFG-NAVSPG-OUTFIL_FACC` -  default is 150 m/s
