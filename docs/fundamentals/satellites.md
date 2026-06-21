@@ -107,11 +107,11 @@ Popular devices within the speed sailing community:
 
 | Constellations / Signals             | Motion | ESP-GPS |
 | ------------------------------------ | :----: | :-----: |
-| GPS + Galileo                        |   ❓    |    ✅    |
 | GPS + GLONASS                        |   ❓    |    ✅    |
-| GPS + GLONASS + Galileo              |   ✅    |    ✅    |
+| GPS + Galileo                        |   ❓    |    ✅    |
+| GPS + Galileo + GLONASS              |   ✅    |    ✅    |
 | GPS + Galileo + BeiDou B1C           |   ❌    |    ✅    |
-| GPS + GLONASS + Galileo + BeiDou B1C |   ❌    |    ✅    |
+| GPS + Galileo + BeiDou B1C + GLONASS |   ❌    |    ✅    |
 
 n.b. It is not known whether the Motion with M10 uses GPS + Galileo, or GPS + GLONASS when running at 10 Hz.
 
