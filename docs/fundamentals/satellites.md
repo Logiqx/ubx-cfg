@@ -19,6 +19,14 @@ There is a useful online tool called [GNSS View](https://app.qzss.go.jp/GNSSView
 
 
 
+#### GPS
+
+The longest running GNSS, and one most likely to be included in the best performing M10 configurations.
+
+Very likely to be used alongside the Galileo + BeiDou signals.
+
+
+
 #### GLONASS
 
 GLONASS currently uses FDMA, instead of CDMA like the other systems. The system is recognised as being less accurate than its rivals; GPS, BeiDou, and Galileo.
@@ -33,13 +41,15 @@ The [MAX-M10M-00B Integration manual](https://content.u-blox.com/sites/default/f
 
 <u>BeiDou B1I</u>
 
-- Faster TTFF and higher start-up sensitivity. BeiDou B1I signals are acquired significantly faster and at a lower signal level than BeiDou B1C signals.
-- Better availability. Higher start-up sensitivity results in a larger number of BeiDou satellites tracked and used in navigation solution especially at low signal level.
+> Faster TTFF and higher start-up sensitivity. BeiDou B1I signals are acquired significantly faster and at a lower signal level than BeiDou B1C signals.
+>
+> Better availability. Higher start-up sensitivity results in a larger number of BeiDou satellites tracked and used in navigation solution especially at low signal level.
 
 <u>BeiDou B1C</u>
 
-- Concurrent reception of 4 GNSSs with GPS L1 C/A, Galileo E1, BeiDou B1C, and GLONASS L1OF.
-- Lower power consumption. No additional frequency band required for BeiDou B1C in multiGNSS constellations, resulting in a lower power consumption during acquisition and tracking phases.
+> Concurrent reception of 4 GNSSs with GPS L1 C/A, Galileo E1, BeiDou B1C, and GLONASS L1OF.
+>
+> No additional frequency band required for BeiDou B1C in multiGNSS constellations, resulting in a lower power consumption during acquisition and tracking phases.
 
 Notes
 
@@ -60,7 +70,7 @@ Suggest GNSS configurations including GPS + Galileo + BeiDou B1C.
 
 #### Satellite Based Augmentation Systems (SBAS)
 
-SBAS performs two roles, firstly for [Differential GPS (DGPS)](https://en.wikipedia.org/wiki/Differential_GNSS):
+SBAS can perform two different roles, firstly as a satellite based [Differential GPS (DGPS)](https://en.wikipedia.org/wiki/Differential_GNSS).
 
 - Potentially improves signal accuracy by mitigating some of the ionospheric errors.
 - Primarily improves positional accuracy by providing range corrections.
