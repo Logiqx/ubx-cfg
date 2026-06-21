@@ -94,7 +94,7 @@ Suggest experimenting with the following the following filters:
 - Maximum number of satellites, but no lower than the 24 of the Motion
 - Elevation mask of 10° or 15°
 
-Propose ignoring the following filters at this time
+Propose ignoring the following filters at this time:
 
 - C/N₀ thresholds
 - Advanced filtering

@@ -39,7 +39,7 @@ High performance relates to when the M10 has been configured to use a higher clo
 
 20 Hz can only be achieved with 2 constellations.
 
-- 2 constellations @ 20 Hz will potentially be worse than 3 or 4 systems @ 5 or 10 Hz
+- 2 constellations @ 20 Hz will potentially be worse than 3 or 4 systems @ 10 Hz
 
 25 Hz can only be achieved with 1 constellation.
 
@@ -135,7 +135,7 @@ I suspect that these update rates we chosen to illustrate what the MAX M10 is ca
 
 #### Accuracy
 
-Previous testing has demonstrated that 3 systems @ 5 Hz can perform better than 2 systems @ 10 Hz. Not only did 10 Hz logging perform worse than 5 Hz, but analysis software says the results are better! The details have been documented on a separate page describing the [static testing](../testing/static-5hz-10hz.md) of 5 Hz and 10 Hz devices.
+Previous testing has demonstrated that 3 systems @ 5 Hz can perform better than 2 systems @ 10 Hz. Not only did 10 Hz logging perform worse than 5 Hz, but +/- figures in analysis software suggests the complete opposite! The details have been documented on a separate page describing the [static testing](../testing/static-5hz-10hz.md) of 5 Hz and 10 Hz devices.
 
 
 
@@ -160,7 +160,7 @@ I was subsequently told that it may be possible to apply the u-blox LPF by compu
 
 Setting `CFG-RATE-MEAS` to a value that is not a divisor of 1000 has already been discussed, and will result in irregular timestamps. This may be regarded as cosmetic, but it also has potential implications for speed analysis software.
 
-The u-blox data sheets describe max update rates on the basis of a minimum 98% fix rate under typical conditions. Dropped points are still possible and will typically occur at the top of the epoch - between .000 and .200. The solution is using less satellites as [discussed](satellites.md) on another page, or reduced logging rate.
+The u-blox data sheets describe max update rates on the basis of a minimum 98% fix rate under typical conditions. Dropped points are still possible and will typically occur at the top of the epoch - between .000 and .200. The solution is using less satellites as [discussed](satellites.md) on another page, or reducing the logging rate.
 
 The requirements for achieving the highest logging rates include the need for higher CPU speeds (M10 and / or ESP32), and higher baud rates. These topics are all described in detail on another page specific to [higher logging rates](../performance/high-rates.md).
 

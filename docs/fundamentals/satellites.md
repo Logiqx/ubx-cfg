@@ -4,16 +4,16 @@
 
 The table below highlights a few key aspects of the signals supported by the M10. It omits details such as modulation, code frequency / chipping rate, primary PRN / code length, etc. Nevertheless, GLONASS and B1I are clearly the odd ones because of their differing frequencies and use of FDMA. The other signals have all been designed to co-exist on the same central frequency, simplifying receiver design and improving performance. The BeiDou B1C and Galileo E1 signals also benefit from modern signal designs, including individual data and pilot components.
 
-| Constellation | Signal |        Frequency         | Technique |  Components  |      |
-| ------------- | :----: | :----------------------: | :-------: | :----------: | :--: |
-| GPS           | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |      |
-| GLONASS       |  L1OF  | 1598.0625 - 1605.375 MHz |   FDMA    |     Data     |      |
-| BeiDou        |  B1I   |       1561.098 MHz       |   CDMA    |     Data     |      |
-| BeiDou        |  B1C   |       1575.42 MHz        |   CDMA    | Data + Pilot |      |
-| Galileo       |   E1   |       1575.42 MHz        |   CDMA    | Data + Pilot |      |
-| SBAS          | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |      |
-| QZSS          | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |      |
-| QZSS          |  L1S   |       1575.42 MHz        |   CDMA    |     Data     |      |
+| Constellation | Signal |        Frequency         | Technique |  Components  |
+| ------------- | :----: | :----------------------: | :-------: | :----------: |
+| GPS           | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |
+| GLONASS       |  L1OF  | 1598.0625 - 1605.375 MHz |   FDMA    |     Data     |
+| BeiDou        |  B1I   |       1561.098 MHz       |   CDMA    |     Data     |
+| BeiDou        |  B1C   |       1575.42 MHz        |   CDMA    | Data + Pilot |
+| Galileo       |   E1   |       1575.42 MHz        |   CDMA    | Data + Pilot |
+| SBAS          | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |
+| QZSS          | L1 C/A |       1575.42 MHz        |   CDMA    |     Data     |
+| QZSS          |  L1S   |       1575.42 MHz        |   CDMA    |     Data     |
 
 There is a useful online tool called [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951) which can be used to determine the visible GNSS satellites at any given time.
 
