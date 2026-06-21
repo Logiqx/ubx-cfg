@@ -2,19 +2,15 @@
 
 ### Introduction
 
-10 Hz is twice as accurate as 5 Hz, right? Well, not necessarily!
+10 Hz is twice as accurate as 5 Hz, right? It may be your expectation, but it is not that simple. Simple [static testing](../testing/static-5hz-10hz.md) has shown that 10 Hz can sometimes be worse than 5 Hz.
 
-Simple [static testing](../testing/static-5hz-10hz.md) has shown that 10 Hz can sometimes be worse than 5 Hz.
-
-Reducing the number of constellations to allow higher logging rates can be counterproductive.
-
-The best results will likely come from the best signals (GPS, Galileo and BeiDou B1C) and the available logging rate.
+Reducing the number of constellations to facilitate higher logging rates can be counterproductive. The best accuracy will likely achieved from the best signals (GPS, Galileo and BeiDou B1C), and reliable update rates.
 
 
 
 ### Max Rates
 
-The [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) shows the max update rates of some example configurations:
+The [MAX-M10M-00B Data sheet](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) shows some examples of max update rates:
 
 | Constellations / Services                   | Default | High Performance |
 | ------------------------------------------- | :-----: | :--------------: |
@@ -31,10 +27,10 @@ Notes:
 - The defaults of 1 system at 18 Hz or 2 systems at 10 Hz are identical to the [NEO-M8Q and NEO-M8M](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf).
 - The [NEO-M9M](https://content.u-blox.com/sites/default/files/NEO-M9N-00B_DataSheet_UBX-19014285.pdf) claims to support 25 Hz for all configurations, including 4 constellations.
 
-High performance requires the M10 to be configured to use a higher clock speed:
+High performance relates to when the M10 has been configured to use a higher clock speed:
 
 - The default M10 clock speed is 128 MHz, whereas high performance is 192 MHz.
-- Configuring the M10 for high performance is irreversible, and CANNOT be reverted back to 128 MHz.
+- Configuring the clock speed to 192 MHz is irreversible, and CANNOT be reverted back to 128 MHz.
 - The configuration required to support the high performance rates is described in [Higher Logging Rates](../performance/high-rates.md).
 
 
@@ -58,9 +54,7 @@ Both rates require the M10 to run in "high performance" mode, which requires mor
 The [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites/default/files/documents/u-blox-M10-SPG-5.30_InterfaceDescription_UBXDOC-304424225-20395.pdf) describes how to configure the navigation update rate.
 
 - `CFG-RATE-MEAS` = Nominal time between GNSS measurements
-
 - `CFG-RATE-NAV` = Ratio of number of measurements to number of navigation solutions
-
 - `CFG-RATE-TIMEREF` = Time system to which measurements are aligned
 
 The default time reference system is GPS, but those milliseconds should be identical to UTC.
@@ -69,36 +63,39 @@ The default time reference system is GPS, but those milliseconds should be ident
 
 #### Existing Devices
 
-Some current devices using the M10 support the following logging rates.
+The table below lists some M10 devices, and the logging rates they support.
 
-| Rate  | Motion | ESP-GPS | LISA GPS |
-| :---: | :----: | :-----: | :------: |
-| 1 Hz  |   ✅    |    ✅    |    ✅     |
-| 2 Hz  |   ✅    |    ✅    |    ✅     |
-| 4 Hz  |   ❌    |    ✅    |    ✅     |
-| 5 Hz  |   ✅    |    ✅    |    ✅     |
-| 8 Hz  |   ❌    |    ✅    |    ✅     |
-| 10 Hz |   ✅    |    ✅    |    ✅     |
-| 15 Hz |   ❌    |    ✅    |    ❌     |
-| 20 Hz |   ❌    |    ✅    |    ❌     |
+| Rate  | Motion | LISA GPS | ESP-GPS |
+| :---: | :----: | :------: | :-----: |
+| 1 Hz  |   ✅    |    ✅     |    ✅    |
+| 2 Hz  |   ✅    |    ✅     |    ✅    |
+| 4 Hz  |   ❌    |    ✅     |    ✅    |
+| 5 Hz  |   ✅    |    ✅     |    ✅    |
+| 8 Hz  |   ❌    |    ✅     |    ✅    |
+| 10 Hz |   ✅    |    ✅     |    ✅    |
+| 15 Hz |   ❌    |    ❌     |    ✅    |
+| 20 Hz |   ❌    |    ❌     |    ✅    |
 
-n.b. The SYRAC-GPS (an ESP-GPS) also mentions 3 and 6 Hz in the user guide, presumably inspired by u-blox data sheets?
+Notes:
+
+- The LISA GPS is based on the ESP-GPS
+- The SYRAC-GPS is an ESP-GPS and mentions 3 and 6 Hz in the user guide, perhaps inspired by u-blox data sheets?
 
 
 
 #### Implications of Non-Divisors
 
-When `CFG-RATE-MEAS` is not a divisor of 1000 the timestamps will not be inconsistent from one second to the next.
+When `CFG-RATE-MEAS` is not a divisor of 1000 the timestamps will not be consistent from one second to the next.
 
-This example shows 15 Hz data from an ESP-GPS. Intriguingly .995 and  .996 are rare in the file, seemingly being logged at .000.
+This chart shows 15 Hz data from an ESP-GPS. Intriguingly .995 and  .996 rarely occur, seemingly being logged at .000.
 
 ![15hz-distribution](img/15hz-distribution.png)
 
-TBH, I am not really a fan of non-divisors, and prefer timestamps that are consistent from one second to the next.
+I am not really a fan of non-divisors, and prefer timestamps that are consistent from one second to the next.
 
 - 0.000, 0.100, 0.200, etc.
 
-Regular timestamps are easier to read, and non-divisors can cause some complications for speed analysis software.
+Regular timestamps are easier to read, and non-divisors can cause complications for speed analysis software.
 
 
 
@@ -130,7 +127,7 @@ It is worth mentioning the MAX M10 data sheet also refers to several update rate
 | 16 Hz |      63       |      1       |
 | 18 Hz |      56       |      1       |
 
-I suspect that u-blox only chose these update rates to illustrate what the MAX M10 is capable of achieving 98% of the time.
+I suspect that these update rates we chosen to illustrate what the MAX M10 is capable of achieving 98% of the time.
 
 
 
@@ -138,11 +135,7 @@ I suspect that u-blox only chose these update rates to illustrate what the MAX M
 
 #### Accuracy
 
-Previous testing has demonstrated that 3 systems @ 5 Hz can perform better than 2 systems @ 10 Hz.
-
-Not only did 10 Hz logging perform worse than 5 Hz, but analysis software says the results are better!
-
-The details have been documented on a separate page describing the [static testing](../testing/static-5hz-10hz.md) of 5 Hz and 10 Hz devices.
+Previous testing has demonstrated that 3 systems @ 5 Hz can perform better than 2 systems @ 10 Hz. Not only did 10 Hz logging perform worse than 5 Hz, but analysis software says the results are better! The details have been documented on a separate page describing the [static testing](../testing/static-5hz-10hz.md) of 5 Hz and 10 Hz devices.
 
 
 
@@ -157,7 +150,7 @@ It should be noted that it is possible to request 1 Hz output in numerous ways, 
 | 1 Hz |      500      |      2       |
 | 1 Hz |     1000      |      1       |
 
-I wrote an [article](https://logiqx.github.io/gps-details/general/aliasing/) about the effects of aliasing and how it is evident in 1 Hz u-blox data. I wonder whether different combinations of `CFG-RATE-MEAS` and `CFG-RATE-NAV` might cause the M10 to implement a low-pass filter (LPF).
+I wrote an article about the effects of [aliasing](https://logiqx.github.io/gps-details/general/aliasing/) and how it is evident in 1 Hz u-blox data. I wonder whether different combinations of `CFG-RATE-MEAS` and `CFG-RATE-NAV` might cause the M10 to implement a low-pass filter (LPF).
 
 I was subsequently told that it may be possible to apply the u-blox LPF by computing the resultant vector of the North and East velocity fields, instead of using the ground speed field. I have not had an opportunity to investigate this any further.
 
@@ -169,5 +162,5 @@ Setting `CFG-RATE-MEAS` to a value that is not a divisor of 1000 has already bee
 
 The u-blox data sheets describe max update rates on the basis of a minimum 98% fix rate under typical conditions. Dropped points are still possible and will typically occur at the top of the epoch - between .000 and .200. The solution is using less satellites as [discussed](satellites.md) on another page, or reduced logging rate.
 
-The requirements for achieving the highest logging rates include increased MCU speeds (M10 and / or ESP32), and higher baud rates. These topics are all described in detail on another page specific to [higher logging rates](../performance/high-rates.md).
+The requirements for achieving the highest logging rates include the need for higher CPU speeds (M10 and / or ESP32), and higher baud rates. These topics are all described in detail on another page specific to [higher logging rates](../performance/high-rates.md).
 
