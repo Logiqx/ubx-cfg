@@ -19,7 +19,8 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
 - Testing
   - [Power Mode](testing/power-mode.md) - "balanced" vs "full power"
   - [Static Testing](testing/static-5hz-10hz.md) - 5 Hz vs 10 Hz
-  - [Fundamentals](testing/fundamentals.md) - satellites + rates
+  - [Fundamentals](testing/fundamentals.md) - optimal satellites + rates
+  - [ESP-GPS](testing/esp-gps.md) - optimal ESP-GPS configuration
   
 - Troubleshooting
   - [Noisy Data](troubleshooting/noisy-data.md) - power mode

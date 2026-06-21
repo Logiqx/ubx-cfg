@@ -26,13 +26,13 @@ The final outcome should be an optimal configuration for M10 receivers.
 
 #### Standard Configuration
 
-Hardware
+**Hardware**
 
 - M10 clocked at 192 MHz - high performance
 - Baud rate of 115,200
 - ESP32 clocked according to the logging rate
 
-M10
+**M10**
 
 - Logging rate of 5 Hz
 - Default satellite limit of 32
@@ -136,7 +136,7 @@ Total duration = 12 hours, excluding analysis
 
 Notes:
 
-- 16 Hz is not a divisor of 1000, it still closely related to 4 Hz and 8 Hz.
+- 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz.
 - The ESP32 will need to be clocked accordingly
   - 80 MHz for 8 Hz
   - 160 MHz to 16 Hz
