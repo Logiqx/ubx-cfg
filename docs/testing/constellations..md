@@ -46,7 +46,7 @@ M10
 
 ### Phase 1
 
-Compare each of the following configurations, recording data for a minimum of 3 hours:
+Compare each of the following configurations, recording data for a minimum of 2 hours:
 
 | Test | Device 1         | Device 2         |
 | :--: | ---------------- | ---------------- |
@@ -61,9 +61,9 @@ The tests have been ordered such that only one device needs to be reconfigured, 
 
 Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
 
-Halving the duration of individual tests to 1.5 hours will make it easier, but acquisition times need to be considered.
+Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
 
-Total duration = 18 hours
+Total duration = 12 hours
 
 
 
@@ -81,7 +81,7 @@ I suspect that GLONASS will have the least favourable results, put it needs some
 
 ### Phase 2
 
-Test the effect of limiting the number of satellites, recording data for a minimum of 3 hours:
+Test the effect of limiting the number of satellites, recording data for a minimum of 2 hours:
 
 | Test | Unit 1                     | Unit 2        | Max Sats |
 | :--: | -------------------------- | ------------- | :------: |
@@ -94,9 +94,9 @@ Test the effect of limiting the number of satellites, recording data for a minim
 
 Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
 
-Halving the duration of individual tests to 1.5 hours will make it easier, but acquisition times need to be considered.
+Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
 
-Total duration = 18 hours
+Total duration = 12 hours
 
 
 
@@ -110,7 +110,7 @@ This is important because increasing the logging rate will necessitate a reducti
 
 ### Phase 3
 
-Investigate the maximum possible logging rates, recording data for a minimum of 3 hours:
+Investigate the maximum possible logging rates, recording data for a minimum of 2 hours:
 
 | Test | Unit 1                     | Unit 2        | Rate  |
 | :--: | -------------------------- | ------------- | :---: |
@@ -123,9 +123,9 @@ Investigate the maximum possible logging rates, recording data for a minimum of 
 
 Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
 
-Halving the duration of individual tests to 1.5 hours will make it easier, but acquisition times need to be considered.
+Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
 
-Total duration = 18 hours
+Total duration = 12 hours
 
 Notes:
 
@@ -139,13 +139,15 @@ Notes:
 
 #### Expectations
 
-20 Hz logging will be impossible with 3 constellations, but these tests should establish the limit.
+20 Hz logging will be impossible with 3 constellations, but these tests should establish the practical limit.
 
 
 
 ### Phase 4
 
 The final phase will aim to find the perfect balance between number of satellites and logging rate.
+
+The precise planning of this phase can be done after interpreting the results from phases 2 and 3.
 
 
 
