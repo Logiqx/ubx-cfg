@@ -15,10 +15,10 @@ This battery of tests has been inspired by the plan for [fundamentals testing](f
 There are several phases planned, which can be all be split up over a number of days:
 
 1. Test different logging rates for 2 constellations - 12 hours, excluding analysis
-2. Test different logging rates for 3 constellations - 12 hours, excluding analysis
+2. Test different logging rates for 3 constellations - 10 hours, excluding analysis
 3. Test different logging rates for 4 constellations - 8 hours, excluding analysis
 
-The final outcome should be an optimal configuration from the available options.
+The final outcome should be an optimal configuration from the existing ESP-GPS options.
 
 Note: 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz.
 
@@ -62,7 +62,7 @@ Note: 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz
 
 ### Phase 1
 
-Compare each of the following configurations, recording data for a minimum of 2 hours:
+Compare each of the 2 constellation configurations, recording data for a minimum of 2 hours:
 
 | Test | Device 1      | Device 2      | Rate  |
 | :--: | ------------- | ------------- | :---: |
@@ -89,7 +89,7 @@ The 20 Hz tests might result in dropped frames, demonstrating that the CPU bandw
 
 ### Phase 2
 
-Compare each of the following configurations, recording data for a minimum of 2 hours:
+Compare each of the 3 constellation configurations, recording data for a minimum of 2 hours:
 
 | Test | Device 1                | Device 2                   | Rate  |
 | :--: | ----------------------- | -------------------------- | :---: |
@@ -115,14 +115,14 @@ The 16 Hz tests might result in dropped frames, demonstrating that the CPU bandw
 
 ### Phase 3
 
-Compare each of the following configurations, recording data for a minimum of 2 hours:
+Compare 4 constellations against 3 constellations, recording data for a minimum of 2 hours:
 
 | Test | Device 1                             | Device 2                   | Rate  |
 | :--: | ------------------------------------ | -------------------------- | :---: |
-| 2.1  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 4 Hz  |
-| 2.2  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 5 Hz  |
-| 2.3  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 8 Hz  |
-| 2.4  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 10 Hz |
+| 3.1  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 4 Hz  |
+| 3.2  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 5 Hz  |
+| 3.3  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 8 Hz  |
+| 3.4  | GPS + Galileo + BeiDou B1C + GLONASS | GPS + Galileo + BeiDou B1C | 10 Hz |
 
 Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
 
@@ -142,11 +142,11 @@ The 10 Hz tests might result in dropped frames, demonstrating that the CPU bandw
 
 This series of tests aims to identify the optimal ESP-GPS configuration from the available options.
 
-The testing consists of several phases, but in the end there should be some clarity on the best configurations.
+The testing consists of several phases, but in the end there should be some clarity on the best configuration.
 
-Hopefully the optimal configurations will be unambiguous - e.g. GPS + Galileo + BeiDou B1C @ 10 Hz.
+Hopefully the optimal configuration will be unambiguous - e.g. GPS + Galileo + BeiDou B1C @ 10 Hz.
 
-Future refinements to the ESP-GPS configuration may be possibly based the findings of [fundamentals testing](fundamentals.md).
+Future refinements to the ESP-GPS configuration may benefit from any findings during [fundamentals testing](fundamentals.md).
 
 
 
