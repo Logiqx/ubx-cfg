@@ -121,39 +121,39 @@ n.b. It is not known whether the Motion with M10 uses GPS + Galileo, or GPS + GL
 
 High numbers of satellites are good, but approaching the limit of 32 may not be ideal:
 
-- Burden on the M10
-- Low elevation satellites have an increased risk of both multipath and increased ionospheric delay / distortion
-- Poor C/N₀ from some satellites
+- Burden on the M10.
+- Low elevation satellites have an increased risk of multipath and ionospheric delay.
+- Poor C/N₀ for some of the satellites, potentially degrading the [PVT](https://medium.com/@mikeg888/position-velocity-and-time-pvt-51f4cc738b75) solution.
 
-It is sometimes worth limiting the number of satellites used for the fix:
+It is sometimes worth limiting the number of satellites being tracked, or used in the PVT solution:
 
-- Once weak signals are dropped, the engine dynamically balances the highest C/N₀ streams against those providing the lowest math residuals and the best spatial distribution (sky topology).
-- You can configure a u-blox chip to limit its navigation solution to a fixed maximum number of satellites, and the receiver will automatically select the best candidates based on internal metrics including C/N₀ and geometric geometry.
-- However, you cannot manually force the selection to exclusively rank by C/N₀ power alone, because the module must also prioritize Geometric Dilution of Precision (GDOP) and low residual errors to prevent accurate but tightly bunched satellites from degrading your position fix.
+- Once poor signals are discarded, the engine can dynamically balance the highest C/N₀ streams against those providing the lowest math residuals, and the best spatial distribution / dilution of precision.
+- You can configure the M10 to limit its navigation solution to a fixed maximum number of satellites, and the receiver will automatically select the best candidates based on internal metrics, including C/N₀ and geometric geometry.
+- The M10 will prioritize Geometric Dilution of Precision (GDOP) and low residual errors to prevent accurate but tightly bunched satellites from degrading your position fix.
 
 
 
 #### Number of Satellites
 
-By default the M10 can track up to 32 satellites simultaneously and use them for PVT. If you lower `INFIL_MAXSVS` to a specific number the chip will truncate its active tracking list. Combined with any C/N₀ filter(s) and its internal mathematical selection, it limits the processing payload.
+By default the M10 will use up to 32 satellites for the PVT solution. If you lower `INFIL_MAXSVS` to a specific number the chip will truncate its active tracking list, thus limiting the processing payload.
 
-- `CFG-NAVSPG-INFIL_MAXSVS` - default is 32
+`CFG-NAVSPG-INFIL_MAXSVS` - default is 32
 
-Limiting the number of satellites often makes sense for people with lots of satellites visible (e.g. BeiDou in Asia).
+Limiting the number of satellites in this way can often makes sense, especially for people where lots of satellites tend to be visible (e.g. BeiDou in Asia). The benefits of additional satellites typically diminish once into the twenties.
 
-n.b. The Motion GPS limits the number of satellites to 24 when logging at 5 Hz, and 16 when logging at 10 Hz. It appears to be placing a limit of 8 satellites per constellation, presumably deciding for itself which signals are being used at any one time.
+The Motion GPS limits the number of satellites to 24 when logging at 5 Hz, and 16 when logging at 10 Hz. It may be placing a limit of 8 satellites per constellation, presumably choosing which signals are used at any one time.
 
 
 
 #### Elevation Mask
 
-Satellites at a low elevation angle have an increased risk of both multipath, and increased ionospheric delay/distortion.
+Satellites at a low elevation angle have an increased risk of both multipath, and ionospheric delay / distortion.
 
-Setting an elevation mask of 10° to 15° is common in marine environments. Eliminating these low elevation signals before the internal selection engine even evaluates them leaves it to focus on the more reliable signals.
+Specifying an elevation mask of 10° to 15° is relatively common in marine environments. Eliminating these low elevation signals before the internal selection engine even evaluates them leaves it to focus on the more reliable signals.
 
-The M10 elevation mask defaults to 5° but can be changed using `CFG-NAVSPG-INFIL_MINELEV`.
+The default M10 elevation mask is 5°, but it can be changed using `CFG-NAVSPG-INFIL_MINELEV`.
 
-Changing it to 15° is likely to be beneficial when speed sailing, especially in environments with nearby cliffs, buildings, or ships.
+Specifying 10° or 15° is likely to be beneficial when speed sailing, especially in environments with cliffs, buildings, or ships.
 
 References:
 
@@ -161,33 +161,30 @@ References:
 - [Trimble](https://help.fieldsystems.trimble.com/tbc/2359.htm) say the elevation mask is usually set to 13° by default to avoid interference problems
 - [Veripos](https://help.veripos.com/s/article/Elevation-Mask) apply a default elevation mask of 10°
 
-The online [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html) can also apply a mask angle.
+The online [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html) can be used to see the effects of different mask angles.
 
 
 
 #### C/N₀ Thresholds
 
-Open Sky: Use 30 to 35 dB-Hz. If you have perfect signal conditions, raising the threshold filters out marginal multi-path and weak signals, saving processing power and potentially increasing position accuracy.
+30 to 35 dB-Hz may be suitable for open sky environments. If you have perfect signal conditions, raising the threshold will filter out marginal multi-path and weak signals, saving processing power and potentially increasing accuracy.
 
-When you restrict maxSVs, the internal u-blox navigation engine evaluates all tracked satellites in view and dynamically trims the pool down to your cap. You can proactively filter out weak signals globally by adjusting `CFG-NAVSPG-INFIL_MINCNO` (defaults to 6 dBHz) to a floor value like 35 dB-Hz. This stops the receiver from even considering low C/N₀ satellites.
+When you restrict maxSVs, the M10 navigation engine will evaluate the remaining tracked satellites in view and dynamically trim the pool down to maxSVs. You can proactively filter out weak signals globally by adjusting `CFG-NAVSPG-INFIL_MINCNO` (default is 6 dBHz) to a floor value such as 30 or 35 dB-Hz. This will stop the receiver from considering low C/N₀ signals.
 
-Once weak signals are dropped, the engine dynamically balances the highest C/N₀ streams against those providing the lowest math residuals and the best spatial distribution (sky topology).
+Once the weak signals are dropped, the engine will dynamically balance the highest C/N₀ streams against those providing the lowest math residuals and the best spatial distribution (dilution of precision).
 
 
 
 #### Advanced Filtering
 
-If your application strictly requires an exact number of satellites sorted by C/N₀, you must handle this on your external microcontroller/host software.
+Enable the `UBX-NAV-SAT` binary message to stream data for all tracked satellites. Read the array of satellites, extracting their C/N₀ and PRN codes. Run a quick sorting algorithm on your host microcontroller to pick your fixed number of top signals. Feed those specific satellite measurements into your custom navigation algorithm or localized filtering loop.
 
-Enable the `UBX-NAV-SAT` binary message to stream data for all tracked satellites. Read the array of Satellites, extracting their C/N₀ and PRN codes. Run a quick sorting algorithm on your host microcontroller to pick your fixed number of top signals. Feed those specific satellite measurements into your custom navigation algorithm or localized filtering loop.
-
-It is possible that the Motion does something along these lines to limit the number of satellites to 24, perhaps allowing 8 per constellation.
+It is possible that the Motion does something along these lines to limit the number of satellites to 24, perhaps allowing 8 per constellation. It is not clear what the Motion does, or how it does it. The limit on the number of tracked satellites can vary depending on the hardware version, and firmware version.
 
 
 
 ### References
 
 - [GPS accuracy: The benefits of tracking all four global GNSS constellations](https://www.u-blox.com/en/blogs/tech/gps-accuracy-four-gnss-constellations) - u-blox, 5 Nov 2020
-
 - [Another DIY GPS logger approach](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Another-DIY-GPS-logger-approach?page=54) - veton, 22 May 2025 10:14pm
 
