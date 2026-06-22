@@ -22,63 +22,62 @@ It may become transpire that a short list logging rates is optimal; e.g. 1 / 2 /
 
 
 
-#### Strong Candidates
+#### Strongest Candidates
 
 The following configurations with 3 or 4 constellations have the potential to produce the best M10 performances.
 
 M10 CPU @ 128 MHz, ESP-32 MCU @ 80 MHz:
 
-|            Constellations            | Max Sats | Max Log Rate |
-| :----------------------------------: | :------: | :----------: |
-|      GPS + Galileo + BeiDou B1C      |    ?     | 5 or 8 Hz ?  |
-|       GPS + Galileo + GLONASS        |    ?     | 5 or 6 Hz ?  |
-| GPS + Galileo + BeiDou B1C + GLONASS |    ?     |    4 Hz ?    |
+|            Constellations            | Max Sats |  Log Rate   |
+| :----------------------------------- | :------: | :---------: |
+|      GPS + Galileo + BeiDou B1C      |    ?     | 5 or 8 Hz ? |
+|       GPS + Galileo + GLONASS        |    ?     | 5 or 6 Hz ? |
+| GPS + Galileo + BeiDou B1C + GLONASS |    ?     |   4 Hz ?    |
 
 M10 CPU @ 192 MHz, ESP-32 MCU @ 160 MHz:
 
-|            Constellations            | Max Sats | Max Log Rate  |
-| :----------------------------------: | :------: | :-----------: |
+|            Constellations            | Max Sats |   Log Rate    |
+| :----------------------------------- | :------: | :-----------: |
 |      GPS + Galileo + BeiDou B1C      |    ?     | 10 or 16 Hz ? |
 |       GPS + Galileo + GLONASS        |    ?     | 10 or 16 Hz ? |
 | GPS + Galileo + BeiDou B1C + GLONASS |    ?     | 8 or 10 Hz ?  |
 
 Notes:
 
-- It is likely that GPS+GAL+B1C+GLO can be logged at 8 Hz, without dropping frames when the M10 is at 192 MHz.
-- Propose testing 5 Hz / 10 Hz as the nearest divisors of 1000, and will likely ensure that no points are dropped.
-- It may transpire that GPS + Galileo + BeiDou B1C is suitable for all end users, thus avoiding confusing choices.
+- Upper bounds for log rate are based on minimum 98% fix rate under typical conditions.
+- Lower bounds for log rate use positive divisors of 1000, and less likely to see dropped points.
+- Limiting the number of satellites is another way to reduce the likelihood of dropped points.
+- GPS + Galileo + BeiDou B1C may be suitable for all end users, thus avoiding confusing choices.
 
 
 
-#### Weak Candidates
+#### Weakest Candidates
 
-The following configurations using 2 constellations are not expected to perform as well as the stronger candidates.
+The following configurations using 2 constellations are not expected to perform as well as 3 constellations.
 
 M10 CPU @ 128 MHz, ESP-32 MCU @ 160 MHz:
 
-|  Constellations  | Max Sats | Max Log Rate |
-| :--------------: | :------: | :----------: |
-| GPS + BeiDou B1C |    ?     |   10 Hz ?    |
-|  GPS + Galileo   |    ?     |   10 Hz ?    |
-|  GPS + GLONASS   |    ?     |   10 Hz ?    |
+|  Constellations  | Max Sats | Log Rate |
+| :--------------- | :------: | :------: |
+|  GPS + Galileo   |    ?     | 10 Hz ?  |
+| GPS + BeiDou B1C |    ?     | 10 Hz ?  |
+|  GPS + GLONASS   |    ?     | 10 Hz ?  |
 
 M10 CPU @ 192 MHz, ESP-32 MCU @ 240 MHz:
 
-|  Constellations  | Max Sats | Max Log Rate |
-| :--------------: | :------: | :----------: |
-| GPS + BeiDou B1C |    ?     |   20 Hz ?    |
-|  GPS + Galileo   |    ?     |   20 Hz ?    |
-|  GPS + GLONASS   |    ?     |   20 Hz ?    |
+|  Constellations  | Max Sats | Log Rate |
+| :--------------- | :------: | :------: |
+|  GPS + Galileo   |    ?     | 20 Hz ?  |
+| GPS + BeiDou B1C |    ?     | 20 Hz ?  |
+|  GPS + GLONASS   |    ?     | 20 Hz ?  |
 
 The weak candidates should be tested in the same way as the strong candidates, but with lower expectations!
 
-A variety of other signals and logging rates have also been dismissed:
+A variety of other configurations have been dismissed:
 
-- GLONASS in the 2 or 3 constellation configurations.
-  - Galileo and BeiDou are much better systems, and expected to be more accurate.
 - BeiDou B1I in any configurations.
   - Legacy system, superseded by BeiDou B1C and requires more power on the M10.
-- Single constellations, like GPS alone logging at 25 Hz.
+- Single constellations logging at 25 Hz - e.g. GPS only.
   - Likely to be worse than multiple constellations, and the ESP32 needs to be 240 MHz.
 - Logging rates that are multiples of 3, and thus not divisors of 1000; e.g. 3, 6, and 15 Hz.
   - Inconsistent timestamps from one second to the next can be undesirable.
