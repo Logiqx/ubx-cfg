@@ -14,7 +14,7 @@ There are several phases planned, which can each be split up over a number of da
 
 1. Compare all of the different constellations - 12 hours
 2. Test the effect of limiting the maximum number of satellites - 10 hours
-3. Determine the maximum possible logging rates with up to 32 satellites - 12 hours
+3. Determine the maximum possible logging rates with up to 32 satellites - 10 hours
 4. Determine the optimal balance between numbers of satellites and logging rates
 5. Test additional configurations against the defaults - elevation mask, minimum C/N₀, etc.
 
@@ -89,13 +89,13 @@ I suspect that GLONASS will have the least favourable results, but it needs some
 
 Test the effect of limiting the number of satellites for GPS + Galileo + BeiDou B1C:
 
-| Test | Unit 1 | Unit 2 |
-| :--: | :----: | :----: |
-| 2.1  | 8      | 16     |
-| 2.2  | 12     | 20     |
-| 2.3  | 16     | 24     |
-| 2.4  | 20     | 28     |
-| 2.5  | 24     | 32     |
+| Test |    Unit 1     |    Unit 2     |
+| :--: | :-----------: | :-----------: |
+| 2.1  | Max Sats = 8  | Max Sats = 16 |
+| 2.2  | Max Sats = 12 | Max Sats = 20 |
+| 2.3  | Max Sats = 16 | Max Sats = 24 |
+| 2.4  | Max Sats = 20 | Max Sats = 28 |
+| 2.5  | Max Sats = 24 | Max Sats = 32 |
 
 Total duration = 10 hours, excluding analysis
 
@@ -118,9 +118,8 @@ Determine the maximum possible logging rates with up to 32 satellites:
 | 3.3  | GPS + Galileo + BeiDou B1C | GPS + Galileo | 8 Hz  |
 | 3.4  | GPS + Galileo + BeiDou B1C | GPS + Galileo | 10 Hz |
 | 3.5  | GPS + Galileo + BeiDou B1C | GPS + Galileo | 16 Hz |
-| 3.6  | GPS + BeiDou B1C           | GPS + Galileo | 20 Hz |
 
-Total duration = 12 hours, excluding analysis
+Total duration = 10 hours, excluding analysis
 
 Notes:
 
@@ -128,9 +127,9 @@ Notes:
 
 #### Expectations
 
-20 Hz logging will be impossible with 3 constellations, but these tests should establish the practical limit.
+Some of the tests might result in dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
-Some of the tests might also result in dropped frames, demonstrating that the CPU bandwidth has been exceeded.
+Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
 
 
 
@@ -164,6 +163,8 @@ Once the constellations and logging rates have been optimised, additional config
 | 5.3  | Minimum C/N₀   | CFG-NAVSPG-INFIL_MINCNO  |    6 dBHz    |    30 dBHz     |
 | 5.4  | Minimum C/N₀   | CFG-NAVSPG-INFIL_MINCNO  |    6 dBHz    |    35 dBHz     |
 | 5.5  | Dynamic model  | CFG-NAVSPG-DYNMODEL      | 1 = portable | 4 = automotive |
+
+Total duration = 10 hours, excluding analysis
 
 Notes:
 
