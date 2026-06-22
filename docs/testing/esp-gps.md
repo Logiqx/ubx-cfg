@@ -77,6 +77,8 @@ I suspect that GLONASS will have the least favourable results, but it needs some
 
 The 20 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
+Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
+
 
 
 ### Phase 2
@@ -96,6 +98,8 @@ Total duration = 6 hours, excluding analysis
 The addition of Galileo should improve the accuracy of the results.
 
 The 16 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
+
+Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
 
 
 
@@ -117,6 +121,8 @@ The addition of BeiDou B1C should improve the accuracy of the results.
 
 The 16 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
+Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
+
 
 
 ### Phase 4
@@ -137,6 +143,8 @@ I suspect that GLONASS will have the least favourable results, but it needs some
 
 The 16 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
+Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
+
 
 
 ### Phase 5
@@ -156,6 +164,8 @@ Total duration = 6 hours, excluding analysis
 I suspect that 4 systems will show negligible benefit, because the maximum number of satellites is limited to 32.
 
 The 10 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
+
+Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
 
 
 
