@@ -97,7 +97,7 @@ Total duration = 6 hours, excluding analysis
 
 The addition of Galileo should improve the accuracy of the results.
 
-The 16 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
+The 16 Hz and 20 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
 Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
 
@@ -119,7 +119,7 @@ Total duration = 6 hours, excluding analysis
 
 The addition of BeiDou B1C should improve the accuracy of the results.
 
-The 16 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
+The 16 Hz and 20 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
 Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
 
@@ -163,7 +163,7 @@ Total duration = 6 hours, excluding analysis
 
 I suspect that 4 systems will show negligible benefit, because the maximum number of satellites is limited to 32.
 
-The 10 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
+The 10 Hz and 16 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
 Dropped frames can potential be avoided by reducing the maximum number of satellites from the default of 32.
 
