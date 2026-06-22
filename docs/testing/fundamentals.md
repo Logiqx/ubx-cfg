@@ -10,11 +10,11 @@ Be aware that the +/- values in the software may mislead you... see [earlier tes
 
 ### Overview
 
-There are several phases planned, which can be all be split up over a number of days:
+There are several phases planned, which can each be split up over a number of days:
 
-1. Test all of the different constellations - 12 hours, excluding analysis
-2. Test the effect of limiting the maximum number of satellites - 12 hours, excluding analysis
-3. Test the maximum possible logging rates - 12 hours, excluding analysis
+1. Compare all of the different constellations - 12 hours
+2. Test the effect of limiting the maximum number of satellites - 10 hours
+3. Determine the maximum possible logging rates with up to 32 satellites - 12 hours
 4. Determine the optimal balance between numbers of satellites and logging rates
 5. Test additional configurations against the defaults - elevation mask, minimum C/N₀, etc.
 
@@ -58,7 +58,7 @@ The final outcome should be an optimal configuration for M10 receivers.
 
 ### Phase 1
 
-Compare each of the following configurations:
+Compare all of the different constellations:
 
 | Test | Device 1         | Device 2         |
 | :--: | ---------------- | ---------------- |
@@ -81,24 +81,23 @@ Interim results are possible whilst later tests are still underway.
 - After the first 5 tests we should know the best 2 out of Galileo, GLONASS, and BeiDou B1C.
 - The final test will establish which is the best out of BeiDou B1I and BeiDou B1C.
 
-I suspect that GLONASS will have the least favourable results, put it needs some actual proof.
+I suspect that GLONASS will have the least favourable results, but it needs some actual proof.
 
 
 
 ### Phase 2
 
-Test the effect of limiting the number of satellites:
+Test the effect of limiting the number of satellites for GPS + Galileo + BeiDou B1C:
 
-| Test | Unit 1                     | Unit 2        | Max Sats |
-| :--: | -------------------------- | ------------- | :------: |
-| 2.1  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    12    |
-| 2.2  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    16    |
-| 2.3  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    20    |
-| 2.4  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    24    |
-| 2.5  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    28    |
-| 2.6  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    32    |
+| Test | Unit 1 | Unit 2 |
+| :--: | :----: | :----: |
+| 2.1  | 8      | 16     |
+| 2.2  | 12     | 20     |
+| 2.3  | 16     | 24     |
+| 2.4  | 20     | 28     |
+| 2.5  | 24     | 32     |
 
-Total duration = 12 hours, excluding analysis
+Total duration = 10 hours, excluding analysis
 
 #### Expectations
 
@@ -110,7 +109,7 @@ This is important because increasing the logging rate will necessitate a reducti
 
 ### Phase 3
 
-Test the maximum possible logging rates with maximum of 32 satellites:
+Determine the maximum possible logging rates with up to 32 satellites:
 
 | Test | Unit 1                     | Unit 2        | Rate  |
 | :--: | -------------------------- | ------------- | :---: |
@@ -150,7 +149,7 @@ There may be a point where a 2 constellation performance roughly matches the 3 c
 
 Suspect that the accuracy from 2 constellations at 20 Hz may not be able to exceed 3 constellations at 10 Hz.
 
-It yet to be seen whether whether 3 constellations will be best at 10 Hz or 16 Hz, due to required satellite limits.
+It is yet to be seen whether whether 3 constellations will be best at 10 Hz or 16 Hz, due to required satellite limits.
 
 
 

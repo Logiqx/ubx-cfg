@@ -12,13 +12,13 @@ This battery of tests has been inspired by the plan for [fundamentals testing](f
 
 ### Overview
 
-There are several phases planned, which can be all be split up over a number of days:
+There are several phases planned, which can each be split up over a number of days:
 
-1. Test different logging rates for 2 constellations - 6 hours
+1. Compare both of the 2 constellation configurations - 6 hours
 2. Test whether GPS + GLONASS + Galileo improves accuracy - 6 hours
 3. Test whether GPS + Galileo + BeiDou B1C improves accuracy - 6 hours
-4. Test the 3 constellation configurations, GLONASS vs BeiDou B1C - 6 hours
-5. Compare 4 constellations against the best 3 constellation configuration - 6 hours
+4. Compare both of the 3 constellation configurations - 6 hours
+5. Compare 4 constellations against 3 constellations - 6 hours
 
 The final outcome should be an optimal configuration for the existing ESP-GPS devices.
 
@@ -61,7 +61,7 @@ Note: 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz
 
 ### Phase 1
 
-Compare each of the 2 constellation configurations:
+Compare both of the 2 constellation configurations:
 
 | Test |  ESP-GPS #1   |  ESP-GPS #2   | Rate  |
 | :--: | :------------ | :------------ | :---: |
@@ -73,7 +73,7 @@ Total duration = 6 hours, excluding analysis
 
 #### Expectations
 
-I suspect that GLONASS will have the least favourable results, put it needs some actual proof.
+I suspect that GLONASS will have the least favourable results, but it needs some actual proof.
 
 The 20 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
@@ -121,7 +121,7 @@ The 16 Hz tests might result in some dropped frames, demonstrating that the CPU 
 
 ### Phase 4
 
-Test the 3 constellation configurations, GLONASS vs BeiDou B1C:
+Compare both of the 3 constellation configurations:
 
 | Test |       ESP-GPS #1        |         ESP-GPS #2         | Rate  |
 | :--: | :--------------------- | :------------------------- | :---: |
@@ -133,7 +133,7 @@ Total duration = 6 hours, excluding analysis
 
 #### Expectations
 
-I suspect that GLONASS will have the least favourable results, put it needs some actual proof.
+I suspect that GLONASS will have the least favourable results, but it needs some actual proof.
 
 The 16 Hz tests might result in some dropped frames, demonstrating that the CPU bandwidth has been exceeded.
 
@@ -141,7 +141,7 @@ The 16 Hz tests might result in some dropped frames, demonstrating that the CPU 
 
 ### Phase 5
 
-Compare 4 constellations against the best 3 constellation configuration, assumed to be BeiDou B1C:
+Compare 4 constellations against the best 3 constellations, assumed to be GPS + Galileo + BeiDou B1C :
 
 | Test |                  ESP-GPS #1                  |             ESP-GPS #2             | Rate  |
 | :--: | :------------------------------------------- | :--------------------------------- | :---: |
