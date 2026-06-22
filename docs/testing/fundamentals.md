@@ -24,20 +24,21 @@ The final outcome should be an optimal configuration for M10 receivers.
 
 ### Approach
 
-#### Standard Configuration
+#### Test Duration
 
-**Hardware**
+- Individual tests should record for a total of 2 hours
+- Ideally, ESP-32 devices should switch roles after 1 hour
+- 2 x Mini Motions @ 5 Hz to be included in all tests
+
+#### Configuration
 
 - M10 clocked at 192 MHz - high performance
 - Baud rate of 115,200
+- Logging rate of 5 Hz, unless specified
 - ESP32 clocked according to the logging rate
-
-**M10**
-
-- Logging rate of 5 Hz
-- Default satellite limit of 32
-- Default elevation mask of 5°
-- Default C/N₀ criteria
+  - 80 MHz for 8 Hz
+  - 160 MHz to 16 Hz
+  - 240 MHz for 20 Hz
 
 #### Data Analysis
 
@@ -57,7 +58,7 @@ The final outcome should be an optimal configuration for M10 receivers.
 
 ### Phase 1
 
-Compare each of the following configurations, recording data for a minimum of 2 hours:
+Compare each of the following configurations:
 
 | Test | Device 1         | Device 2         |
 | :--: | ---------------- | ---------------- |
@@ -69,10 +70,6 @@ Compare each of the following configurations, recording data for a minimum of 2 
 | 1.6  | GPS + BeiDou B1I | GPS + BeiDou B1C |
 
 The tests have been ordered such that only one device needs to be reconfigured, prior to the next test.
-
-Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
-
-Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
 
 Total duration = 12 hours, excluding analysis
 
@@ -90,7 +87,7 @@ I suspect that GLONASS will have the least favourable results, put it needs some
 
 ### Phase 2
 
-Test the effect of limiting the number of satellites, recording data for a minimum of 2 hours:
+Test the effect of limiting the number of satellites:
 
 | Test | Unit 1                     | Unit 2        | Max Sats |
 | :--: | -------------------------- | ------------- | :------: |
@@ -100,10 +97,6 @@ Test the effect of limiting the number of satellites, recording data for a minim
 | 2.4  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    24    |
 | 2.5  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    28    |
 | 2.6  | GPS + Galileo + BeiDou B1C | GPS + Galileo |    32    |
-
-Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
-
-Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
 
 Total duration = 12 hours, excluding analysis
 
@@ -117,7 +110,7 @@ This is important because increasing the logging rate will necessitate a reducti
 
 ### Phase 3
 
-Test the maximum possible logging rates with maximum of 32 satellites, recording data for a minimum of 2 hours:
+Test the maximum possible logging rates with maximum of 32 satellites:
 
 | Test | Unit 1                     | Unit 2        | Rate  |
 | :--: | -------------------------- | ------------- | :---: |
@@ -128,19 +121,11 @@ Test the maximum possible logging rates with maximum of 32 satellites, recording
 | 3.5  | GPS + Galileo + BeiDou B1C | GPS + Galileo | 16 Hz |
 | 3.6  | GPS + BeiDou B1C           | GPS + Galileo | 20 Hz |
 
-Ideally after completing these tests they should all be repeated, but with each device having the opposite role.
-
-Halving the duration of individual tests to 1 hour will make it easier, but acquisition times need to be considered.
-
 Total duration = 12 hours, excluding analysis
 
 Notes:
 
 - 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz.
-- The ESP32 will need to be clocked accordingly
-  - 80 MHz for 8 Hz
-  - 160 MHz to 16 Hz
-  - 240 MHz for 20 Hz
 
 #### Expectations
 
@@ -200,7 +185,7 @@ The dynamic model is a bit of a long shot, but "automotive" may prove to be suit
 
 This series of tests aims to identify the optimal M10 configuration - 3 constellations, satellite limits and logging rate.
 
-The testing consists of several phases, but in the end there should be some clarity on the best configurations.
+The testing consists of several phases, but it should shed some light on the optimal configuration(s).
 
 Hopefully the optimal configurations will be unambiguous - e.g. GPS + Galileo + BeiDou B1C @ 10 Hz, 10° elevation
 
