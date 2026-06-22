@@ -59,7 +59,7 @@ Note: 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz
 Compare each of the 2 constellation configurations, recording data for a minimum of 2 hours:
 
 | Test |  ESP-GPS #1   |  ESP-GPS #2   | Rate  |
-| :--: | :-----------: | :-----------: | :---: |
+| :--: | :------------ | :------------ | :---: |
 | 1.1  | GPS + GLONASS | GPS + Galileo | 10 Hz |
 | 1.2  | GPS + GLONASS | GPS + Galileo | 16 Hz |
 | 1.3  | GPS + GLONASS | GPS + Galileo | 20 Hz |
@@ -83,7 +83,7 @@ The 20 Hz tests might result in some dropped frames, demonstrating that the CPU 
 Test whether addition of Galileo improves the accuracy of the results, recording data for a minimum of 2 hours:
 
 | Test | ESP-GPS #1              | ESP-GPS #2                 | Rate  |
-| :--: | :----------------------------------: | :------------------------: | :---: |
+| :--: | :----------------------------------- | :------------------------- | :---: |
 | 2.1 | GPS + GLONASS + Galileo | GPS + GLONASS | 10 Hz |
 | 2.2 | GPS + GLONASS + Galileo | GPS + GLONASS | 16 Hz |
 | 2.3 | GPS + GLONASS + Galileo @ 16 Hz | GPS + GLONASS @ 20 Hz | - |
@@ -107,7 +107,7 @@ The 16 Hz tests might result in some dropped frames, demonstrating that the CPU 
 Test whether addition of BeiDou B1C improves the accuracy of the results, recording data for a minimum of 2 hours:
 
 | Test |             ESP-GPS #1             |      ESP-GPS #2       | Rate  |
-| :--: | :--------------------------------: | :-------------------: | :---: |
+| :--: | :--------------------------------- | :-------------------- | :---: |
 | 3.1  |     GPS + Galileo + BeiDou B1C     |     GPS + Galileo     | 10 Hz |
 | 3.2  |     GPS + Galileo + BeiDou B1C     |     GPS + Galileo     | 16 Hz |
 | 3.3  | GPS + Galileo + BeiDou B1C @ 16 Hz | GPS + Galileo @ 20 Hz |   -   |
@@ -131,7 +131,7 @@ The 16 Hz tests might result in some dropped frames, demonstrating that the CPU 
 Test the 3 constellation configurations (GLONASS vs BeiDou B1C), recording data for a minimum of 2 hours:
 
 | Test |       ESP-GPS #1        |         ESP-GPS #2         | Rate  |
-| :--: | :---------------------: | :------------------------: | :---: |
+| :--: | :--------------------- | :------------------------- | :---: |
 | 4.1  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | 8 Hz  |
 | 4.2  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | 10 Hz |
 | 4.3  | GPS + Galileo + GLONASS | GPS + Galileo + BeiDou B1C | 16 Hz |
@@ -155,7 +155,7 @@ The 16 Hz tests might result in some dropped frames, demonstrating that the CPU 
 Compare 4 constellations against the best 3 constellation configuration, recording data for a minimum of 2 hours:
 
 | Test |                  ESP-GPS #1                  |             ESP-GPS #2             | Rate  |
-| :--: | :------------------------------------------: | :--------------------------------: | :---: |
+| :--: | :------------------------------------------- | :--------------------------------- | :---: |
 | 5.1  |     GPS + Galileo + BeiDou B1C + GLONASS     |     GPS + Galileo + BeiDou B1C     | 8 Hz  |
 | 5.2  |     GPS + Galileo + BeiDou B1C + GLONASS     |     GPS + Galileo + BeiDou B1C     | 10 Hz |
 | 5.3  | GPS + Galileo + BeiDou B1C + GLONASS @ 10 Hz | GPS + Galileo + BeiDou B1C @ 16 Hz |   -   |
