@@ -24,14 +24,21 @@ It may become transpire that a short list logging rates is optimal; e.g. 1 / 2 /
 
 #### Strong Candidates
 
-The following configurations with 3 or 4 constellations are likely to produce the best M10 performances:
+The following configurations with 3 or 4 constellations have the potential to produce the best M10 performances.
 
-|            Constellations            | Max Log Rate  |   M10   |  ESP32  | Useful? |
-| :----------------------------------: | :-----------: | :-----: | :-----: | :-----: |
-| GPS + Galileo + BeiDou B1C + GLONASS |    4 Hz ?     | 128 MHz | 80 MHz  |    ❓    |
-|      GPS + Galileo + BeiDou B1C      |  5 or 8 Hz ?  | 128 MHz | 80 MHz  |    ✅    |
-| GPS + Galileo + BeiDou B1C + GLONASS | 8 or 10 Hz ?  | 192 MHz | 160 MHz |    ❓    |
-|      GPS + Galileo + BeiDou B1C      | 10 or 16 Hz ? | 192 MHz | 160 MHz |    ✅    |
+M10 CPU @ 128 MHz, ESP-32 MCU @ 80 MHz:
+
+|            Constellations            | Max Sats | Max Log Rate | Useful? |
+| :----------------------------------: | :------: | :----------: | :-----: |
+| GPS + Galileo + BeiDou B1C + GLONASS |    ?     |    4 Hz ?    |    ❓    |
+|      GPS + Galileo + BeiDou B1C      |    ?     | 5 or 8 Hz ?  |    ✅    |
+
+M10 CPU @ 192 MHz, ESP-32 MCU @ 160 MHz:
+
+|            Constellations            | Max Sats | Max Log Rate  | Useful? |
+| :----------------------------------: | :------: | :-----------: | :-----: |
+| GPS + Galileo + BeiDou B1C + GLONASS |    ?     | 8 or 10 Hz ?  |    ❓    |
+|      GPS + Galileo + BeiDou B1C      |    ?     | 10 or 16 Hz ? |    ✅    |
 
 Notes:
 
@@ -50,14 +57,21 @@ Notes:
 
 #### Weak Candidates
 
-The following configurations using 2 constellations are not expected to perform as well as the strong candidates:
+The following configurations using 2 constellations are not expected to perform as well as the stronger candidates.
 
-|  Constellations  | Max Log Rate |   M10   |  ESP32  | Useful? |
-| :--------------: | :----------: | :-----: | :-----: | :-----: |
-| GPS + BeiDou B1C |   10 Hz ?    | 128 MHz | 160 MHz |    ❌    |
-|  GPS + Galileo   |   10 Hz ?    | 128 MHz | 160 MHz |    ❌    |
-| GPS + BeiDou B1C |   20 Hz ?    | 192 MHz | 240 MHz |    ❓    |
-|  GPS + Galileo   |   20 Hz ?    | 192 MHz | 240 MHz |    ❓    |
+M10 CPU @ 128 MHz, ESP-32 MCU @ 160 MHz:
+
+|  Constellations  | Max Sats | Max Log Rate | Useful? |
+| :--------------: | :------: | :----------: | :-----: |
+| GPS + BeiDou B1C |    ?     |   10 Hz ?    |    ❌    |
+|  GPS + Galileo   |    ?     |   10 Hz ?    |    ❌    |
+
+M10 CPU @ 192 MHz, ESP-32 MCU @ 240 MHz:
+
+|  Constellations  | Max Sats | Max Log Rate | Useful? |
+| :--------------: | :------: | :----------: | :-----: |
+| GPS + BeiDou B1C |    ?     |   20 Hz ?    |    ❓    |
+|  GPS + Galileo   |    ?     |   20 Hz ?    |    ❓    |
 
 The weak candidates should be tested in the same way as the strong candidates, but with lower expectations!
 
