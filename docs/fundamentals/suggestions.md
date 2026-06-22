@@ -28,30 +28,25 @@ The following configurations with 3 or 4 constellations have the potential to pr
 
 M10 CPU @ 128 MHz, ESP-32 MCU @ 80 MHz:
 
-|            Constellations            | Max Sats | Max Log Rate | Useful? |
-| :----------------------------------: | :------: | :----------: | :-----: |
-| GPS + Galileo + BeiDou B1C + GLONASS |    ?     |    4 Hz ?    |    ❓    |
-|      GPS + Galileo + BeiDou B1C      |    ?     | 5 or 8 Hz ?  |    ✅    |
+|            Constellations            | Max Sats | Max Log Rate |
+| :----------------------------------: | :------: | :----------: |
+|      GPS + Galileo + BeiDou B1C      |    ?     | 5 or 8 Hz ?  |
+|       GPS + Galileo + GLONASS        |    ?     | 5 or 6 Hz ?  |
+| GPS + Galileo + BeiDou B1C + GLONASS |    ?     |    4 Hz ?    |
 
 M10 CPU @ 192 MHz, ESP-32 MCU @ 160 MHz:
 
-|            Constellations            | Max Sats | Max Log Rate  | Useful? |
-| :----------------------------------: | :------: | :-----------: | :-----: |
-| GPS + Galileo + BeiDou B1C + GLONASS |    ?     | 8 or 10 Hz ?  |    ❓    |
-|      GPS + Galileo + BeiDou B1C      |    ?     | 10 or 16 Hz ? |    ✅    |
+|            Constellations            | Max Sats | Max Log Rate  |
+| :----------------------------------: | :------: | :-----------: |
+|      GPS + Galileo + BeiDou B1C      |    ?     | 10 or 16 Hz ? |
+|       GPS + Galileo + GLONASS        |    ?     | 10 or 16 Hz ? |
+| GPS + Galileo + BeiDou B1C + GLONASS |    ?     | 8 or 10 Hz ?  |
 
 Notes:
 
-- GPS+GAL+B1C+GLO logging at 4 Hz / 10 Hz is based on the u-blox claim of a minimum 98% fix rate under typical conditions.
-  - It is likely that GPS+GAL+B1C+GLO can be logged at 8 Hz, without dropping frames when the M10 is at 192 MHz.
-
-- GPS+GAL+B1C can potentially log at 8 Hz / 16 Hz, but that is based on the basis of a minimum 98% fix rate under typical conditions.
-  - Propose testing 5 Hz / 10 Hz as the nearest divisors of 1000, and will likely ensure that no points are dropped.
-
-- It has yet to be determined whether GPS+GAL+B1C+GLO has any benefits over GPS+GAL+B1C.
-  - It may transpire that GPS + Galileo + BeiDou B1C is suitable for all end users, thus avoiding confusing choices.
-  
-
+- It is likely that GPS+GAL+B1C+GLO can be logged at 8 Hz, without dropping frames when the M10 is at 192 MHz.
+- Propose testing 5 Hz / 10 Hz as the nearest divisors of 1000, and will likely ensure that no points are dropped.
+- It may transpire that GPS + Galileo + BeiDou B1C is suitable for all end users, thus avoiding confusing choices.
 
 
 
@@ -61,17 +56,19 @@ The following configurations using 2 constellations are not expected to perform 
 
 M10 CPU @ 128 MHz, ESP-32 MCU @ 160 MHz:
 
-|  Constellations  | Max Sats | Max Log Rate | Useful? |
-| :--------------: | :------: | :----------: | :-----: |
-| GPS + BeiDou B1C |    ?     |   10 Hz ?    |    ❌    |
-|  GPS + Galileo   |    ?     |   10 Hz ?    |    ❌    |
+|  Constellations  | Max Sats | Max Log Rate |
+| :--------------: | :------: | :----------: |
+| GPS + BeiDou B1C |    ?     |   10 Hz ?    |
+|  GPS + Galileo   |    ?     |   10 Hz ?    |
+|  GPS + GLONASS   |    ?     |   10 Hz ?    |
 
 M10 CPU @ 192 MHz, ESP-32 MCU @ 240 MHz:
 
-|  Constellations  | Max Sats | Max Log Rate | Useful? |
-| :--------------: | :------: | :----------: | :-----: |
-| GPS + BeiDou B1C |    ?     |   20 Hz ?    |    ❓    |
-|  GPS + Galileo   |    ?     |   20 Hz ?    |    ❓    |
+|  Constellations  | Max Sats | Max Log Rate |
+| :--------------: | :------: | :----------: |
+| GPS + BeiDou B1C |    ?     |   20 Hz ?    |
+|  GPS + Galileo   |    ?     |   20 Hz ?    |
+|  GPS + GLONASS   |    ?     |   20 Hz ?    |
 
 The weak candidates should be tested in the same way as the strong candidates, but with lower expectations!
 
