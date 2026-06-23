@@ -185,11 +185,20 @@ The dynamic model is a bit of a long shot, but "automotive" may prove to be suit
 
 ### Summary
 
-This series of tests aims to identify the optimal M10 configuration - 3 constellations, satellite limits and logging rate.
+The intended outcome of this investigation will be the optimal configurations, based on M10 and ESP32 clock speeds.
 
-The testing consists of several phases, but it should shed some light on the optimal configuration(s).
+For example:
 
-Hopefully the optimal configurations will be unambiguous - e.g. GPS + Galileo + BeiDou B1C @ 10 Hz, 10° elevation
+|                     |           M10 @ 128 MHz           |           M10 @ 192 MHz            |
+| ------------------- | :-------------------------------: | :--------------------------------: |
+| **ESP32 @ 80 MHz**  | GPS + Galileo + BeiDou B1C @ 8 Hz |                 -                  |
+| **ESP32 @ 160 MHz** |                 -                 | GPS + Galileo + BeiDou B1C @ 16 Hz |
+
+In order to prevent dropped frames, maximum numbers of satellites will almost certainly need to be restricted.
+
+Different logging rates can be offered to anyone who wants smaller files, e.g. GPS + Galileo + BeiDou B1C @ 4 Hz.
+
+Hopefully the optimal configurations will be unambiguous - e.g. GPS + Galileo + BeiDou B1C @ 8 Hz, 10° elevation.
 
 
 
