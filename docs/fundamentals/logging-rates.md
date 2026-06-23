@@ -164,3 +164,9 @@ The u-blox data sheets describe max update rates on the basis of a minimum 98% f
 
 The requirements for achieving the highest logging rates include the need for higher CPU speeds (M10 and / or ESP32), and higher baud rates. These topics are all described in detail on another page specific to [higher logging rates](../performance/high-rates.md).
 
+
+
+### References
+
+- [Another DIY GPS logger approach](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Another-DIY-GPS-logger-approach?page=54) - veton, 22 May 2025 10:14pm
+
