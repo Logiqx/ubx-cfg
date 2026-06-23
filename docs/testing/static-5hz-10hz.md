@@ -34,15 +34,21 @@ n.b. Under normal circumstances errors will sometimes be higher than the truth, 
 
 The data was exported into Excel and a variety of stats were produced for Speed over Ground (SOG), Speed Accuracy (sAcc) and Horizontal Dilution of Precision (HDOP). These focused on common percentiles of interest; 50, 68, 95, and 99.7. The 100th percentile was ignored because the max values are typically freak outliers.
 
-SOG was significantly lower for the 5 Hz devices, around 40 % lower than the 10 Hz devices. It was clearly better on the 5 Hz devices (3 systems, 24 sats) than 10 Hz devices (2 systems, 16 sats)
+SOG was significantly lower for the 5 Hz devices, around 40 % lower than the 10 Hz devices, so the errors were smaller.
+
+- It was clearly better on the 5 Hz devices (3 systems, 24 satellites) than 10 Hz devices (2 systems, 16 satellites).
 
 ![freqency-test-3](img/freqency-test-3.png)
 
-sAcc was practically identical for the 5 Hz and 10 Hz devices, so not reflecting the differences. It does not necessarily reflect the true accuracy / precision of each measurement.
+sAcc was practically identical for the 5 Hz and 10 Hz devices, so not reflecting the actual differences in accuracy.
+
+- It does not necessarily reflect the true accuracy / precision of each measurement.
 
 ![freqency-test-3](img/freqency-test-4.png)
 
-HDOP was significantly lower for the 5 Hz devices, around 25 % lower than the 10 Hz devices. It has a relationship with the number of satellites and may also have a relationship with the speeds being reported.
+HDOP was significantly lower for the 5 Hz devices, around 25 % lower than the 10 Hz devices, which means it was better.
+
+- It has a close relationship with the number of satellites, and may also have a relationship with the speeds being reported.
 
 ![freqency-test-3](img/freqency-test-5.png)
 
