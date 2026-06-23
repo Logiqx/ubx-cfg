@@ -91,11 +91,11 @@ Test the effect of limiting the number of satellites for GPS + Galileo + BeiDou 
 
 | Test |    Unit 1     |    Unit 2     |
 | :--: | :-----------: | :-----------: |
-| 2.1  | Max Sats = 8  | Max Sats = 16 |
-| 2.2  | Max Sats = 12 | Max Sats = 20 |
-| 2.3  | Max Sats = 16 | Max Sats = 24 |
-| 2.4  | Max Sats = 20 | Max Sats = 28 |
-| 2.5  | Max Sats = 24 | Max Sats = 32 |
+| 2.1  | Max Sats = 12 | Max Sats = 16 |
+| 2.2  | Max Sats = 16 | Max Sats = 20 |
+| 2.3  | Max Sats = 20 | Max Sats = 24 |
+| 2.4  | Max Sats = 24 | Max Sats = 28 |
+| 2.5  | Max Sats = 28 | Max Sats = 32 |
 
 Total duration = 10 hours, excluding analysis
 
