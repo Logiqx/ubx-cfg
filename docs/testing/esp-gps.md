@@ -54,8 +54,8 @@ Note: 16 Hz is not a divisor of 1000, but it is closely related to 4 Hz and 8 Hz
   - Total distance - derived from speed data
 - Percentiles from individual values - 50, 68, 95, 99.7
   - Speed over Ground (SOG)
-  - sAcc
-  - HDOP
+  - Speed Accuracy (sAcc)
+  - Horizontal Dilution of Precision (HDOP)
 - Dropped frames
   - Indication of CPU bandwidth being exceeded
 

@@ -51,8 +51,8 @@ The final outcome should be an optimal configuration for M10 receivers.
   - Total distance - derived from speed data
 - Percentiles from individual values - 50, 68, 95, 99.7
   - Speed over Ground (SOG)
-  - sAcc
-  - HDOP
+  - Speed Accuracy (sAcc)
+  - Horizontal Dilution of Precision (HDOP)
 - Dropped frames
   - Indication of CPU bandwidth being exceeded
 
