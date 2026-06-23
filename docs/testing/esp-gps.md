@@ -200,7 +200,7 @@ Dropped frames can potential be avoided by reducing the maximum number of satell
 
 ### Summary
 
-The outcome of this investigation will be a shortlist of optimal configurations, based on M10 and ESP32 clock speeds.
+The intended outcome of this investigation will be the optimal configurations, based on M10 and ESP32 clock speeds.
 
 For example:
 
