@@ -1,6 +1,8 @@
 ## ESP-GPS Testing
 
-Choosing the right constellations, satellite limits, and logging rates is a fundamental decision.
+Choosing the right constellations, satellite limits, and logging rates is a complex, but crucial decision.
+
+It would be good to identify a shortlist of optimal configurations, based on M10 and ESP32 clock speeds.
 
 Static testing provides a controlled environment to test devices systematically, and is very easy to perform.
 
@@ -71,6 +73,11 @@ Compare both of the 2 constellation configurations:
 
 Total duration = 6 hours, excluding analysis
 
+Notes:
+
+- These logging rates are for high performance mode - i.e. M10 CPU clocked at 192 MHz.
+- The viable logging rates for the default M10 clock speed would be 5 Hz, 8 Hz, and 10 Hz.
+
 #### Expectations
 
 I suspect that GLONASS will have the least favourable results, but it needs some actual proof.
@@ -92,6 +99,11 @@ Test whether GPS + GLONASS + Galileo improves accuracy:
 | 2.3 | GPS + GLONASS + Galileo @ 16 Hz | GPS + GLONASS @ 20 Hz | - |
 
 Total duration = 6 hours, excluding analysis
+
+Notes:
+
+- These logging rates are for high performance mode - i.e. M10 CPU clocked at 192 MHz.
+- The default M10 clock speed theoretically limits GPS + GLONASS + Galileo to 6 Hz.
 
 #### Expectations
 
@@ -115,6 +127,11 @@ Test whether GPS + Galileo + BeiDou B1C improves accuracy:
 
 Total duration = 6 hours, excluding analysis
 
+Notes:
+
+- These logging rates are for high performance mode - i.e. M10 CPU clocked at 192 MHz.
+- The default M10 clock speed theoretically limits GPS + Galileo + BeiDou B1C to 8 Hz.
+
 #### Expectations
 
 The addition of BeiDou B1C should improve the accuracy of the results.
@@ -137,6 +154,12 @@ Compare both of the 3 constellation configurations:
 
 Total duration = 6 hours, excluding analysis
 
+Notes:
+
+- These logging rates are for high performance mode - i.e. M10 CPU clocked at 192 MHz.
+- The default M10 clock speed theoretically limits GPS + GLONASS + Galileo to 6 Hz.
+- The assumption is that GPS + Galileo + BeiDou B1C would be a better option, supporting 8 Hz.
+
 #### Expectations
 
 I suspect that GLONASS will have the least favourable results, but it needs some actual proof.
@@ -157,6 +180,12 @@ Compare 4 constellations against the best 3 constellations, assumed to be GPS + 
 | 5.2  |     GPS + Galileo + BeiDou B1C + GLONASS     |     GPS + Galileo + BeiDou B1C     | 10 Hz |
 | 5.3  | GPS + Galileo + BeiDou B1C + GLONASS @ 10 Hz | GPS + Galileo + BeiDou B1C @ 16 Hz |   -   |
 
+Notes:
+
+- These logging rates are for high performance mode - i.e. M10 CPU clocked at 192 MHz.
+- The default M10 clock speed theoretically limits GPS + Galileo + BeiDou B1C + GLONASS to 4 Hz.
+- The assumption is that GPS + Galileo + BeiDou B1C would be a better option, supporting 8 Hz.
+
 Total duration = 6 hours, excluding analysis
 
 #### Expectations
@@ -171,13 +200,20 @@ Dropped frames can potential be avoided by reducing the maximum number of satell
 
 ### Summary
 
-This series of tests aims to identify the optimal ESP-GPS configuration, amongst the existing options.
+The outcome of this investigation will be a shortlist of optimal configurations, based on M10 and ESP32 clock speeds.
 
-The testing consists of several phases, but it should shed some light on the optimal configuration(s).
+For example:
 
-Hopefully the optimal configuration will be unambiguous - e.g. GPS + Galileo + BeiDou B1C @ 10 Hz.
+|                     | M10 @ 128 MHz                     | M10 @ 192 MHz                      |
+| ------------------- | :-------------------------------: | :--------------------------------: |
+| **ESP32 @ 80 MHz**  | GPS + Galileo + BeiDou B1C @ 8 Hz | -                                  |
+| **ESP32 @ 160 MHz** | -                                 | GPS + Galileo + BeiDou B1C @ 16 Hz |
 
-Future refinements to the ESP-GPS configuration may benefit from the findings of [fundamentals testing](fundamentals.md).
+In order to prevent dropped frames, maximum numbers of satellites will almost certainly need to be restricted.
+
+Different logging rates can be offered to anyone who wants smaller files, e.g. GPS + Galileo + BeiDou B1C @ 4 Hz.
+
+Future refinements to the ESP-GPS configuration may also benefit from the findings of [fundamentals testing](fundamentals.md).
 
 
 

@@ -1,6 +1,8 @@
 ## Fundamentals Testing
 
-Choosing the right constellations, satellite limits, and logging rates is a crucial decision.
+Choosing the right constellations, satellite limits, and logging rates is a complex, but crucial decision.
+
+It would be good to identify the best performing configurations for the various M10 and ESP32 clock speeds.
 
 Static testing provides a controlled environment to test devices systematically, and is very easy to perform.
 
