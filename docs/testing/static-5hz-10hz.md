@@ -6,7 +6,7 @@ Motion Minis were tested in 2024 to see how the accuracy might differ for 5 Hz a
 
 Just as way of background, static testing works because it simulates a constant speed, exactly matching the rotation of the earth. The satellites are in [Medium Earth Orbit](https://en.wikipedia.org/wiki/Medium_Earth_orbit) (MEO), and the earth is constantly rotating, but within an [ECEF coordinate system](https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system) the calculated speed should be exactly zero.
 
-It is one of the few tests where the true speed can be known throughout the entirety of the test period. [Speed over ground](https://en.wikipedia.org/wiki/Ground_speed) (SOG) is exactly zero!
+It is one of the few tests where the true speed can be known throughout the entirety of the test period. The true  [Speed over ground](https://en.wikipedia.org/wiki/Ground_speed) (SOG) is exactly zero, so anything other than zero is a genuine error.
 
 
 
@@ -32,21 +32,19 @@ n.b. Under normal circumstances errors will sometimes be higher than the truth, 
 
 #### Excel
 
-The data was exported into Excel and a variety of stats were produced for SOG, sAcc and HDOP. These focused on common percentiles of interest; 50, 68, 95, and 99.7. The 100th percentile was ignored because the max values are typically freak outliers.
+The data was exported into Excel and a variety of stats were produced for Speed over Ground (SOG), Speed Accuracy (sAcc) and Horizontal Dilution of Precision (HDOP). These focused on common percentiles of interest; 50, 68, 95, and 99.7. The 100th percentile was ignored because the max values are typically freak outliers.
+
+SOG was significantly lower for the 5 Hz devices, around 40 % lower than the 10 Hz devices. It was clearly better on the 5 Hz devices (3 systems, 24 sats) than 10 Hz devices (2 systems, 16 sats)
 
 ![freqency-test-3](img/freqency-test-3.png)
 
-Summary:
+sAcc was practically identical for the 5 Hz and 10 Hz devices, so not reflecting the differences. It does not necessarily reflect the true accuracy / precision of each measurement.
 
-- SOG was significantly lower for the 5 Hz devices, around 40 % lower than the 10 Hz devices
-- sAcc was practically identical for the 5 Hz and 10 Hz devices, so not reflecting the differences
-- HDOP was significantly lower for the 5 Hz devices, around 25 % lower than the 10 Hz devices
+![freqency-test-3](img/freqency-test-4.png)
 
-Interpretation:
+HDOP was significantly lower for the 5 Hz devices, around 25 % lower than the 10 Hz devices. It has a relationship with the number of satellites and may also have a relationship with the speeds being reported.
 
-- SOG was clearly better on the 5 Hz devices (3 systems, 24 sats) than 10 Hz devices (2 systems, 16 sats)
-- sAcc does not necessarily reflect the true accuracy / precision of each measurement
-- HDOP has a relationship with # sats and may also have a relationship with speed accuracy
+![freqency-test-3](img/freqency-test-5.png)
 
 
 
