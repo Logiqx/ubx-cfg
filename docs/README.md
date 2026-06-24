@@ -24,7 +24,7 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
   - [ESP-GPS](testing/esp-gps.md) - optimal configuration
   
 - Troubleshooting
-  - [Noisy Data](troubleshooting/noisy-data.md) - “balanced” power mode
+  - [Noisy Data](troubleshooting/noisy-data.md) - "balanced" power mode
   - [Dropped Frames](troubleshooting/dropped-frames.md) - CPU bandwidth limit
   - [Timestamp Variations](troubleshooting/timestamp-variations.md) - TBC
   - [Slow Acquisition](troubleshooting/slow-acquisition.md) - TBC
