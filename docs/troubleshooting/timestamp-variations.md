@@ -11,3 +11,5 @@ According to Google:
 This does not happen on the Motion, but it is not known whether it rounds the timestamps, or found a solution.
 
 Perhaps it is another consequence of exceeding the CPU bandwidth in the M10, along with dropped frames?
+
+Misaligned timestamps may be an indication that the maximum number of satellites needs to be reduced. TBC
