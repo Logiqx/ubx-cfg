@@ -89,7 +89,10 @@ A variety of other configurations have been dismissed:
 What about SBAS and QZSS?
 
 - SBAS may improve positional accuracy, but must not be used as additional satellites.
-  - Need to check if it is possible for the M10 to only use SBAS for the range corrections.
+  - Ensure SBAS differential corrections in are used
+    - `CFG-SBAS-USE_DIFFCORR = 1`
+  - Ensure SBAS GEOs are not used as a ranging source
+    - `CFG-SBAS-USE_RANGING = 0`
 - QZSS may be useful in the Pacific region, especially Japan and Australia.
   - Use [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951) to determine where the QZSS QZO (orbiting) satellites are visible.
 

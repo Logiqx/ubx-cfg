@@ -74,10 +74,14 @@ SBAS can perform two different roles, firstly as a satellite based [Differential
 
 - Potentially improves signal accuracy by mitigating some of the ionospheric errors.
 - Primarily improves positional accuracy by providing range corrections.
+- Use SBAS differential corrections:
+  - `CFG-SBAS-USE_DIFFCORR = 1`
 
 Secondly, SBAS satellites (geostationary, not MEO) can also be used to calculate positions.
 
-- This is generally regarded as a bad thing to do, and can reduce accuracy.
+- This is sometimes regarded as a bad thing to do, because it can reduce accuracy.
+- Do NOT use SBAS GEOs as a ranging source:
+  - `CFG-SBAS-USE_RANGING = 0`
 
 By all means use SBAS for corrections, but don't use it as supplementary satellites for position fixes.
 
