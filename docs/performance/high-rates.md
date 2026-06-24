@@ -15,7 +15,7 @@ Increasing the clock rate from 128 MHz (default) to 192 MHz (higher) is describe
 - Changes made in the OTP configuration are permanent and CANNOT be reverted. 
 - The high performance navigation update rate can be checked at run time.
 
-The M10 may require the higher clock rate when using lots of satellites or high logging rates, otherwise dropped points may become an issue.
+The M10 may require the higher clock rate when using lots of satellites or high logging rates, otherwise dropped frames may become an issue.
 
 The latest for firmware for the Motion LCD and Motion Mini devices will automatically configure the higher clock rate for 10 Hz logging.
 

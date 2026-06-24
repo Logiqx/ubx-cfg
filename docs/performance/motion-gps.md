@@ -2,20 +2,22 @@
 
 ### Background
 
-The [Motion GPS](https://www.motion-gps.com/motion/) has been one of the most popular devices within the speed sailing community:
+The [Motion GPS](https://www.motion-gps.com/motion/) is one of the most popular devices within the speed sailing community, but no longer produced:
 
-- The Motion LCD had either 4 or 5 buttons
-- The Motion Mini had one button and a light
+- The Motion LCD had a colourful screen and initially had 5 buttons, subsequently changed to 4
+- The Motion Mini had one button and a light to show the status
 
-Inside both devices there is a custom PCB, which includes a u-blox GNSS chip, filters, amplifier, and oscillator. This is somewhat different to the ESP-GPS design, which uses an all-in-1 GPS module from Beitian. GPS modules are a self-contained package including the GNSS chip, antenna, filters, amplifier, and oscillator. The GNSS oscillator has an impact on performance, and it was upgraded when the Motion Mini was re-designed (double-strap). The earlier Motion LCD and Motion Mini devices shipped with the u-blox M8, but were subsequently upgraded to the M10.
+Inside both devices there is a custom PCB, which includes a u-blox GNSS chip, filters, amplifier, and oscillator. This is different to the ESP-GPS design, which uses an Beitian GPS module. GPS modules are a self-contained package including the GNSS chip, antenna, filters, amplifier, and oscillator.
+
+It is worth mentioning that that GNSS oscillator can have a significant impact on accuracy, and it was upgraded when the Motion Mini was re-designed (double-strap). The earlier Motion LCD and Motion Mini devices shipped with the u-blox M8, but were subsequently upgraded to the M10.
 
 
 
 ### M8 Devices
 
-The [UBX-M8030-KT](https://www.u-blox.com/en/product/ubx-m8030-series) was used by the original Motions, u-blox GNSS modules such as the MAX M8, and Beitian [BN250](https://www.youtube.com/watch?v=NGotetkXIZc).
+The [UBX-M8030-KT](https://www.u-blox.com/en/product/ubx-m8030-series) was used by the original Motions, GNSS modules such as the MAX M8, and the Beitian [BN250](https://www.youtube.com/watch?v=NGotetkXIZc).
 
-The [NEO-M8](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf) datasheet shows the different levels of performance for the M8:
+The [NEO-M8](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf) datasheet shows the following max navigation update rates, dependant on the choice of module:
 
 | Constellations / Services                   | NEO-M8N | NEO-M8Q |
 | ------------------------------------------- | :-----: | :-----: |
@@ -26,19 +28,25 @@ These figures are all on the basis of a minimum 98% fix rate under typical condi
 
 The original Motions (M8) supported logging rates of 1, 2, 5, and 10 Hz:
 
-- GPS + GLONASS + Galileo - up to 5 Hz, limited to 24 satellites
-- GPS + GLONASS (perhaps Galileo) - up to 10 Hz, limited to 18 satellites
+- GPS + GLONASS + Galileo for up to 5 Hz, limited to 24 satellites
+- GPS + GLONASS (perhaps Galileo) for 10 Hz, limited to 18 satellites
+
+The M8 limited the original Motions to 2 systems for 10Hz, just like the NEO-M8Q.
+
+GPS + GLONASS was likely to be used for 10 Hz, since that combination was the default for the M8.
+
+The number of satellites was probably limited to avoid [Dropped Frames](../troubleshooting/dropped-frames.md), and maybe to conserve battery.
 
 
 
 ### M10 Devices
 
-The [UBX-M10050-KB](https://www.u-blox.com/en/product/ubx-m10-series) was used by the newer Motions, u-blox GNSS modules such as the MAX M10, and Beitian [BE250](https://www.beitian.com/en/sys-pd/520.html).
+The [UBX-M10050-KB](https://www.u-blox.com/en/product/ubx-m10-series) was used by the newer Motions, GNSS modules such as the MAX M10, and the Beitian [BE250](https://www.beitian.com/en/sys-pd/520.html).
 
-It is worth noting that the MAX-M10 performance closely matches the [MAX-M8](https://content.u-blox.com/sites/default/files/documents/MAX-M8-FW3_DataSheet_UBX-15031506.pdf):
+It is worth noting that the MAX-M10 performance looks very similar to the [MAX-M8](https://content.u-blox.com/sites/default/files/documents/MAX-M8-FW3_DataSheet_UBX-15031506.pdf), but nothing like the M9:
 
-- High performance mode of the MAX-M10 has the same max navigation rates of the MAX-M8
-- The MAX-M10 has the identical Time-To-First-Fix (TTFF) to the MAX-M8 for the various constellations
+- Default performance of the MAX-M10 has the same max navigation rates of the MAX-M8
+- The MAX-M10 has identical Time-To-First-Fix (TTFF) specifications as the MAX-M8
 
 The [MAX-M10](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-00B_DataSheet_UBX-22028884.pdf) datasheet shows the following max navigation update rates:
 
@@ -53,42 +61,45 @@ The [MAX-M10](https://content.u-blox.com/sites/default/files/documents/MAX-M10M-
 
 These figures are all on the basis of a minimum 98% fix rate under typical conditions, not 100%.
 
-The newer Motions (M10) support the same logging rates as the earlier models - 1, 2, 5, and 10 Hz:
+The newer Motions (M10) support logging rates of 1, 2, 5, and 10 Hz:
 
-- GPS + GLONASS + Galileo up to 5 Hz - limited to 24 satellites
-- GPS + GLONASS (perhaps Galileo) up to 10 Hz - limited to 18 satellites
+- GPS + GLONASS + Galileo for up to 5 Hz - limited to 24 satellites
+- GPS + GLONASS (perhaps Galileo) for 10 Hz - limited to 18 satellites
 
-The M10 configuration:
+These rates are the same as the M8 devices, but the M10 required some additional configuration:
 
-- [Full power](signal-quality.md) mode is used instead of the default "balanced" power mode
-- [High performance](high-rates.md) mode is only enabled when 10 Hz logging is configured, and CANNOT be reverted
+- [Full power](signal-quality.md) mode instead of the default "balanced" power mode of the M10
+- [High performance](high-rates.md) mode for 10 Hz logging, which CANNOT be reverted back to the default
 
-It is interesting to note that 5 Hz logging is more accurate than 10 Hz logging, demonstrated during [Static Testing](../testing/static-5hz-10hz.md).
+It is interesting to note that 5 Hz logging is more accurate than 10 Hz logging on the M10 devices, demonstrated during [Static Testing](../testing/static-5hz-10hz.md).
+
+The accuracy of the M10 devices improved when the Motion Mini was [re-designed](https://www.motion-gps.com/motion/changelog.html#3231), possibly due to the upgraded GNSS oscillator.
 
 
 
 ### Hardware Details
 
 - Custom PCB
-  - The Expressif logo is clearly visible on one of the chips
-  - The battery, charge coil, controller, and shielding are visible
+  - The Expressif logo is clearly visible on one of the chips, perhaps the MCU
+  - The battery, charge coil, controller, and shielding are also visible
     - See [photo](https://www.seabreeze.com.au/img/photos/windsurfing/23053891.jpg) of PBC in Seabreeze [thread](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Mini-Motion-Battery-Replacement-Installed)
-- GNSS chip
+- GNSS chip, not a GNSS module
   -  [UBX-M8030-KT](https://www.u-blox.com/en/product/ubx-m8030-series) (40 pin QFN chip)
   - [UBX-M10050-KB](https://www.u-blox.com/en/product/ubx-m10-series) (28 pin QFN chip)
+- GNSS filters and Lower Noise Amplifier (LNA)
+  - No details available
 
-- GNSS oscillator has an impact on performance
-  - See [NEO-M8](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf) and [MAX-M8](https://content.u-blox.com/sites/default/files/documents/MAX-M8-FW3_DataSheet_UBX-15031506.pdf) datasheets
-  - Upgraded when Motion Mini was re-designed (double-strap), see [changelog](https://www.motion-gps.com/motion/changelog.html#3231)
+- GNSS oscillator choice has an impact on performance
+  - [NEO-M8](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf) and [MAX-M8](https://content.u-blox.com/sites/default/files/documents/MAX-M8-FW3_DataSheet_UBX-15031506.pdf) datasheets distinguish between crystal and [TCXO](https://www.microchip.com/en-us/products/clock-and-timing/components/oscillators/tcxo)
+  - GNSS oscillator was upgraded when the Motion Mini hardware was [improved](https://www.motion-gps.com/motion/changelog.html#3231)
 - Antenna
   - Cirocom [PA025KQ0002](https://www.cirocomm.com/en-global/products_ciro/detail/PA025KQ0002) 25\*25\*2 mm GPS + GLONASS patch antenna
     - See [photo](https://www.seabreeze.com.au/img/photos/windsurfing/21752270.jpg) of antenna in Seabreeze [thread](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Mini-Motion-repaired)
-- Comparable Beitian GNSS modules
-  - UBX-M8030 - Beitian [BN250](https://www.youtube.com/watch?v=NGotetkXIZc)
-  - UBX-M10050 - Beitian [BE250](https://www.beitian.com/en/sys-pd/520.html)
-
-- LCDs and Minis have Wi-Fi
-  - Only the LCDs have longer range radio
+- Beitian GNSS modules containing the UBX-M8030 and UBX-M10050
+  - Beitian [BN250](https://www.youtube.com/watch?v=NGotetkXIZc) contains UBX-M8030
+  - Beitian [BE250](https://www.beitian.com/en/sys-pd/520.html) contains UBX-M10050
+- LCDs and Minis both support Wi-Fi
+  - Only the LCDs have support for longer range radio
 
 
 

@@ -25,7 +25,7 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
   
 - Troubleshooting
   - [Noisy Data](troubleshooting/noisy-data.md) - power mode
-  - [Dropped Points](troubleshooting/dropped-points.md) - CPU bandwidth
+  - [Dropped Frames](troubleshooting/dropped-frames.md) - CPU bandwidth
   - [Timestamp Variations](troubleshooting/timestamp-variations.md) - TBC
   - [Slow Acquisition](troubleshooting/slow-acquisition.md) - TBC
 

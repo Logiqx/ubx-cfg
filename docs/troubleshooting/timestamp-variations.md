@@ -10,4 +10,4 @@ According to Google:
 
 This does not happen on the Motion, but it is not known whether it rounds the timestamps, or found a solution.
 
-Perhaps it is another consequence of exceeding the CPU bandwidth in the M10, along with dropped points?
+Perhaps it is another consequence of exceeding the CPU bandwidth in the M10, along with dropped frames?

@@ -45,8 +45,8 @@ M10 CPU @ 192 MHz, ESP-32 MCU @ 160 MHz:
 Notes:
 
 - Upper bounds for log rate are based on minimum 98% fix rate under typical conditions.
-- Lower bounds for log rate use positive divisors of 1000, and less likely to see dropped points.
-- Limiting the number of satellites is another way to reduce the likelihood of dropped points.
+- Lower bounds for log rate use positive divisors of 1000, and less likely to see dropped frames.
+- Limiting the number of satellites is another way to reduce the likelihood of dropped frames.
 - GPS + Galileo + BeiDou B1C may be suitable for all end users, thus avoiding confusing choices.
 
 
@@ -109,7 +109,7 @@ Propose ignoring the following filters at this time:
 - C/N₀ thresholds
 - Advanced filtering
 
-Note: Restricting the number of satellites is one way to prevent points from being dropped by the M10.
+Note: Restricting the number of satellites is one way to prevent frames from being dropped by the M10.
 
 
 

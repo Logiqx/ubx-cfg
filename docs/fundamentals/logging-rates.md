@@ -160,7 +160,7 @@ I was subsequently told that it may be possible to apply the u-blox LPF by compu
 
 Setting `CFG-RATE-MEAS` to a value that is not a divisor of 1000 has already been discussed, and will result in irregular timestamps. This may be regarded as cosmetic, but it also has potential implications for speed analysis software.
 
-The u-blox data sheets describe max update rates on the basis of a minimum 98% fix rate under typical conditions. Dropped points are still possible and will typically occur at the top of the epoch - between .000 and .200. The solution is using less satellites as [discussed](satellites.md) on another page, or reducing the logging rate.
+The u-blox data sheets describe max update rates on the basis of a minimum 98% fix rate under typical conditions. Dropped frames are still possible and will typically occur at the top of the epoch - between .000 and .200. The solution is using less satellites as [discussed](satellites.md) on another page, or reducing the logging rate.
 
 The requirements for achieving the highest logging rates include the need for higher CPU speeds (M10 and / or ESP32), and higher baud rates. These topics are all described in detail on another page specific to [higher logging rates](../performance/high-rates.md).
 
