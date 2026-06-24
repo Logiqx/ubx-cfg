@@ -150,7 +150,7 @@ There may be a point where a 2 constellation performance roughly matches the 3 c
 
 Suspect that the accuracy from 2 constellations at 20 Hz may not be able to exceed 3 constellations at 10 Hz.
 
-It is yet to be seen whether whether 3 constellations will be best at 10 Hz or 16 Hz, due to required satellite limits.
+It is yet to be seen whether 3 constellations will be best at 10 Hz or 16 Hz, due to required satellite limits.
 
 
 
