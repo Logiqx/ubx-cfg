@@ -7,7 +7,7 @@ The [Motion GPS](https://www.motion-gps.com/motion/) has been one of the most po
 - The Motion LCD had either 4 or 5 buttons
 - The Motion Mini had one button and a light
 
-Inside both devices there is a custom PCB, which includes a u-blox GNSS chip, filters, amplifier, and oscillator. This is somewhat different to the ESP-GPS design, which uses an all-in-1 GPS module from Beitian. GPS modules are a self-contained package including the GNSS chip, antenna, filters, amplifier, and oscillator. The GNSS oscillator was upgraded when the Motion Mini was re-designed (double-strap), and mentioned in the release notes of [firmware](https://www.motion-gps.com/motion/changelog.html#3231) 3231. The earlier Motion LCD and Motion Mini devices shipped with the u-blox M8, but were subsequently upgraded to the M10.
+Inside both devices there is a custom PCB, which includes a u-blox GNSS chip, filters, amplifier, and oscillator. This is somewhat different to the ESP-GPS design, which uses an all-in-1 GPS module from Beitian. GPS modules are a self-contained package including the GNSS chip, antenna, filters, amplifier, and oscillator. The GNSS oscillator has an impact on performance, and it was upgraded when the Motion Mini was re-designed (double-strap). The earlier Motion LCD and Motion Mini devices shipped with the u-blox M8, but were subsequently upgraded to the M10.
 
 
 
@@ -77,8 +77,9 @@ It is interesting to note that 5 Hz logging is more accurate than 10 Hz logging,
   -  [UBX-M8030-KT](https://www.u-blox.com/en/product/ubx-m8030-series) (40 pin QFN chip)
   - [UBX-M10050-KB](https://www.u-blox.com/en/product/ubx-m10-series) (28 pin QFN chip)
 
-- GNSS oscillator clearly has an impact on performance
-  - See [NEO-M8](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf) datasheet and [MAX-M8](https://content.u-blox.com/sites/default/files/documents/MAX-M8-FW3_DataSheet_UBX-15031506.pdf) datasheets
+- GNSS oscillator has an impact on performance
+  - See [NEO-M8](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf) and [MAX-M8](https://content.u-blox.com/sites/default/files/documents/MAX-M8-FW3_DataSheet_UBX-15031506.pdf) datasheets
+  - Upgraded when Motion Mini was re-designed (double-strap), see [changelog](https://www.motion-gps.com/motion/changelog.html#3231)
 - Antenna
   - Cirocom [PA025KQ0002](https://www.cirocomm.com/en-global/products_ciro/detail/PA025KQ0002) 25\*25\*2 mm GPS + GLONASS patch antenna
     - See [photo](https://www.seabreeze.com.au/img/photos/windsurfing/21752270.jpg) of antenna in Seabreeze [thread](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Mini-Motion-repaired)
