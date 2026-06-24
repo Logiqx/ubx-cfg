@@ -9,7 +9,7 @@ The [Motion GPS](https://www.motion-gps.com/motion/) is one of the most popular 
 
 Inside both devices there is a custom PCB, which includes a u-blox GNSS chip, filters, amplifier, and oscillator. This is different to the ESP-GPS design, which uses an Beitian GPS module. GPS modules are a self-contained package including the GNSS chip, antenna, filters, amplifier, and oscillator.
 
-It is worth mentioning that that GNSS oscillator can have a significant impact on accuracy, and it was upgraded when the Motion Mini was re-designed (double-strap). The earlier Motion LCD and Motion Mini devices shipped with the u-blox M8, but were subsequently upgraded to the M10.
+It is worth mentioning that the GNSS oscillator can have a significant impact on accuracy, and it was upgraded when the Motion Mini was re-designed (double-strap). The earlier Motion LCD and Motion Mini devices shipped with the u-blox M8, but were subsequently upgraded to the M10.
 
 
 
