@@ -16,7 +16,7 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
   - [High Logging Rates](performance/high-rates.md) - CPU + baud rates
   - [Signal Quality](performance/signal-quality.md) - power savings and LNA
   - [Solution Quality](performance/solution-quality.md) - models + filters
-  - [Motion GPS](performance/motion-gps.md) - hardware and configuration
+  - [Motion GPS](performance/motion-gps.md) - hardware + configuration
 - Testing
   - [Power Mode](testing/power-mode.md) - "balanced" vs "full power"
   - [Static Testing](testing/static-5hz-10hz.md) - 5 Hz vs 10 Hz
