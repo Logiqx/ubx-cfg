@@ -139,23 +139,27 @@ It is sometimes worth limiting the number of satellites being tracked, or used i
 
 #### Number of Satellites
 
-By default the M10 will use up to 32 satellites for the PVT solution. If you lower `INFIL_MAXSVS` to a specific number the chip will truncate its active tracking list, thus limiting the processing payload.
+The default for u-blox Standard Precision GNSS (SPG) chipsets is to use up to 32 satellites for the PVT solution,  including M8 / M9 / M10 chipsets.
+
+It is possible to change this limit, which will cause the GNSS chip to reduce its processing payload. The chip will still track all of the available signals, but will only use a limited number of satellites / signals for the PVT solution.
 
 `CFG-NAVSPG-INFIL_MAXSVS` - default is 32
 
-Limiting the number of satellites in this way can often makes sense, especially for people where lots of satellites tend to be visible (e.g. BeiDou in Asia). The benefits of additional satellites typically diminish once into the twenties.
+The GNSS chip will automatically choose the best selection of satellites / signals. This is based on the Carrier-to-Noise-Density Ratio (C/N₀), and their positions in the sky; both in terms of the elevation angle, and their impact on Dilution of Precision (DOP).
 
-The Motion GPS limits the number of satellites to 24 when logging at 5 Hz, and 16 when logging at 10 Hz. It may be placing a limit of 8 satellites per constellation, presumably choosing which signals are used at any one time.
+Limiting the number of satellites in this way can often makes sense, especially where lots of satellites tend to be visible (e.g. BeiDou in Asia). The benefits of additional satellites typically start to diminish once into the twenties.
+
+The Motion GPS limits the number of satellites to 24 when logging at 5 Hz, and 18 when logging at 10 Hz.
 
 
 
 #### Elevation Mask
 
-Satellites at a low elevation angle have an increased risk of both multipath, and ionospheric delay / distortion.
+Satellites at a low elevation angle have an increased risk of both multipath, and ionospheric delay / distortion. The default elevation mask for u-blox SPG products is 5°,  including M8 / M9 / M10 chipsets.
 
 Specifying an elevation mask of 10° to 15° is relatively common in marine environments. Eliminating these low elevation signals before the internal selection engine even evaluates them leaves it to focus on the more reliable signals.
 
-The default M10 elevation mask is 5°, but it can be changed using `CFG-NAVSPG-INFIL_MINELEV`.
+`CFG-NAVSPG-INFIL_MINELEV` - default is 5°
 
 Specifying 10° or 15° is likely to be beneficial when speed sailing, especially in environments with cliffs, buildings, or ships.
 
@@ -173,17 +177,17 @@ The online [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html) can be use
 
 30 to 35 dB-Hz may be suitable for open sky environments. If you have perfect signal conditions, raising the threshold will filter out marginal multi-path and weak signals, saving processing power and potentially increasing accuracy.
 
-When you restrict maxSVs, the M10 navigation engine will evaluate the remaining tracked satellites in view and dynamically trim the pool down to maxSVs. You can proactively filter out weak signals globally by adjusting `CFG-NAVSPG-INFIL_MINCNO` (default is 6 dBHz) to a floor value such as 30 or 35 dB-Hz. This will stop the receiver from considering low C/N₀ signals.
+The default minimum C/N₀ setting for u-blox SPG products is 6 dBHz,  including M8 / M9 / M10 chipsets. You can proactively filter out weak signals by reducing the minimum C/N₀ to a floor value such as 30 or 35 dB-Hz.
 
-Once the weak signals are dropped, the engine will dynamically balance the highest C/N₀ streams against those providing the lowest math residuals and the best spatial distribution (dilution of precision).
+`CFG-NAVSPG-INFIL_MINCNO` - default is 6 dBHz
+
+Once the weak signals are dropped, the engine will dynamically balance the highest C/N₀ streams against those providing the lowest math residuals and the best spatial distribution (Dilution of Precision, DOP).
 
 
 
 #### Advanced Filtering
 
 Enable the `UBX-NAV-SAT` binary message to stream data for all tracked satellites. Read the array of satellites, extracting their C/N₀ and PRN codes. Run a quick sorting algorithm on your host microcontroller to pick your fixed number of top signals. Feed those specific satellite measurements into your custom navigation algorithm or localized filtering loop.
-
-It is possible that the Motion does something along these lines to limit the number of satellites to 24, perhaps allowing 8 per constellation. It is not clear what the Motion does, or how it does it. The limit on the number of tracked satellites can vary depending on the hardware version, and firmware version.
 
 
 

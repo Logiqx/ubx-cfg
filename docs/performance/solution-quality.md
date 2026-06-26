@@ -54,20 +54,20 @@ For speed sailing, static hold thresholds should left at zero.
 
 ### Navigation Input Filters
 
-Navigation input filters can potentially prevent poor quality solutions from being calculated.
+Navigation input filters may potentially prevent poor quality PVT solutions from a few satellites / signals.
 
 #### Satellites
 
 - `CFG-NAVSPG-INFIL_MINSVS` - default is 3
-  - Julien said the default used to be 5, so may need to be increased
+  - This corresponds a minimal 2D fix
 
 
 #### C/N₀ Threshold
 
 - `CFG-NAVSPG-INFIL_NCNOTHRS` - default is 0
-  - Number above threshold
+  - Number of signals required above this threshold
 - `CFG-NAVSPG-INFIL_CNOTHRS` - default is 0
-  - Might consider 30 to 35 dB-Hz
+  - Thresholds to consider might be 30 to 35 dB-Hz
 
 
 
