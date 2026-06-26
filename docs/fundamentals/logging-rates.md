@@ -53,9 +53,15 @@ Both rates require the M10 to run in "high performance" mode, which requires mor
 
 The [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites/default/files/documents/u-blox-M10-SPG-5.30_InterfaceDescription_UBXDOC-304424225-20395.pdf) describes how to configure the navigation update rate.
 
-- `CFG-RATE-MEAS` = Nominal time between GNSS measurements
-- `CFG-RATE-NAV` = Ratio of number of measurements to number of navigation solutions
-- `CFG-RATE-TIMEREF` = Time system to which measurements are aligned
+- `CFG-RATE-MEAS` - default is 1000
+  - Nominal time between GNSS measurements
+
+- `CFG-RATE-NAV` - default is 1
+  - Ratio of number of measurements to number of navigation solutions
+
+- `CFG-RATE-TIMEREF` - default is 1 (GPS)
+  - Time system to which measurements are aligned
+
 
 The default time reference system is GPS, but those milliseconds should be identical to UTC.
 
@@ -78,8 +84,8 @@ The table below lists some M10 devices, and the logging rates they support.
 
 Notes:
 
-- The LISA GPS is based on the ESP-GPS
-- The SYRAC-GPS is an ESP-GPS and mentions 3 and 6 Hz in the user guide, perhaps inspired by u-blox data sheets?
+- The LISA GPS is based on the ESP-GPS, and provides all of the standard rates up to 10 Hz
+- The SYRAC-GPS is also based on the ESP-GPS but the user guide also mentions 3 Hz and 6 Hz
 
 
 

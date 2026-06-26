@@ -139,11 +139,11 @@ It is sometimes worth limiting the number of satellites being tracked, or used i
 
 #### Number of Satellites
 
-The default for u-blox Standard Precision GNSS (SPG) chipsets is to use up to 32 satellites for the PVT solution,  including M8 / M9 / M10 chipsets.
+The default for u-blox Standard Precision GNSS (SPG) chipsets is to use up to 32 satellites for the PVT solution,  including M8 / M9 / M10 chipsets. It should be noted that the M9 will enforce a maximum of 16 satellites at rates >= 10 Hz.
 
 It is possible to change this limit, which will cause the GNSS chip to reduce its processing payload. The chip will still track all of the available signals, but will only use a limited number of satellites / signals for the PVT solution.
 
-`CFG-NAVSPG-INFIL_MAXSVS` - default is 32
+- `CFG-NAVSPG-INFIL_MAXSVS` - default is 32
 
 The GNSS chip will automatically choose the best selection of satellites / signals. This is based on the Carrier-to-Noise-Density Ratio (C/N₀), and their positions in the sky; both in terms of the elevation angle, and their impact on Dilution of Precision (DOP).
 
@@ -159,7 +159,7 @@ Satellites at a low elevation angle have an increased risk of both multipath, an
 
 Specifying an elevation mask of 10° to 15° is relatively common in marine environments. Eliminating these low elevation signals before the internal selection engine even evaluates them leaves it to focus on the more reliable signals.
 
-`CFG-NAVSPG-INFIL_MINELEV` - default is 5°
+- `CFG-NAVSPG-INFIL_MINELEV` - default is 5°
 
 Specifying 10° or 15° is likely to be beneficial when speed sailing, especially in environments with cliffs, buildings, or ships.
 
@@ -179,7 +179,7 @@ The online [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html) can be use
 
 The default minimum C/N₀ setting for u-blox SPG products is 6 dBHz,  including M8 / M9 / M10 chipsets. You can proactively filter out weak signals by reducing the minimum C/N₀ to a floor value such as 30 or 35 dB-Hz.
 
-`CFG-NAVSPG-INFIL_MINCNO` - default is 6 dBHz
+- `CFG-NAVSPG-INFIL_MINCNO` - default is 6 dBHz
 
 Once the weak signals are dropped, the engine will dynamically balance the highest C/N₀ streams against those providing the lowest math residuals and the best spatial distribution (Dilution of Precision, DOP).
 
