@@ -84,23 +84,19 @@ Final thoughts:
 - Custom PCB
   - The Expressif logo is clearly visible on one of the chips, perhaps the MCU
   - The battery, charge coil, controller, and shielding are also visible
-    - See [photo](https://www.seabreeze.com.au/img/photos/windsurfing/23053891.jpg) of PBC in Seabreeze [thread](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Mini-Motion-Battery-Replacement-Installed)
+  - See [photo](https://www.seabreeze.com.au/img/photos/windsurfing/23053891.jpg) of PCB in Seabreeze [thread](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Mini-Motion-Battery-Replacement-Installed)
 - GNSS chip, not a GNSS module
   -  [UBX-M8030-KT](https://www.u-blox.com/en/product/ubx-m8030-series) (40 pin QFN chip)
   - [UBX-M10050-KB](https://www.u-blox.com/en/product/ubx-m10-series) (28 pin QFN chip)
-- GNSS filters
+- Filters and Lower Noise Amplifier (LNA)
   - No details available
-
-- Lower Noise Amplifier (LNA)
-  - No details available
-
 - GNSS oscillator
   - [NEO-M8](https://content.u-blox.com/sites/default/files/NEO-M8-FW3_DataSheet_UBX-15031086.pdf) and [MAX-M8](https://content.u-blox.com/sites/default/files/documents/MAX-M8-FW3_DataSheet_UBX-15031506.pdf) datasheets distinguish between crystal and [TCXO](https://www.microchip.com/en-us/products/clock-and-timing/components/oscillators/tcxo)
   - GNSS oscillator was upgraded when the Motion Mini hardware was [improved](https://www.motion-gps.com/motion/changelog.html#3231)
   - Devices with the upgraded oscillator benefit from improved performance
 - Antenna
   - Cirocom [PA025KQ0002](https://www.cirocomm.com/en-global/products_ciro/detail/PA025KQ0002) 25\*25\*2 mm GPS + GLONASS patch antenna
-    - See [photo](https://www.seabreeze.com.au/img/photos/windsurfing/21752270.jpg) of antenna in Seabreeze [thread](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Mini-Motion-repaired)
+  - See [photo](https://www.seabreeze.com.au/img/photos/windsurfing/21752270.jpg) of antenna in Seabreeze [thread](https://www.seabreeze.com.au/forums/Windsurfing/Gps/Mini-Motion-repaired)
 - Beitian GNSS modules - M8 and M10
   - Beitian [BN250](https://www.youtube.com/watch?v=NGotetkXIZc) contains UBX-M8030
   - Beitian [BE250](https://www.beitian.com/en/sys-pd/520.html) contains UBX-M10050
