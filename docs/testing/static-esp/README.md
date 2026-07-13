@@ -1,0 +1,72 @@
+## Static ESP Testing
+
+### Overview
+
+The ESP GPS provides a number of configuration options which relate to GNSS performance:
+
+- Constellations - GPS, GLONASS, Galileo, BeiDou
+- Logging Rate
+- Max Satellites
+- ESP Clock Rate
+
+The objective of this study is to identify the optimal ESP GPS configuration(s), and hide the complexities from regular users.
+
+
+
+### Approach
+
+The SYRAC GPS is based on the ESP GPS, and 7 identical units have been used to perform a number of static tests. The tests were all conducted from a rooftop in Tarifa (Spain) and they are a precursor to a number of on-the-water comparisons.
+
+Static testing is extremely effective and it works by simulating a constant speed, exactly matching the rotation of the earth. The satellites are in [Medium Earth Orbit](https://en.wikipedia.org/wiki/Medium_Earth_orbit) (MEO), and the earth is constantly rotating, but within an [ECEF coordinate system](https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system) the calculated speed should be exactly zero.
+
+Previous tests for devices such as the Locosys GT-11, GT-31, GW-60, Motion GPS, and Garmin watches have all shown that static test performance are highly indicative of kinematic performance. The best devices in static testing always perform best on the water, but static testing is more practical.
+
+Each of the tests lasted for a period of at least 6 hours, which is roughly half of the time time that it takes for a full orbit of the various GNSS constellations. Comparisons are only between devices during the same test period, never across different test periods.
+
+The primary focus has been mean speed over ground (SOG) throughout the test. The first 30 minutes is ignored to allow for cold starts, and also the last 5 minutes to allow for any movement during shutdown. The summary statistics were produced using Python code.
+
+
+
+### Conclusions
+
+The first tests showed that GPS + Galileo always performs better than GPS + GLONASS. The tests were performed in Tarifa (Spain), and should apply to most popular windsurfing regions, but similar testing should also be performed at higher latitudes (e.g. Norway, Sweden, or Finland).
+
+The reason that latitude matters is because the orbit of GLONASS satellites uses an inclination of 64.8° as opposed to 55° (GPS + BeiDou) or 56° (Galileo). This difference is to ensure that GLONASS satellites appear higher above the horizon when the latitude of the receiver is above 55° (e.g. Moscow).
+
+Introducing a third GNSS demonstrated that GPS + Galileo + GLONASS performed worse than GPS + Galileo + BeiDou B1C, and also GPS + Galileo. The use of GLONASS as a third system actually degraded the solution quality.
+
+TODO - further summary regarding logging rates, etc.
+
+
+
+### Phases
+
+This study consists of a number of phases, which are essentially individual tests.
+
+|                              |                  Constellations                   |                          |
+| ---------------------------- | :-----------------------------------------------: | ------------------------ |
+| [Phase 1](phase-1/README.md) |          GPS + GLONASS vs GPS + Galileo           | GLONASS vs Galileo       |
+| [Phase 2](phase-2/README.md) | GPS + Galileo + GLONASS vs GPS + Galileo + BeiDou | GLONASS vs BeiDou        |
+| [Phase 3](phase-3/README.md) | GPS + Galileo + GLONASS vs GPS + Galileo + BeiDou | Satellite limits @ 15 Hz |
+| [Phase 4](phase-4/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 5 Hz  |
+| [Phase 5](phase-5/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 5 Hz  |
+| Test 6                       |              GPS + Galileo + BeiDou               | Satellite limits @ 10 Hz |
+| Test 7                       |              GPS + Galileo + BeiDou               | 5 Hz vs 10 Hz vs 20 Hz   |
+
+There is a separate page for each individual test / phase, so be sure to click the above links for the full details!
+
+
+
+### Data
+
+- Sheets
+- XLSX
+- PNG
+- TXT
+
+
+
+### Code
+
+- Shell
+- Python
