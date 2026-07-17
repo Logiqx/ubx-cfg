@@ -99,4 +99,4 @@ Theory
 - [Accuracy and HDOP](accuracy-hdop/README.md)
 - [Satellite orbits](satellite-orbits/README.md)
 - [Sampling rates](sampling-rates/README.md)
-- [GPY vs SBP](gpy-vs-sbp/README.md)
+- [GPY vs SBP](gpy-sbp/README.md)
