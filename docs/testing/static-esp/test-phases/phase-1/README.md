@@ -24,4 +24,26 @@ GLONASS vs Galileo
 
 
 
+### Charts
+
+![phase-1-sog](img/phase-1-sog.png)
+
 ### Results
+
+- TTFF was quite variable... will assume some devices were a cold start
+- Warm up periods need deleting... remove 30 mins and show the effects in GPS Speedreader
+- No evidence of M10 "balanced" power mode issues in SOG
+- Overall GLONASS performed worst, Galileo performed best
+  - GPS + Galileo > GPS + Galileo + GLONASS > GPS + GLONASS @ 10 Hz
+  - GPS + Galileo > GPS + GLONASS @ 15 Hz
+  - GPS + Galileo > GPS + GLONASS @ 20 Hz
+  - GPS + Galileo ~ 0.020 m/s
+  - GPS + GLONASS ~ 0.025 m/s
+- HDOP doesn't really improve much after 20 sats
+  - S3 has scatter plot
+- Oddly 10 Hz tests slightly outperformed the 15 Hz and 20 Hz ones
+  - S3 might be misleading though as it shows a lot of clock adjustments
+  - Phase 2 testing to confirm!
+- Odd time intervals due to clock drift, except 15 Hz which is just weird
+- Dropped frames @ 20 Hz... slightly more for GLONASS (11) vs Galileo (4)
+- Thought... multiply actual sats by log rate for sats / sec

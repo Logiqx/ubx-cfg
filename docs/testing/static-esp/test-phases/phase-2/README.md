@@ -26,4 +26,25 @@ S3 was intended to be GPS + Galileo + BeiDou B1C @ 10 Hz, but somehow reset itse
 
 
 
+### Charts
+
+![phase-2-sog](img/phase-2-sog.png)
+
+
+
 ### Results
+
+Test 2
+
+- S3 was incorrectly configured
+  - Shame because we cannot compare the 10 Hz configurations
+  - Will have to rely on phase 3 for GLONASS vs B1C
+- SY2 (GPS + GAL + B1C) dropped lots of frames and saw quite a few mini spikes
+  - Perhaps due to "balanced" power mode?
+  - Maybe the clock is drifting quickly as well?
+- Practically no difference between 15 Hz and 20 Hz
+  - Arguably, 10 Hz was better
+- Overall GLONASS performed worst, Galileo performed best
+  - GPS + Galileo > GPS + Galileo + GLONASS @ 10 Hz
+  - GPS + Galileo + BeiDou B1C > GPS + Galileo + GLONASS > GPS + Galileo @ 15 Hz
+  - GPS + Galileo > GPS + GLONASS @ 20 Hz

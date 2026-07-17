@@ -26,4 +26,29 @@ S3 was intended to be GPS + Galileo + BeiDou B1C and 160 MHz, but somehow reset 
 
 
 
+### Charts
+
+![phase-7-sog](img/phase-7-sog.png)
+
+BLAH
+
+![phase-7-sacc](img/phase-7-sacc.png)
+
+
+
 ### Results
+
+Test 7
+
+puts equally performing devices up against each other (e.g. D1 and D3) but 5 Hz vs 10 Hz
+
+I have taken into consideration that S3 may use GGB (hopefully it will), and knowing that SY2 could not handle 10 Hz, put it on 5 Hz
+
+Results
+
+- 5 Hz significantly better than 10 Hz
+  - There is no advantage to 10 Hz
+- sAcc is misleading
+  - It says that 10 Hz is performing better
+- Performance of all 5 Hz devices comparable
+  - SY1 performed less well than D1 and D2 @ 10 Hz, maybe baud rate?

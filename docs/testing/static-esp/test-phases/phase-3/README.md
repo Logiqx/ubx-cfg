@@ -26,4 +26,25 @@ S3 was intended to be GPS + Galileo + BeiDou B1C, but somehow reset itself to GP
 
 
 
+### Charts
+
+![phase-3-sog](img/phase-3-sog.png)
+
+
+
 ### Results
+
+Test 3
+
+- 38,400 seemed to cope with 15 Hz
+  - SY1
+- B1C is clearly better than GLONASS
+  - Evident when max sats set at 28 and 24
+  - Sadly no data for 20 sats due to incorrect configuration on S3
+- Sat limit can prevent dropped frames
+  - Does not appear to reduce accuracy...
+  - 28 is actually the least accurate
+  - 24 is most accurate, but drops frames
+  - 20 appears to avoid dropped frames, but accuracy slightly worse than 24
+- SY2 is still not working correctly
+  - Perhaps dropping frames due to the default limit of 32 sats

@@ -26,4 +26,22 @@ S3 was intended to be GPS + Galileo + BeiDou B1C, but somehow reset itself to GP
 
 
 
+### Charts
+
+![phase-4-sog](img\phase-4-sog.png)
+
+
+
 ### Results
+
+Test 4
+
+- Similar in nature to test 3, but 5 Hz and no GLONASS
+- 5 Hz GGB with various sat limits
+- S3 is incorrectly configured (GPS + Galileo) and should be ignored
+- Max of 28 sats is optimal, but dropping frames
+  - Rankings: 28 sats, 32 sats, 24 sats
+- Results suggest that 10 Hz is much worse than 5 Hz for accuracy
+  - SY2 (10 Hz) mean SOG is much worse than the 5 Hz devices
+- HOWEVER this was D1 and D2 which performed best in test 3
+  - Test 3 showed 24 sats was best, but also D1 and D2

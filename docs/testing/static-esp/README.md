@@ -61,7 +61,7 @@ The earliest tests focused on sample rates between 10 Hz and 20 Hz, but later te
 
 ### Phases
 
-This study consists of 7 individual phases, each one containing a number of different tests run in parallel.
+This study consisted of 7 individual phases, each containing a number of different configurations run in parallel.
 
 |                                          |                  Constellations                   |         Summary          |
 | ---------------------------------------- | :-----------------------------------------------: | :----------------------: |
@@ -73,28 +73,28 @@ This study consists of 7 individual phases, each one containing a number of diff
 | [Phase 6](test-phases/phase-6/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 10 Hz |
 | [Phase 7](test-phases/phase-7/README.md) |              GPS + Galileo + BeiDou               |      5 Hz vs 10 Hz       |
 
-There is a separate page for each individual test / phase, so be sure to click the above links for full details.
+There are separate pages detailing the individual phases, accessible via the links in the table.
 
 
 
 ### Further Details
 
-To reduce the length of this summary page, further details are on individual pages.
+To reduce the length of this page, further details are provided on individual pages.
 
-Methodology
+#### Methodology
 
 - [Test approach](test-approach/README.md)
-- [Technical details](tech-details/README.md) - procedure, shell commands, Python code, and data
+- [Technical details](tech-details/README.md)
 - [SYRAC devices](syrac-devices/README.md)
 - [Key findings](key-findings/README.md)
 
-Next steps
+#### Next steps
 
 - [Elevation mask](elevation-mask/README.md)
 - [Kinematic testing](kinematic-testing/README.md)
 - [ESP enhancements](esp-enhancements/README.md)
 
-Theory
+#### Theory
 
 - [Accuracy and HDOP](accuracy-hdop/README.md)
 - [Satellite orbits](satellite-orbits/README.md)
