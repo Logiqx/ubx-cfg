@@ -22,7 +22,7 @@ GLONASS vs BeiDou
 |   D5   | GPS + Galileo + BeiDou B1C | 15 Hz |    32    | 240 MHz | 115,200 |
 |   D2   | GPS + Galileo              | 20 Hz |    32    | 240 MHz | 115,200 |
 
-S3 was intended to be GPS + Galileo + BeiDou B1C @ 10 Hz, but was configured as GPS + Galileo.
+S3 was intended to be GPS + Galileo + BeiDou B1C @ 10 Hz, but somehow reset itself to GPS + Galileo.
 
 
 

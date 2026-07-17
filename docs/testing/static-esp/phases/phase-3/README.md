@@ -22,7 +22,7 @@ Satellite limits @ 15 Hz
 | **S3** | **GPS + Galileo**          | 15 Hz |    20    | 240 MHz |  38,400 |
 |  SY2   | GPS + Galileo + GLONASS    | 10 Hz |    32    | 160 MHz |  38,400 |
 
-S3 was intended to be GPS + Galileo + BeiDou B1C, but was configured as GPS + Galileo.
+S3 was intended to be GPS + Galileo + BeiDou B1C, but somehow reset itself to GPS + Galileo.
 
 
 

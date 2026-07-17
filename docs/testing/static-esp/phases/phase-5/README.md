@@ -22,7 +22,7 @@ Satellite limits @ 5 Hz
 |   D5   | GPS + Galileo + BeiDou B1C     | 5 Hz |    32    | 160 MHz | 115,200 |
 |  SY2   | GPS + Galileo + BeiDou B1C     | 5 Hz |    20    | 160 MHz |  38,400 |
 
-S3 did not record any data during this test
+S3 did not record any data during this test, presumably because the "start logging speed" was 1 knot.
 
 
 
