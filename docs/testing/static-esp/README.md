@@ -63,15 +63,15 @@ The earliest tests focused on sample rates between 10 Hz and 20 Hz, but later te
 
 This study consists of 7 individual phases, each one containing a number of different tests run in parallel.
 
-|                                     |                  Constellations                   |         Summary          |
-| ----------------------------------- | :-----------------------------------------------: | :----------------------: |
-| [Phase 1](phases/phase-1/README.md) |          GPS + GLONASS vs GPS + Galileo           |    GLONASS vs Galileo    |
-| [Phase 2](phases/phase-2/README.md) | GPS + Galileo + GLONASS vs GPS + Galileo + BeiDou |    GLONASS vs BeiDou     |
-| [Phase 3](phases/phase-3/README.md) | GPS + Galileo + GLONASS vs GPS + Galileo + BeiDou | Satellite limits @ 15 Hz |
-| [Phase 4](phases/phase-4/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 5 Hz  |
-| [Phase 5](phases/phase-5/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 5 Hz  |
-| [Phase 6](phases/phase-6/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 10 Hz |
-| [Phase 7](phases/phase-7/README.md) |              GPS + Galileo + BeiDou               |      5 Hz vs 10 Hz       |
+|                                          |                  Constellations                   |         Summary          |
+| ---------------------------------------- | :-----------------------------------------------: | :----------------------: |
+| [Phase 1](test-phases/phase-1/README.md) |          GPS + GLONASS vs GPS + Galileo           |    GLONASS vs Galileo    |
+| [Phase 2](test-phases/phase-2/README.md) | GPS + Galileo + GLONASS vs GPS + Galileo + BeiDou |    GLONASS vs BeiDou     |
+| [Phase 3](test-phases/phase-3/README.md) | GPS + Galileo + GLONASS vs GPS + Galileo + BeiDou | Satellite limits @ 15 Hz |
+| [Phase 4](test-phases/phase-4/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 5 Hz  |
+| [Phase 5](test-phases/phase-5/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 5 Hz  |
+| [Phase 6](test-phases/phase-6/README.md) |              GPS + Galileo + BeiDou               | Satellite limits @ 10 Hz |
+| [Phase 7](test-phases/phase-7/README.md) |              GPS + Galileo + BeiDou               |      5 Hz vs 10 Hz       |
 
 There is a separate page for each individual test / phase, so be sure to click the above links for full details.
 
@@ -92,6 +92,7 @@ Next steps
 
 - [Elevation mask](elevation-mask/README.md)
 - [Kinematic testing](kinematic-testing/README.md)
+- [ESP enhancements](esp-enhancements/README.md)
 
 Theory
 

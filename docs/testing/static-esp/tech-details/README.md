@@ -57,3 +57,9 @@ The following links will provide access to all of the outputs (e.g. statistics a
 - [Google Drive](https://drive.google.com/drive/folders/1gRNQ0LvkSTy7sVIzL2fw2LlLyMm03tbF?usp=sharing)
 
 
+
+### Note to Self
+
+Data location, should it be needed in the future!
+
+`C:\Users\mwgeo\OneDrive\Projects\GPS\Logs\Organised\ESP-GPS\Salvador, SYRAC-GPS\2026-07-xx, SYRAC-GPS, Static Testing`
