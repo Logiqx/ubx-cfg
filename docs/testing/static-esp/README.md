@@ -81,5 +81,21 @@ There is a separate page for each individual test / phase, so be sure to click t
 
 To reduce the length of this summary page, further details are on individual pages.
 
-- [Technical details](tech-details/README.md) - procedure, data, code
+Methodology
 
+- [Test approach](test-approach/README.md)
+- [Technical details](tech-details/README.md) - procedure, shell commands, Python code, and data
+- [SYRAC devices](syrac-devices/README.md)
+- [Key findings](key-findings/README.md)
+
+Next steps
+
+- [Elevation mask](elevation-mask/README.md)
+- [Kinematic testing](kinematic-testing/README.md)
+
+Theory
+
+- [Accuracy and HDOP](accuracy-hdop/README.md)
+- [Satellite orbits](satellite-orbits/README.md)
+- [Sampling rates](sampling-rates/README.md)
+- [GPY vs SBP](gpy-vs-sbp/README.md)
