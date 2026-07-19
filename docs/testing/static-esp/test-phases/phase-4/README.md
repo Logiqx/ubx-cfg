@@ -4,25 +4,40 @@
 
 Satellite limits @ 5 Hz
 
-
-
-### Conclusions
+2026-07-10 @ 2311
 
 
 
-### Configuration
+### Configurations
 
-|  ID  | Constellations             | Rate  | Max Sats |   ESP   |    Baud |
-| :--: | -------------------------- | :---: | :------: | :-----: | ------: |
-| SY1  | GPS + Galileo + BeiDou B1C | 5 Hz  |    24    | 80 MHz  |  38,400 |
-|  S3  | **GPS + Galileo**          | 5 Hz  |    24    | 80 MHz  |  38,400 |
-|  D1  | GPS + Galileo + BeiDou B1C | 5 Hz  |    28    | 80 MHz  | 115,200 |
-|  D2  | GPS + Galileo + BeiDou B1C | 5 Hz  |    28    | 80 MHz  | 115,200 |
-|  D3  | GPS + Galileo + BeiDou B1C | 5 Hz  |    32    | 80 MHz  | 115,200 |
-|  D5  | GPS + Galileo + BeiDou B1C | 5 Hz  |    32    | 80 MHz  | 115,200 |
-| SY2  | GPS + Galileo + BeiDou B1C | 10 Hz |    32    | 160 MHz |  38,400 |
+The following device configurations were tested.
+
+|  ID  | Constellations             | Rate  | Max Sats |   ESP   | Observed time distribution (ms)                      | Drops? |
+| :--: | -------------------------- | :---: | :------: | :-----: | :--------------------------------------------------- | :----: |
+|  S3  | **GPS + Galileo**          | 5 Hz  |    24    | 80 MHz  | 199: 2, 200: 94680, 201: 2                           |   -    |
+|  D1  | GPS + Galileo + BeiDou B1C | 5 Hz  |    28    | 80 MHz  | 199: 13, 200: 183228, 201: 13, 400: 6                |   Y    |
+|  D2  | GPS + Galileo + BeiDou B1C | 5 Hz  |    28    | 80 MHz  | 199: 5, 200: 183224, 201: 5, 400: 3                  |   Y    |
+|  D3  | GPS + Galileo + BeiDou B1C | 5 Hz  |    32    | 80 MHz  | 199: 18, 200: 183737, 201: 18, 400: 5                |   Y    |
+|  D5  | GPS + Galileo + BeiDou B1C | 5 Hz  |    32    | 80 MHz  | 199: 13, 200: 183253, 201: 13, 400: 8                |   Y    |
+| SY2  | GPS + Galileo + BeiDou B1C | 10 Hz |    32    | 160 MHz | 99: 18, 100: 363251, 101: 38, **199: 20, 200: 2098** |   Y    |
 
 S3 was intended to be GPS + Galileo + BeiDou B1C, but somehow reset itself to GPS + Galileo.
+
+
+
+### Statistics
+
+The following statistics were produced by a Python script, although it needed to use an SBP file instead of GPY.
+
+| File                 | Configuration                      | Mean  | Median | Stddev |
+| -------------------- | -------------------------------------------- | :---: | :----: | :----: |
+| D2\_\_2607112346.sbp  | GPS + Galileo + BeiDou, 28 sats @ 5 Hz   | 0.021 | 0.019      | 0.014              |
+| D1\_2607112346.sbp   | GPS + Galileo + BeiDou, 28 sats @ 5 Hz   | 0.021 | 0.019      | 0.014              |
+| D5\_2607112346.sbp   | GPS + Galileo + BeiDou, 32 sats @ 5 Hz   | 0.023 | 0.019      | 0.015              |
+| D3\_\_2607112345.sbp  | GPS + Galileo + BeiDou, 32 sats @ 5 Hz   | 0.024 | 0.019      | 0.015              |
+| SY1\_\_2607112345.sbp | GPS + Galileo + BeiDou, 24 sats @ 5 Hz  | 0.025 | 0.019      | 0.015              |
+| S3\_\_2607120443.sbp  | **GPS + Galileo, 24 sats @ 5 Hz**        | 0.026 | 0.019      | 0.016              |
+| SY2\_2607112345.sbp  | GPS + Galileo + BeiDou, 32 sats @ 10 Hz | 0.045 | 0.039      | 0.025              |
 
 
 
