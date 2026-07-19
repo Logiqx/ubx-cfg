@@ -28,7 +28,17 @@ S3 was intended to be GPS + Galileo + BeiDou B1C, but somehow reset itself to GP
 
 ### Charts
 
-![phase-4-sog](img\phase-4-sog.png)
+BLAH
+
+![sog-mean.png](img/sog-mean.png)
+
+BLAH
+
+![sog-median.png](img/sog-median.png)
+
+BLAH
+
+![sog-stddev.png](img/sog-stddev.png)
 
 
 

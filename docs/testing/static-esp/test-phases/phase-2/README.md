@@ -28,7 +28,21 @@ S3 was intended to be GPS + Galileo + BeiDou B1C @ 10 Hz, but somehow reset itse
 
 ### Charts
 
-![phase-2-sog](img/phase-2-sog.png)
+BLAH
+
+![sog-mean-1.png](img/sog-mean-1.png)
+
+BLAH
+
+![sog-mean-2.png](img/sog-mean-2.png)
+
+BLAH
+
+![sog-median.png](img/sog-median.png)
+
+BLAH
+
+![sog-stddev.png](img/sog-stddev.png)
 
 
 
