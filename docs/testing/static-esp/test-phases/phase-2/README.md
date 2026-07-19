@@ -29,6 +29,24 @@ Notes:
 
 
 
+### Charts
+
+![D1_2607091307](png/D1_2607091307.png)
+
+![D2__2607091307](png/D2__2607091307.png)
+
+![D3__2607091314](png/D3__2607091314.png)
+
+![D5_2607091307](png/D5_2607091307.png)
+
+![S3__2607091314](png/S3__2607091314.png)
+
+![SY1__2607091314](png/SY1__2607091314.png)
+
+![SY2_2607091314](png/SY2_2607091314.png)
+
+
+
 ### Statistics
 
 The following statistics were produced by a Python script, although it needed to use an SBP file instead of GPY.
@@ -42,10 +60,6 @@ The following statistics were produced by a Python script, although it needed to
 | D3\_\_2607091314.sbp  | GPS + Galileo @ 15 Hz            | 0.054 | 0.058      | 0.030              |
 | D1\_2607091307.sbp   | GPS + Galileo + GLONASS @ 15 Hz  | 0.054 | 0.058      | 0.029              |
 | D2\_\_2607091307.sbp  | GPS + Galileo @ 20 Hz            | 0.058 | 0.058      | 0.031              |
-
-
-
-### Charts
 
 BLAH
 
