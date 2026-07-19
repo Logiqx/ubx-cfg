@@ -31,17 +31,14 @@ Notes:
 
 ### Charts
 
-![D1_2607130203](png/D1_2607130203.png)
+The Python charts are best viewed in new tabs... hold the ctrl key when left-clicking the links.
 
-![D2__2607130201](png/D2__2607130201.png)
-
-![D3__2607130201](png/D3__2607130201.png)
-
-![D5_2607130202](png/D5_2607130202.png)
-
-![SY1__2607130200](png/SY1__2607130200.png)
-
-![SY2_2607130203](png/SY2_2607130203.png)
+- [D1\_2607130203](png/D1_2607130203.png)
+- [D2\_\_2607130201](png/D2__2607130201.png)
+- [D3\_\_2607130201](png/D3__2607130201.png)
+- [D5\_2607130202](png/D5_2607130202.png)
+- [SY1\_\_2607130200](png/SY1__2607130200.png)
+- [SY2\_2607130203](png/SY2_2607130203.png)
 
 
 

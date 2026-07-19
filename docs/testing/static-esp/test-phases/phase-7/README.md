@@ -31,19 +31,15 @@ Notes:
 
 ### Charts
 
-![D1_2607140032](png/D1_2607140032.png)
+The Python charts are best viewed in new tabs... hold the ctrl key when left-clicking the links.
 
-![D2__2607140033](png/D2__2607140033.png)
-
-![D3__2607140033](png/D3__2607140033.png)
-
-![D5_2607140031](png/D5_2607140031.png)
-
-![SY1__2607140034](png/SY1__2607140034.png)
-
-![SY2_2607140033](png/SY2_2607140033.png)
-
-![ubxGPS_2607140032](png/ubxGPS_2607140032.png)
+- [D1\_2607140032](png/D1_2607140032.png)
+- [D2\_\_2607140033](png/D2__2607140033.png)
+- [D3\_\_2607140033](png/D3__2607140033.png)
+- [D5\_2607140031](png/D5_2607140031.png)
+- [SY1\_2607140034](png/SY1__2607140034.png)
+- [SY2\_2607140033](png/SY2_2607140033.png)
+- [ubxGPS\_2607140032](png/ubxGPS_2607140032.png)
 
 
 
