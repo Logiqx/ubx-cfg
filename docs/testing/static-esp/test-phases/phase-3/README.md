@@ -12,17 +12,20 @@ Satellite limits @ 15 Hz
 
 The following device configurations were tested.
 
-|  ID  | Constellations             | Rate  | Max Sats |   ESP   | Observed time distribution (ms)                          | Drops? |
-| :--: | -------------------------- | :---: | :------: | :-----: | :------------------------------------------------------- | :----: |
-|  D3  | GPS + Galileo + GLONASS    | 15 Hz |    28    | 240 MHz | 65: 1, 66: 2844, 67: 623883, 68: 2855, 133: 9            |   Y    |
-|  D5  | GPS + Galileo + BeiDou B1C | 15 Hz |    28    | 240 MHz | 66: 2838, 67: 623969, 68: 2842, 133: 4                   |   Y    |
-|  D1  | GPS + Galileo + GLONASS    | 15 Hz |    24    | 240 MHz | 65: 1, 66: 2845, 67: 623816, 68: 2854, 132: 1, 133: 5    |   Y    |
-|  D2  | GPS + Galileo + BeiDou B1C | 15 Hz |    24    | 240 MHz | 66: 2288, 67: 502609, 68: 2290, 133: 2                   |   Y    |
-| SY1  | GPS + Galileo + GLONASS    | 15 Hz |    20    | 240 MHz | 66: 2806, 67: 623919, 68: 2806                           |   -    |
-|  S3  | **GPS + Galileo**          | 15 Hz |    20    | 240 MHz | 66: 2835, 67: 623912, 68: 2835                           |   -    |
-| SY2  | GPS + Galileo + GLONASS    | 10 Hz |    32    | 160 MHz | 99: 21, 100: 417730, 101: 43, 199: 23, 200: 1987, 201: 1 |   Y    |
+|   ID    | Constellations             | Rate  | Max Sats |   ESP   | Observed time distribution (ms)                              | Drops? |
+| :-----: | -------------------------- | :---: | :------: | :-----: | :----------------------------------------------------------- | :----: |
+|   D3    | GPS + Galileo + GLONASS    | 15 Hz |    28    | 240 MHz | 65: 1, 66: 2844, 67: 623883, 68: 2855, 133: 9                |   Y    |
+|   D5    | GPS + Galileo + BeiDou B1C | 15 Hz |    28    | 240 MHz | 66: 2838, 67: 623969, 68: 2842, 133: 4                       |   Y    |
+|   D1    | GPS + Galileo + GLONASS    | 15 Hz |    24    | 240 MHz | 65: 1, 66: 2845, 67: 623816, 68: 2854, 132: 1, 133: 5        |   Y    |
+|   D2    | GPS + Galileo + BeiDou B1C | 15 Hz |    24    | 240 MHz | 66: 2288, 67: 502609, 68: 2290, 133: 2                       |   Y    |
+|   SY1   | GPS + Galileo + GLONASS    | 15 Hz |    20    | 240 MHz | 66: 2806, 67: 623919, 68: 2806                               |   -    |
+| **S3**  | **GPS + Galileo**          | 15 Hz |    20    | 240 MHz | 66: 2835, 67: 623912, 68: 2835                               |   -    |
+| **SY2** | GPS + Galileo + GLONASS    | 10 Hz |    32    | 160 MHz | 99: 21, 100: 417730, 101: 43, **199: 23, 200: 1987, 201: 1** |   Y    |
 
-S3 was intended to be GPS + Galileo + BeiDou B1C, but somehow reset itself to GPS + Galileo.
+Notes:
+
+- S3 was intended to be GPS + Galileo + BeiDou B1C, but it somehow switched to GPS + Galileo
+- Many of the devices dropped some frames, but SY2 dropped a LOT of frames
 
 
 

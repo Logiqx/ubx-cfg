@@ -12,20 +12,20 @@ Satellite limits @ 10 Hz
 
 The following device configurations were tested.
 
-|  ID  | Constellations             | Rate  | Max Sats |   ESP   | Observed time distribution (ms)               | Drops? |
-| :--: | -------------------------- | :---: | :------: | :-----: | :-------------------------------------------- | :----: |
-| SY1  | GPS + Galileo + BeiDou B1C | 10 Hz |    24    | 160 MHz | 99: 1, 100: 190916, 101: 1                    |   -    |
-|  S3  | **GPS + Galileo**          | 10 Hz |    24    | 160 MHz | 99: 6, 100: 191198, 101: 6                    |   -    |
-|  D1  | GPS + Galileo + BeiDou B1C | 10 Hz |    28    | 160 MHz | 99: 8, 100: 191205, 101: 8                    |   -    |
-|  D2  | GPS + Galileo + BeiDou B1C | 10 Hz |    24    | 160 MHz | 99: 5, 100: 191132, 101: 5                    |   -    |
-|  D3  | GPS + Galileo + BeiDou B1C | 10 Hz |    28    | 160 MHz | 99: 11, 100: 191851, 101: 11                  |   -    |
-|  D5  | GPS + Galileo + BeiDou B1C | 10 Hz |    20    | 160 MHz | 99: 8, 100: 191009, 101: 8                    |   -    |
-| SY2  | GPS + Galileo + BeiDou B1C | 10 Hz |    20    | 160 MHz | 99: 19, 100: 190978, 101: 22, 199: 3, 200: 32 |   Y    |
+|   ID    | Constellations             | Rate  | Max Sats |   ESP   | Observed time distribution (ms)                   | Drops? |
+| :-----: | -------------------------- | :---: | :------: | :-----: | :------------------------------------------------ | :----: |
+|   SY1   | GPS + Galileo + BeiDou B1C | 10 Hz |    24    | 160 MHz | 99: 1, 100: 190916, 101: 1                        |   -    |
+| **S3**  | **GPS + Galileo**          | 10 Hz |    24    | 160 MHz | 99: 6, 100: 191198, 101: 6                        |   -    |
+|   D1    | GPS + Galileo + BeiDou B1C | 10 Hz |    28    | 160 MHz | 99: 8, 100: 191205, 101: 8                        |   -    |
+|   D2    | GPS + Galileo + BeiDou B1C | 10 Hz |    24    | 160 MHz | 99: 5, 100: 191132, 101: 5                        |   -    |
+|   D3    | GPS + Galileo + BeiDou B1C | 10 Hz |    28    | 160 MHz | 99: 11, 100: 191851, 101: 11                      |   -    |
+|   D5    | GPS + Galileo + BeiDou B1C | 10 Hz |    20    | 160 MHz | 99: 8, 100: 191009, 101: 8                        |   -    |
+| **SY2** | GPS + Galileo + BeiDou B1C | 10 Hz |    20    | 160 MHz | 99: 19, 100: 190978, 101: 22, **199: 3, 200: 32** |   Y    |
 
 Notes:
 
-- S3 was intended to be GPS + Galileo + BeiDou B1C, but somehow reset itself to GPS + Galileo
-- SY2 is problematic
+- S3 was intended to be GPS + Galileo + BeiDou B1C, but somehow switched to GPS + Galileo
+- SY2 was the only device that dropped any frames. The Python charts show a clear issue in sAcc, only affecting SY2.
 
 
 

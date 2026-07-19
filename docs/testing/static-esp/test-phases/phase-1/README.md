@@ -22,6 +22,10 @@ The following device configurations were tested.
 |  D2  | GPS + Galileo           | 20 Hz |    32    | 240 MHz | 50: 673429, 51: 4, 99: 4              |   Y    |
 |  S3  | GPS + Galileo + GLONASS | 10 Hz |    32    | 160 MHz | 99: 4, 100: 336891, 101: 4            |        |
 
+Notes:
+
+- The 20 Hz devices (D5 and D2) both dropped frames during this test, but not in huge numbers
+
 
 
 ### Statistics

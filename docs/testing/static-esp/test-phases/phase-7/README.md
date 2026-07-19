@@ -12,19 +12,20 @@ Optimal 5 Hz vs 10 Hz
 
 The following device configurations were tested.
 
-|  ID  | Constellations              | Rate  | Max Sats |    ESP     | Observed time distribution (ms)     | Drops? |
-| :--: | --------------------------- | :---: | :------: | :--------: | :---------------------------------- | :----: |
-|  D1  | GPS + Galileo + BeiDou B1C  | 10 Hz |    28    |  160 MHz   | 99: 11, 100: 338258, 101: 11        |   -    |
-|  D2  | GPS + Galileo + BeiDou B1C  | 10 Hz |    28    |  160 MHz   | 99: 5, 100: 352086, 101: 5          |   -    |
-|  D3  | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 18, 200: 176100, 201: 18       |   -    |
-|  D5  | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 12, 200: 176461, 201: 12       |   -    |
-|  S3  | **GPS + Galileo + GLONASS** | 5 Hz  |    32    | **80 Mhz** | 199: 4, 200: 176099, 201: 4, 400: 8 |   Y    |
-| SY1  | GPS + Galileo + BeiDou B1C  | 10 Hz |    28    |  160 MHz   | 99: 3, 100: 351202, 101: 3          |   -    |
-| SY2  | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 36, 200: 175999, 201: 36       |   -    |
+|   ID   | Constellations              | Rate  | Max Sats |    ESP     | Observed time distribution (ms)         | Drops? |
+| :----: | --------------------------- | :---: | :------: | :--------: | :-------------------------------------- | :----: |
+|   D1   | GPS + Galileo + BeiDou B1C  | 10 Hz |    28    |  160 MHz   | 99: 11, 100: 338258, 101: 11            |   -    |
+|   D2   | GPS + Galileo + BeiDou B1C  | 10 Hz |    28    |  160 MHz   | 99: 5, 100: 352086, 101: 5              |   -    |
+|   D3   | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 18, 200: 176100, 201: 18           |   -    |
+|   D5   | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 12, 200: 176461, 201: 12           |   -    |
+| **S3** | **GPS + Galileo + GLONASS** | 5 Hz  |    32    | **80 Mhz** | 199: 4, 200: 176099, **201: 4, 400: 8** |   Y    |
+|  SY1   | GPS + Galileo + BeiDou B1C  | 10 Hz |    28    |  160 MHz   | 99: 3, 100: 351202, 101: 3              |   -    |
+|  SY2   | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 36, 200: 175999, 201: 36           |   -    |
 
 Notes:
 
 - S3 was intended to be GPS + Galileo + BeiDou B1C @ 160 MHz, but somehow reset itself to GPS + Galileo + GLONASS @ 80 MHz
+- S3 was the only device to drop any frames, presumably because the ESP32 was running @ 80 MHz
 
 
 

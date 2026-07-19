@@ -12,17 +12,20 @@ Satellite limits @ 5 Hz
 
 The following device configurations were tested.
 
-|  ID  | Constellations             | Rate | Max Sats |   ESP   | Observed time distribution (ms) | Drops? |
-| :--: | -------------------------- | :--: | :------: | :-----: | :------------------------------ | :----: |
-| SY1  | GPS + Galileo + BeiDou B1C | 5 Hz |    24    | 160 MHz | 199: 3, 200: 157518, 201: 3     |   -    |
-|  S3  | GPS + Galileo + BeiDou B1C | 5 Hz |    32    | 160 MHz | -                               |   -    |
-|  D1  | GPS + Galileo + BeiDou B1C | 5 Hz |    28    | 160 MHz | 199: 10, 200: 156753, 201: 10   |   -    |
-|  D2  | GPS + Galileo + BeiDou B1C | 5 Hz |    24    | 160 MHz | 199: 4, 200: 157173, 201: 4     |   -    |
-|  D3  | GPS + Galileo + BeiDou B1C | 5 Hz |    28    | 160 MHz | 199: 16, 200: 157351, 201: 16   |   -    |
-|  D5  | GPS + Galileo + BeiDou B1C | 5 Hz |    32    | 160 MHz | 199: 10, 200: 156891, 201: 10   |   -    |
-| SY2  | GPS + Galileo + BeiDou B1C | 5 Hz |    20    | 160 MHz | 199: 32, 200: 156725, 201: 32   |   -    |
+|   ID   | Constellations             | Rate | Max Sats |   ESP   | Observed time distribution (ms) | Drops? |
+| :----: | -------------------------- | :--: | :------: | :-----: | :------------------------------ | :----: |
+|  SY1   | GPS + Galileo + BeiDou B1C | 5 Hz |    24    | 160 MHz | 199: 3, 200: 157518, 201: 3     |   -    |
+| **S3** | GPS + Galileo + BeiDou B1C | 5 Hz |    32    | 160 MHz | -                               |   -    |
+|   D1   | GPS + Galileo + BeiDou B1C | 5 Hz |    28    | 160 MHz | 199: 10, 200: 156753, 201: 10   |   -    |
+|   D2   | GPS + Galileo + BeiDou B1C | 5 Hz |    24    | 160 MHz | 199: 4, 200: 157173, 201: 4     |   -    |
+|   D3   | GPS + Galileo + BeiDou B1C | 5 Hz |    28    | 160 MHz | 199: 16, 200: 157351, 201: 16   |   -    |
+|   D5   | GPS + Galileo + BeiDou B1C | 5 Hz |    32    | 160 MHz | 199: 10, 200: 156891, 201: 10   |   -    |
+|  SY2   | GPS + Galileo + BeiDou B1C | 5 Hz |    20    | 160 MHz | 199: 32, 200: 156725, 201: 32   |   -    |
 
-S3 did not record any data during this test, presumably because the "start logging speed" was 1 knot.
+Notes:
+
+- S3 did not record any data during this test, presumably because the "start logging speed" was 1 knot
+- None of the devices dropped frames, presumably because 5 Hz + 160 MHz is a good combination
 
 
 
