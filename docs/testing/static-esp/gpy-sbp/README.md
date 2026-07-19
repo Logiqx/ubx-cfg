@@ -1,11 +1,11 @@
 ## Static ESP Testing - GPY vs SBP
 
 - Approximately 20 bytes per record for GPY, instead of 32 for SBP
-- Increased precision
+- Increased precision of GPY
   - SOG and sAcc are 3 decimals, instead of 2 decimals in SBP
     - sAcc is not limited to 2.55 m/s (4.96 kt) like SBP
-  - HDOP is 3 decimals, instead of increments of 0.2 in SBP
-- Missing SBP fields are no biggie
+  - HDOP is 2 decimals, instead of increments of 0.2 in SBP
+- SBP fields that are not in GPY are no biggie
   - Altitude (MSL) is not present in GPY, but increased precision is preferable
   - Sat ID list (flags indicating the 32 GPS satellites in use) is no great loss
   - Climb rate (i.e. vertical speed) + vsdop (vertical speed DOP) is no great loss
@@ -15,11 +15,9 @@
   - Log Rate : MAX CHAR 3, 0..255 in seconds
   - Firmware Version  :  MAX CHAR (14) , V1.62(B0820T)
 - GPY header
-  - uint8_t Flags;
-  - uint16_t Length=72;    //length = 6 + 4 * STRING_IO_LENGTH + 2 = 72
   - uint16_t DeviceType=2;//ublox = 2
   - char deviceDescription[16]="ESP-GPS";
   - char deviceName[16]= "Boom";
   - char serialNumber[16]="macAddr";
   - char firmwareVersion[16]="SW_version";
-  - uint16_t Checksum;
+
