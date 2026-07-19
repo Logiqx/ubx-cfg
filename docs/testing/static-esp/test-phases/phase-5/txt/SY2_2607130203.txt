@@ -1,0 +1,77 @@
+T5 MAC adress: A0DD6CB29248 
+V 6.05beta
+SD_MMC Read speed= 803 ms/MB Write speed= 3911 ms/MB s
+First fix : 62 s
+Total time : 31365 s
+Total distance : 334 m
+Sample rate : 5 Hz
+CPU freq logging : 160 MHz
+Speed calibration: 1.943800 
+Lipo calibration: 1.710 
+Timezone : 1.000000 h
+tz offset (sec) : -3600 
+CET-1CEST,M3.5.0,M10.5.0/3
+Dynamic model: Portable 
+Ublox GNSS-enabled : 13
+GNSS = GPS + GALILEO + BEIDOU 
+Ublox SW-version : ROM SPG 5.10 (7b202e) 
+Ublox HW-version : 000A0000 
+Ublox M10 ID = ccbae90f3754
+Ublox M10 38400bd 
+0.035 knots avg 5_best_runs
+0.056 knots 2:3:6 Run: 0 S2
+0.000 knots 0:0:0 Run: 0 S2
+0.000 knots 0:0:0 Run: 0 S2
+0.000 knots 0:0:0 Run: 0 S2
+0.000 knots 0:0:0 Run: 0 S2
+0.012 knots avg 5_best_runs
+0.000 knots 0:0:0 Run: 0 S10
+0.000 knots 0:0:0 Run: 0 S10
+0.000 knots 0:0:0 Run: 0 S10
+0.000 knots 0:0:0 Run: 0 S10
+0.000 knots 0:0:0 Run: 0 S10
+0.000 knots avg 5_best_runs
+0.000 knots 0:0:0 Run: 0 S1800
+0.000 knots 0:0:0 Run: 0 S1800
+0.000 knots 0:0:0 Run: 0 S1800
+0.000 knots 0:0:0 Run: 0 S1800
+0.000 knots 0:0:0 Run: 0 S1800
+0.000 knots avg 5_best_runs
+0.000 knots 0:0:0 Run: 0 S3600
+0.000 knots 0:0:0 Run: 0 S3600
+0.000 knots 0:0:0 Run: 0 S3600
+0.000 knots 0:0:0 Run: 0 S3600
+0.000 knots 0:0:0 Run: 0 S3600
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M100
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M100
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M100
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M100
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M100
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M500
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M500
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M500
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M500
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M500
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M1852
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M1852
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M1852
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M1852
+0.000 knots 0:0:0 Distance: 0.00 Msg_nr: 0 Samples: 0 Run: 0 M1852
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa250
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa250
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa250
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa250
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa250
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa500
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa500
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa500
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa500
+0.000 knots 0.00 m 0.0 m 0:0:0 Run: 0 Msg_nr: 0 Alfa500
+Track Length 0.00 , Start 0.000000 lat 0.000000 lon, Finish 0.000000 lat 0.000000 lon 
+Track 0.000000 Doppler 0.000000 Time 0:0 
+Track 0.000000 Doppler 0.000000 Time 0:0 
+Track 0.000000 Doppler 0.000000 Time 0:0 
+Track 0.000000 Doppler 0.000000 Time 0:0 
+Track 0.000000 Doppler 0.000000 Time 0:0 
+Track 0.000000 Doppler 0.000000 Time 0:0 
+<html><hr><h2>GPS Team Challenge Category Results:</h2><h3>Date: 2026-7-13</h3><table cellpadding="10" style="text-align: right;"><tr style="text-align: center;"><th>Category</th><th>Speed (kn)</th><th>Speed (km/h)</th></tr><tr><td>2 sec</td><td><b>0.056  </b></td><td>0.121</td></tr><tr><td>5*10 sec</td><td><b>0.012  </b></td><td>0.012</td></tr><tr><td>1 hour</td><td><b>0.025  </b></td><td>0.025</td></tr><tr><td>alfa500</td><td><b>0.000  </b></td><td>0.000</td></tr><tr><td>1852 m</td><td><b>0.000  </b></td><td>0.000</td></tr><tr><td>Distance</td><td><b>0.335  </b></td><td>km</td></tr><form method="POST" action="https://gpsteamchallenge.com.au/sailor_session/post"><input type="hidden" name="load_from_post" value="true"><input type="hidden" name="date" value="2026-07-13"><input type="hidden" name="2_sec_peak" value="0.056"><input type="hidden" name="2_sec_peak_calc_method" value="D"><input type="hidden" name="5x10" value="0.012"><input type="hidden" name="5x10_calc_method" value="D"><input type="hidden" name="1_hour" value="0.025"><input type="hidden" name="1_hour_calc_method" value="D"><input type="hidden" name="alpha_500" value="0.000"><input type="hidden" name="alpha_500_calc_method" value="D"><input type="hidden" name="nautical_mile" value="0.000"><input type="hidden" name="nautical_mile_calc_method" value="D"><input type="hidden" name="distance" value="0.335"><input type="hidden" name="distane_calc_method" value="D"><input type="submit" name="Submit" value="Submit this session to the GPS Team Challenge website"></form></html>
