@@ -19,6 +19,11 @@ ESP GPS suggestions
   - The comment "For 5 Hz sample_rate, CPU freq of 80 MHz is sufficient" needs to be revised
   - "if(reset_boot==true) {setCpuFrequencyMhz(80);}"  needs to be revised
 
+- Elevation mask
+  
+- Power modes - "full power" vs "balanced" (M10 default)
+  - See [Signal quality](../../../performance/signal-quality.md) for more details
+  
 - Simplified config
   - Provide a simple 5 Hz / 10 Hz option and hide "expert" GNSS settings
   - "Expert" GNSS settings include constellations, log rate, ESP clock, max sats, and elevation mask

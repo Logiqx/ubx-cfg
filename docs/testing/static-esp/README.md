@@ -1,9 +1,5 @@
 ## Static ESP Testing
 
-**\* THIS PAGE IS WORK IN PROGRESS AND NOT FOR SHARING OR REVIEW \***
-
-
-
 ### Overview
 
 The [ESP GPS](https://github.com/RP6conrad/ESP-GPS-Logger) provides a number of configuration options which directly impact GNSS performance:
@@ -11,7 +7,7 @@ The [ESP GPS](https://github.com/RP6conrad/ESP-GPS-Logger) provides a number of 
 - GNSS - GPS, GLONASS, Galileo, BeiDou
 - Max satellites
 - Sample rate
-- CPU frequency (ESP32)
+- CPU frequency of the ESP32
 
 The objective of this study was to identify the optimal ESP GPS configuration(s), and provide clarity to the ESP GPS community.
 
@@ -29,11 +25,11 @@ This study identified optimal settings for all ESP GPS users, including derivati
 - CPU Freq = 160 MHz
 - Logging = GPY + TXT
 
-It was slightly surprising to discover that 10 Hz is NOT optimal, but it actually degrades the accuracy of the device. Should anyone be interested in how all of these settings were identified, further details can be found throughout these pages.
+It was slightly surprising to discover that 10 Hz is NOT optimal, but it actually degrades the accuracy of the data. Should anyone be interested in how all of these settings were determined, full details can be found throughout these pages.
 
-It is also highly recommended that ESP GPS devices are switched on some time before being used on the water. It can sometimes take between 15 and 30 minutes for an ESP GPS to establish the best possible fix, and utilise the maximum number of available satellites.
+It is highly recommended that ESP GPS devices are switched on some time before being used on the water. It can sometimes take between 15 and 30 minutes for an ESP GPS to establish the best possible fix, and utilise the maximum number of available satellites.
 
-The majority of ESP GPS users do not need to know how the optimal settings were identified. The majority of ESP GPS users can simply use the optimal settings as recommended, but anyone wanting further details can read the remainder of this content.
+The majority of people do not need to know how the optimal settings were determined for the ESP GPS. Those people can simply use the settings that have been provided on this page (see above), but anyone interested in further details can read the remaining content.
 
 
 
@@ -41,13 +37,13 @@ The majority of ESP GPS users do not need to know how the optimal settings were 
 
 The SYRAC GPS is based on the ESP GPS, and 7 identical units were made available for static testing. The static testing was conducted from a rooftop in Tarifa (Spain) and are precursors to any kinematic testing on the water.
 
-Static testing is extremely effective because in reality the devices have a constant velocity, exactly matching the rotation of the earth. The satellites are in [Medium Earth Orbit](https://en.wikipedia.org/wiki/Medium_Earth_orbit) (MEO) and the earth is rotating, but Speed Over Ground ([SOG](https://en.wikipedia.org/wiki/Ground_speed)) is zero within the [ECEF coordinate system](https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system).
+Static testing is extremely effective because in reality the devices have a constant velocity, exactly matching the rotation of the earth. The satellites are in [Medium Earth Orbit](https://en.wikipedia.org/wiki/Medium_Earth_orbit) (MEO) and the earth is rotating, but [Speed Over Ground](https://en.wikipedia.org/wiki/Ground_speed) (SOG) is zero within the [ECEF coordinate system](https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system).
 
 Previous tests for devices such as the Locosys GT-11, GT-31, GW-60, Motion GPS, and Garmin watches have all shown that performance during static testing is highly indicative of kinematic performance. The best devices during static testing will typically perform best on the water.
 
-Each of the tests lasted for a period of at least 6 hours, which is roughly half of the time time that it takes for a full orbit of the various GNSS constellations. Comparisons are only made between devices during the same test period, never across different test periods.
+Each of the tests lasted for 6 to 12 hours, so at least half of the time time that it takes for a full orbit for each of the various GNSS constellations. Comparisons are only made between devices during the same test period, never across different test periods.
 
-The primary focus of this investigation was the accuracy of Speed Over Ground (SOG). The first 30 minutes is always discarded to allow for cold starts, and so is the last 5 minutes to allow for any disruption during shutdown. The statistics were produced using Python code.
+The primary focus of this investigation was the accuracy of Speed Over Ground (SOG). The first 30 minutes is always discarded to allow for cold starts, and so is the last 5 minutes to allow for any disruption during shutdown. Detailed charts and statistics were produced using Python code.
 
 
 
@@ -77,7 +73,7 @@ Latitude is potentially relevant because GLONASS satellites use an orbital incli
 
 Introducing a third GNSS demonstrated how GPS + Galileo + BeiDou B1C is better than GPS + Galileo + GLONASS. The use of GLONASS as a third system sometimes degraded the overall solution quality, but this may be different at higher latitudes.
 
-The earliest tests focused on sample rates between 5 Hz and 20 Hz, but the final tests focused on 5 Hz and 10 Hz. Just like the Motion GPS it was determined that sample rates of 10 Hz and higher actually degrade the solution quality, offering no obvious benefit over 5 Hz.
+The earliest tests focused on sample rates between 5 Hz and 20 Hz, but the final tests focused on 5 Hz and 10 Hz. Just like the Motion GPS it was determined that sample rates of 10 Hz and higher actually degrade the solution quality, offering no discernible benefits over 5 Hz.
 
 
 
@@ -95,6 +91,7 @@ To reduce the length of this page, further details are provided on separate page
 #### Next Steps
 
 - [Elevation mask](elevation-mask/README.md)
+- [Power mode](power-mode/README.md)
 - [ESP enhancements](esp-enhancements/README.md)
 - [Kinematic testing](kinematic-testing/README.md)
 

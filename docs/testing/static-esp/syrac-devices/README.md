@@ -3,7 +3,7 @@
 - Note about baud rates
   - Some devices are 38,400 but some are 115,200
 
-
+SY1 and SY2 not as good as D devices when configured for 10 Hz upwards
 
 S3 has a little problem... It had a Lot of excess sealant so I glued part of the screen to the acrilic. This become in losing the screen in one test because of the intense Heat that probably expanded the resin and broke the screen. Anyway still works fine, i'm surprised I messed Up again, i have to Connect in a different way
 
