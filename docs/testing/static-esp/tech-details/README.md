@@ -2,15 +2,21 @@
 
 ### Procedure
 
-After each phase the data was consumed using the following process:
+After each phase the data was processed as follows:
 
-1. Download GPY + TXT files
-2. Review TXT files using shell commands, and update the [Google Sheet](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing)
-3. Load GPY files into [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader), record time intervals in the Google Sheet, and export as SBP
-4. Convert SBP files to CSV using [batch_convert.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/batch_convert.ipynb)
-5. Generate + review charts using [static_test_charts.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_charts.ipynb)
-6. Generate + review stats using [static_test_stats.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_stats.ipynb)
-7. Copy stats into Excel and produce summary charts
+1. Download GPY + TXT from the SYRAC
+2. Review TXT using shell commands (see below), and copy into the [Google Sheet](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing)
+3. Load GPY into [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader), record the time intervals, and export as SBP
+4. Generate charts from the SBP using [static_test_charts.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_charts.ipynb)
+6. Generate statistics from the SBP using [static_test_stats.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_stats.ipynb)
+7. Copy statistics into Excel, and produce simple summary charts
+
+Notes:
+
+- SBP files were used because a GPY loader was not immediately available
+  - Previous studies used UBX or OAO, so this was the first such test using GPY files
+- The SBP format is not ideal because of the [quantization](https://en.wikipedia.org/wiki/Quantization_(signal_processing)) errors, but deemed adequate
+  - There is a desire to add a GPY loader to the Python libraries in the future
 
 
 
@@ -38,23 +44,21 @@ grep "Total distance" txt/* | sort
 
 Python code was used to generate charts and statistics.
 
-- [batch_convert.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/batch_convert.ipynb)
-- [static_test_charts.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_charts.ipynb)
-- [static_test_stats.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_stats.ipynb)
+- [static_test_charts.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_charts.ipynb) - charts showing SOG, Sats, HDOP, and sAcc
+- [static_test_stats.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_stats.ipynb) - calculate mean, median, stddev, etc.
 
-The charts are relatively crude but provided a useful summary of each session. Possible improvements:
-
-- Standard y-axis
-- Summarise configurations in the titles (i.e. via lookup)
+The charts are relatively crude, but provide a useful summary of each SBP file.
 
 
 
 ### Data
 
-The following links will provide access to all of the outputs (e.g. statistics and charts), but not the raw data.
+The following links will provide access to all of the spreadsheets, but not the raw data.
 
-- [Google Sheets](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing)
-- [Google Drive](https://drive.google.com/drive/folders/1gRNQ0LvkSTy7sVIzL2fw2LlLyMm03tbF?usp=sharing)
+- [Google Sheet](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing) - summary statistics from TXT files and GPS Speedreader
+- [Excel Spreadsheet](https://drive.google.com/drive/folders/1gRNQ0LvkSTy7sVIzL2fw2LlLyMm03tbF?usp=sharing) - summary statistics from Python
+
+The pages describing all of the individual tests also have links to all of the charts and statistics.
 
 
 

@@ -37,9 +37,9 @@ The majority of people do not need to know how the optimal settings were determi
 
 The SYRAC GPS is based on the ESP GPS, and 7 identical units were made available for static testing. The static testing was conducted from a rooftop in Tarifa (Spain) and are precursors to any kinematic testing on the water.
 
-Static testing is extremely effective because in reality the devices have a constant velocity, exactly matching the rotation of the earth. The satellites are in [Medium Earth Orbit](https://en.wikipedia.org/wiki/Medium_Earth_orbit) (MEO) and the earth is rotating, but [Speed Over Ground](https://en.wikipedia.org/wiki/Ground_speed) (SOG) is zero within the [ECEF coordinate system](https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system).
+Static testing is extremely effective because the GPS receivers essentially have a constant velocity, perfectly matching the rotation of the earth. The satellites are in [Medium Earth Orbit](https://en.wikipedia.org/wiki/Medium_Earth_orbit) (MEO) and the earth is rotating, but [Speed Over Ground](https://en.wikipedia.org/wiki/Ground_speed) (SOG) is zero within the [ECEF coordinate system](https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system).
 
-Previous tests for devices such as the Locosys GT-11, GT-31, GW-60, Motion GPS, and Garmin watches have all shown that performance during static testing is highly indicative of kinematic performance. The best devices during static testing will typically perform best on the water.
+Previous tests for devices such as the Locosys GT-11, GT-31, GW-60, Motion GPS, and Garmin watches have all shown that performance during static testing is highly indicative of kinematic performance. The devices that perform best during static testing also tend to perform best on the water.
 
 Each of the tests lasted for 6 to 12 hours, so at least half of the time time that it takes for a full orbit for each of the various GNSS constellations. Comparisons are only made between devices during the same test period, never across different test periods.
 
