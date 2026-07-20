@@ -62,26 +62,28 @@ The performances from the perspective of standard deviation were ordered in much
 
 - 28 satellites performed best @ 5 Hz
   
-  - The improvement over 24 and 32 is only very subtle
+  - The improvement over 24 and 32 is only minimal
 - SY1 and SY2 did not perform as well as the D devices
-  - This will be factored into phase 7
+  - This has also been considered during phase 7
 - 24 sats had vastly differing results for D2 and SY1
-  - D2 was good, SY1 was bad
+  - D2 was good, SY1 was not as good
 - 20 sats was worst, but that was SY2
-  - Will assign 20 Hz to D5 for phase 7
+  
+  - Will assign 20 sats to D5 during phase 7
 - There were no dropped frames from any devices
-  - 80 MHz is too low, but 160 MHz is fine
+  - 80 MHz was too low (phase 4), but 160 MHz is fine
 
   
 
 ### Conclusions
 
 - 28 satellites is best @ 5 Hz, but 24 and 32 are pretty close
-  - Yet to be seen whether this applies to 10 Hz
-- The ESP32 @ 80 MHz is too low for 5 Hz samples
-  - 160 MHz is enough to ensure robust logging
-- 5 Hz seems to be much better than 10 Hz
-  - These 5 Hz results are comparable to phase 4
+  - Yet to be seen whether this also applies to 10 Hz
+- The ESP32 @ 80 MHz is too slow for 5 Hz sample rate
+  - 160 MHz is required for contiguous logging @ 5 Hz
+- 5 Hz seems to be much more accurate than 10 Hz
+  - The phase 5 results are very similar to phase 4
 - D models perform noticeably better than the S models
   - Reviewed previous phases, and their conclusions
-
+- D models all have comparable performance
+  - D1 + D2 in phase 4, and D1 + D3 in phase 5

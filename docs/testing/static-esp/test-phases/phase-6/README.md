@@ -43,7 +43,7 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 | [SY1\_\_2607131350](png/SY1__2607131350.png) | GPS + Galileo + BeiDou, 24 sats @ 10 Hz | 0.049 | 0.039      | 0.027              |
 | [SY2\_2607131349.sbp](png/SY2_2607131349.png)  | GPS + Galileo + BeiDou, 20 sats @ 10 Hz | 0.050 | 0.039      | 0.027              |
 
-28 satellites (green) performed best, but it is also noticeable that SY1 and SY2 may not as good as the D devices.
+28 satellites (green) performed best, but it is also noticeable that SY devices may not be as good as D devices.
 
 ![sog-mean.png](img/sog-mean.png)
 
@@ -51,7 +51,7 @@ The medians are all identical, but this is perhaps due to SBP quantization error
 
 ![sog-median.png](img/sog-median.png)
 
-The performances from the perspective of standard deviation were ordered in much the same way as the mean values.
+The performances from the perspective of standard deviation were much the same as the mean values.
 
 ![sog-stddev.png](img/sog-stddev.png)
 
@@ -61,14 +61,14 @@ The performances from the perspective of standard deviation were ordered in much
 
 - S3 was intended to be GPS + Galileo + BeiDou B1C
   - Somehow it was switched to GPS + Galileo
-- 28 satellites (green) performed best @ 10 Hz
-  - The improvement over 20 and 24 is only very subtle
-- SY1 and SY2 did not perform as well as the D devices
-  - This will be factored into phase 7
+- 28 satellites performed best @ 10 Hz
+  - The improvement over 20 and 24 is quite small
+- SY devices did not perform as well as D devices
+  - This will be factored into the plans for phase 7
 - 24 sats had vastly differing results for D2 and SY1
-  - D2 was good, SY1 was bad
+  - D2 was good, SY1 was not so good
 - 20 sats was worst, but that was SY2
-  - Will assign 20 Hz to D5 for phase 7
+  - Will assign 20 sats to D5 for phase 7
 - SY2 dropped some frames, and saw quite a few "mini spikes"
   - Perhaps due to the M10 using "balanced" [power mode](../../../../performance/signal-quality.md)
 

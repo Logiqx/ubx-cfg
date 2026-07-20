@@ -2,9 +2,9 @@
 
 ### Overview
 
-The objective of phase 4 was to determine the effects of limiting the number of satellites @ 5 Hz. The SYRAC GPS devices were all intended to use GPS + Galileo + BeiDou B1C (no GLONASS), and various satellite limits - 20, 24, and 28.
+The objective of phase 4 was to determine the effects of limiting the number of satellites @ 5 Hz. The SYRAC GPS devices were all intended to use GPS + Galileo + BeiDou B1C (no GLONASS), and various satellite limits - 24, 28, and 32.
 
-The clock rate of the ESP32 was also set to 80 MHz to see whether it would be capable of sustaining 5 Hz samples, without dropping any frames. It was noticeable that almost all of the devices did drop frames, which influenced the plans for phase 5.
+The clock rate of the ESP32 was also set to 80 MHz to see whether it would be capable of the 5 Hz rate, without dropping any frames. It was noticeable that almost all of the devices dropped frames, which inspired the 160 MHz tests for phase 5.
 
 The tests were started on 2026-07-10 @ 2311 and the duration was over 10 hours. The results showed max sats = 28 to be optimal @ 5 Hz, and 5 Hz to be more accurate than 10 Hz. There was also a hint that D1 and D2 may have a slight performance advantage.
 
@@ -28,7 +28,7 @@ Notes:
 
 - S3 was intended to be GPS + Galileo + BeiDou B1C, but it somehow switched to GPS + Galileo
 - Devices using 3 systems @ 5 Hz + 80 MHz were all observed to drop frames, but SY2 dropped a LOT of frames
-- SY2 @ 10 Hz + 160 MHz dropped a LOT of frames, and problems with speed and sAcc were evident in the Python charts
+- SY2 @ 10 Hz + 160 MHz dropped a LOT of frames, and problems with speed and sAcc were evident in the data
 
 
 
@@ -68,8 +68,8 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
   - Perhaps due to the M10 using "balanced" [power mode](../../../../performance/signal-quality.md)
 - 28 satellites performed best @ 5 Hz
   - 32 sats was next best, and 24 sats slightly worse than 32
-- D1 and D2 were also the two that performed best in test 3
-  - Test 3 showed 24 sats was best, but that was also D1 and D2
+- D1 and D2 produced the most accurate results during phase 3
+  - D1 and D2 produced the most accurate results during phase 2
 
 
 
@@ -78,8 +78,8 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 - Max of 28 sats provides the best accuracy, but drops frames @ 80 MHz
   - Order of accuracy @ 5 Hz is 28 sats, 32 sats, 24 sats
 - The cause of dropped frames at 5 Hz may be the ESP32 @ 80 MHz
-  - Earlier tests used higher sample rates without dropping frames
-- Results suggest that 10 Hz is much worse than 5 Hz for accuracy
-  - The mean SOG of SY2 (10 Hz) was much worse than 5 Hz
+  - Earlier tests coped with higher rates without dropping frames
+- Results suggest the accuracy of 10 Hz is significantly worse than 5 Hz
+  - The accuracy of SY2 @ 10 Hz was much worse than 5 Hz devices
 - D1 and D2 may perform better than the S devices
-  - Phase 5 testing will assigning them with different configurations
+  - Phase 5 testing will ensure they use different configurations

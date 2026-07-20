@@ -55,11 +55,11 @@ GPS + Galileo (green) clearly outperformed GPS + GLONASS (orange) @ 20 Hz.
 
 ![sog-mean-3.png](img/sog-mean-3.png)
 
-GPS + Galileo also outperformed GPS + GLONASS from the perspective of median values.
+The same was also evident in the median values for SOG.
 
 ![sog-median.png](img/sog-median.png)
 
-GPS + Galileo also outperformed GPS + GLONASS from the perspective of standard deviations.
+The performances from the perspective of standard deviation were ordered in much the same way as the mean values.
 
 ![sog-stddev.png](img/sog-stddev.png)
 

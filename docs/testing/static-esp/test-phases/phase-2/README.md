@@ -25,7 +25,7 @@ The following device configurations were tested, and the time distributions obta
 Notes:
 
 - S3 was intended to be GPS + Galileo + BeiDou B1C @ 10 Hz, but it somehow switched to GPS + Galileo
-- SY2 dropped a lot of frames during this test, and the Python charts show clear issues with speed + sAcc, perhaps due to "balanced" [power mode](../../../../performance/signal-quality.md)
+- SY2 dropped a lot of frames during this test, and the Python charts show clear issues with speed + sAcc
 - Various time intervals were observed, due to the way the M10 handles clock drift
 
 

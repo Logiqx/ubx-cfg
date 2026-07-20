@@ -55,7 +55,7 @@ The same was also evident in the median values for SOG
 
 ![sog-median.png](img/sog-median.png)
 
-The performances from the perspective of standard deviation were ordered in much the same way as the mean values.
+The performances from the perspective of standard deviation were similar to the mean values.
 
 ![sog-stddev.png](img/sog-stddev.png)
 
@@ -63,17 +63,19 @@ The performances from the perspective of standard deviation were ordered in much
 
 #### Speed Accuracy (sAcc)
 
-The mean "speed accuracy" at 5 Hz is WORSE than 10 Hz.
+The mean "speed accuracy" at 5 Hz is reported as being WORSE than 10 Hz.
 
 ![sacc-mean.png](img/sacc-mean.png)
 
-The median "speed accuracy" at 5 Hz is WORSE than 10 Hz.
+The median "speed accuracy" at 5 Hz is reported as being WORSE than 10 Hz.
 
 ![sacc-median.png](img/sacc-median.png)
 
-The standard deviation for "speed accuracy" at 5 Hz is WORSE than 10 Hz.
+The standard deviation for "speed accuracy" at 5 Hz is also WORSE than 10 Hz.
 
 ![sacc-stddev.png](img/sacc-stddev.png)
+
+Since we know that the true Speed Over Ground (SOG) we can be sure that the Speed Accuracy (sAcc) is erroneous during these tests.
 
 
 
@@ -83,21 +85,21 @@ The standard deviation for "speed accuracy" at 5 Hz is WORSE than 10 Hz.
   - Somehow it was switched to GPS + Galileo
 - S3 (ubxGPS) was also the only device to drop any frames
   - Presumably caused by the ESP32 running @ 80 MHz
-- SY2 dropped saw quite a few "mini spikes" like in previous tests
+- SY2 dropped saw a few "mini spikes", similar to previous tests
   - Perhaps due to the M10 using "balanced" [power mode](../../../../performance/signal-quality.md)
 - Performance of all 5 Hz devices comparable
   - SY1 not as good as D1 and D2 @ 10 Hz, maybe baud rate?
-- 5 Hz significantly better than 10 Hz
-  - There is no obvious advantage to 10 Hz
+- 5 Hz accuracy is significantly better than 10 Hz
+  - There is no obvious advantage to 10 Hz for speed sailing
 - sAcc is very misleading
-  - It says that 10 Hz is most accurate, which is incorrect
+  - It says that 10 Hz is most accurate, which is NOT correct
 
 
 
 ### Conclusions
 
-- 5 Hz is more accurate than 10 Hz
-  - Phase 7 results are consistent with phase 4, 5, and 6
+- 5 Hz is significantly more accurate than 10 Hz
+  - Phase 7 results are consistent with phases 4, 5, and 6
 - Speed Accuracy (sAcc) cannot be taken literally
-  - 5 Hz performs better than 10 Hz, but sAcc says the opposite
+  - 5 Hz was better than 10 Hz, but sAcc said the opposite!
 
