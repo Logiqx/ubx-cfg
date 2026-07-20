@@ -2,9 +2,9 @@
 
 ### Overview
 
-Satellite limits @ 10 Hz
+The objective of phase 6 was to determine the effects of limiting the number of satellites @ 10 Hz. The SYRAC GPS devices were all intended to use GPS + Galileo + BeiDou B1C (no GLONASS), and various satellite limits - 20, 24, and 28.
 
-2026-07-13 @ 1348
+The tests were started on 2026-07-13 @ 1348 and the duration was over 5 hours. The results showed max sats = 28 to be optimal @ 10 Hz, and 10 Hz to be less accurate than 5 Hz. There was also a hint that SY1 and SY2 have a slight performance disadvantage.
 
 
 
@@ -29,60 +29,54 @@ Notes:
 
 
 
-### Charts
-
-The Python charts are best viewed in new tabs... hold the ctrl key when left-clicking the links.
-
-- [D1\_2607131349](png/D1_2607131349.png)
-- [D2\_\_2607131349](png/D2__2607131349.png)
-- [D3\_\_2607131348](png/D3__2607131348.png)
-- [D5\_2607131349](png/D5_2607131349.png)
-- [S3\_\_2607131349](png/S3__2607131349.png)
-- [SY1\_\_2607131350](png/SY1__2607131350.png)
-- [SY2\_2607131349](png/SY2_2607131349.png)
-
-
-
 ### Statistics
 
-The following statistics were produced by a Python script, although it needed to use an SBP file instead of GPY.
+Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                  | Description                     | Mean  | Median | Stddev |
 | --------------------- | ------------------------------- | :---: | :----: | :----: |
-| D3\_\_2607131348.sbp  | GPS + Galileo + BeiDou, 28 sats @ 10 Hz  | 0.043 | 0.039      | 0.024              |
-| D1\_2607131349.sbp   | GPS + Galileo + BeiDou, 28 sats @ 10 Hz  | 0.044 | 0.039      | 0.024              |
-| S3\_\_2607131349.sbp  | **GPS + Galileo, 24 sats @ 10 Hz**       | 0.045 | 0.039      | 0.025              |
-| D2\_\_2607131349.sbp  | GPS + Galileo + BeiDou, 24 sats @ 10 Hz  | 0.045 | 0.039      | 0.025              |
-| D5\_2607131349.sbp   | GPS + Galileo + BeiDou, 20 sats @ 10 Hz  | 0.047 | 0.039      | 0.025              |
-| SY1\_\_2607131350.sbp | GPS + Galileo + BeiDou, 24 sats @ 10 Hz | 0.049 | 0.039      | 0.027              |
-| SY2\_2607131349.sbp  | GPS + Galileo + BeiDou, 20 sats @ 10 Hz | 0.050 | 0.039      | 0.027              |
+| [D3\_\_2607131348](png/D3__2607131348.png)  | GPS + Galileo + BeiDou, 28 sats @ 10 Hz  | 0.043 | 0.039      | 0.024              |
+| [D1\_2607131349](png/D1_2607131349.png)   | GPS + Galileo + BeiDou, 28 sats @ 10 Hz  | 0.044 | 0.039      | 0.024              |
+| [S3\_\_2607131349](png/S3__2607131349.png)  | **GPS + Galileo, 24 sats @ 10 Hz**       | 0.045 | 0.039      | 0.025              |
+| [D2\_\_2607131349](png/D2__2607131349.png)  | GPS + Galileo + BeiDou, 24 sats @ 10 Hz  | 0.045 | 0.039      | 0.025              |
+| [D5\_2607131349](png/D5_2607131349.png)   | GPS + Galileo + BeiDou, 20 sats @ 10 Hz  | 0.047 | 0.039      | 0.025              |
+| [SY1\_\_2607131350](png/SY1__2607131350.png) | GPS + Galileo + BeiDou, 24 sats @ 10 Hz | 0.049 | 0.039      | 0.027              |
+| [SY2\_2607131349.sbp](png/SY2_2607131349.png)  | GPS + Galileo + BeiDou, 20 sats @ 10 Hz | 0.050 | 0.039      | 0.027              |
 
-BLAH
+28 satellites (green) performed best, but it is also noticeable that SY1 and SY2 may not as good as the D devices.
 
 ![sog-mean.png](img/sog-mean.png)
 
-BLAH
+The medians are all identical, but this is perhaps due to SBP quantization errors.
 
 ![sog-median.png](img/sog-median.png)
 
-BLAH
+The performances from the perspective of standard deviation were ordered in much the same way as the mean values.
 
 ![sog-stddev.png](img/sog-stddev.png)
 
 
 
-### Results
+### Observations
 
-Test 6 - 10 Hz tests
+- S3 was intended to be GPS + Galileo + BeiDou B1C
+  - Somehow it was switched to GPS + Galileo
+- 28 satellites (green) performed best @ 10 Hz
+  - The improvement over 20 and 24 is only very subtle
+- SY1 and SY2 did not perform as well as the D devices
+  - This will be factored into phase 7
+- 24 sats had vastly differing results for D2 and SY1
+  - D2 was good, SY1 was bad
+- 20 sats was worst, but that was SY2
+  - Will assign 20 Hz to D5 for phase 7
+- SY2 dropped some frames, and saw quite a few "mini spikes"
+  - Perhaps due to the M10 using "balanced" [power mode](../../../../performance/signal-quality.md)
 
-- S3 on wrong config
-- SY2 could not handle GGB with 20 sats at 10 Hz
-  - There is perhaps something wrong with the device
-- Python stats are crucial and give different answer to distance alone
-  - D3 and D1 best with 28 sats
 
-Findings
 
-1. Only SY2 dropped frames, but based on previous tests I can see it has often been struggling
-2. The other 6 devices did not drop frames
-3. just like 5 Hz, 28 sats was best
+### Conclusions
+
+- Max of 28 sats provides the best accuracy @ 10 Hz
+  - Order of accuracy @ 10 Hz is 28 sats, 24 sats, 20 sats
+- The SY devices are not as accurate as the S devices
+  - Phase 7 testing will take this into consideration

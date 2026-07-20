@@ -2,9 +2,9 @@
 
 ### Overview
 
-Satellite limits @ 15 Hz
+The objective of phase 3 was to determine the effects of limiting the number of satellites @ 15 Hz. The SYRAC GPS devices were configured to use GPS + Galileo + GLONASS or GPS + Galileo + BeiDou B1C, and various satellite limits - 20, 24, and 28.
 
-2026-07-10 @ 2311
+The tests were started on 2026-07-10 @ 2311 and the duration was close to 12 hours. The results re-enforced the belief that B1C is better than GLONASS, and also showed that satellites limits can prevent dropped frames, without reducing accuracy.
 
 
 
@@ -20,74 +20,68 @@ The following device configurations were tested.
 |   D2    | GPS + Galileo + BeiDou B1C | 15 Hz |    24    | 240 MHz | 66: 2288, 67: 502609, 68: 2290, 133: 2                       |   Y    |
 |   SY1   | GPS + Galileo + GLONASS    | 15 Hz |    20    | 240 MHz | 66: 2806, 67: 623919, 68: 2806                               |   -    |
 | **S3**  | **GPS + Galileo**          | 15 Hz |    20    | 240 MHz | 66: 2835, 67: 623912, 68: 2835                               |   -    |
-| **SY2** | GPS + Galileo + GLONASS    | 10 Hz |    32    | 160 MHz | 99: 21, 100: 417730, 101: 43, **199: 23, 200: 1987, 201: 1** |   Y    |
+| **SY2** | GPS + Galileo + GLONASS    | 10 Hz |    32    | 160 MHz | 99: 21, 100: 417730, 101: 43, 199: 23, **200: 1987**, 201: 1 |   Y    |
 
 Notes:
 
 - S3 was intended to be GPS + Galileo + BeiDou B1C, but it somehow switched to GPS + Galileo
-- Many of the devices dropped some frames, but SY2 dropped a LOT of frames
-
-
-
-### Charts
-
-The Python charts are best viewed in new tabs... hold the ctrl key when left-clicking the links.
-
-- [D1\_2607102311](png/D1_2607102311.png)
-- [D2\_\_2607102312](png/D2__2607102312.png)
-- [D3\_\_2607102311](png/D3__2607102311.png)
-- [D5\_2607102311](png/D5_2607102311.png)
-- [S3\_\_2607102311](png/S3__2607102311.png)
-- [SY1\_\_2607102311](png/SY1__2607102311.png)
-- [SY2\_2607102311](png/SY2_2607102311.png)
+- All of the devices using more than 20 satellites dropped some frames, but SY2 dropped a LOT of frames
 
 
 
 ### Statistics
 
-The following statistics were produced by a Python script, although it needed to use an SBP file instead of GPY.
+Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                 | Description                                  | Mean  | Median | Stddev |
 | -------------------- | ----------------------------------- | :---: | :----: | :----: |
-| SY2\_2607102311.sbp  | GPS + Galileo + GLONASS, 32 sats @ 10 Hz | 0.045 | 0.039      | 0.025              |
-| D2\_\_2607102312.sbp  | GPS + Galileo + BeiDou, 24 sats @ 15 Hz   | 0.050 | 0.039      | 0.027              |
-| S3\_\_2607102311.sbp  | **GPS + Galileo, 20 sats @ 15 Hz**        | 0.051 | 0.039      | 0.028              |
-| D5\_2607102311.sbp   | GPS + Galileo + BeiDou, 28 sats @ 15 Hz   | 0.052 | 0.039      | 0.029              |
-| D1\_2607102311.sbp   | GPS + Galileo + GLONASS, 24 sats @ 15 Hz  | 0.053 | 0.058      | 0.029              |
-| SY1\_\_2607102311.sbp | GPS + Galileo + GLONASS, 20 sats @ 15 Hz | 0.054 | 0.058      | 0.029              |
-| D3\_\_2607102311.sbp  | GPS + Galileo + GLONASS, 28 sats @ 15 Hz  | 0.056 | 0.058      | 0.031              |
+| [SY2\_2607102311.sbp](png/SY2_2607102311.png)  | GPS + Galileo + GLONASS, 32 sats @ 10 Hz | 0.045 | 0.039      | 0.025              |
+| [D2\_\_2607102312.sbp.sbp](png/D2__2607102312.png)  | GPS + Galileo + BeiDou, 24 sats @ 15 Hz   | 0.050 | 0.039      | 0.027              |
+| [S3\_\_2607102311.sbp](png/S3__2607102311.png)  | **GPS + Galileo, 20 sats @ 15 Hz**        | 0.051 | 0.039      | 0.028              |
+| [D5\_2607102311.sbp](png/D5_2607102311.png)   | GPS + Galileo + BeiDou, 28 sats @ 15 Hz   | 0.052 | 0.039      | 0.029              |
+| [D1\_2607102311.sbp](png/D1_2607102311.png)   | GPS + Galileo + GLONASS, 24 sats @ 15 Hz  | 0.053 | 0.058      | 0.029              |
+| [SY1\_\_2607102311.sbp](png/SY1__2607102311.png) | GPS + Galileo + GLONASS, 20 sats @ 15 Hz | 0.054 | 0.058      | 0.029              |
+| [D3\_\_2607102311.sbp](png/D3__2607102311.png)  | GPS + Galileo + GLONASS, 28 sats @ 15 Hz  | 0.056 | 0.058      | 0.031              |
 
-BLAH
+GPS + Galileo + BeiDou (green) slightly outperformed GPS + Galileo + GLONASS (orange) with 24 satellites.
 
 ![sog-mean-1.png](img/sog-mean-1.png)
 
-BLAH
+GPS + Galileo + BeiDou (green) slightly outperformed GPS + Galileo + GLONASS (orange) with 28 satellites.
 
 ![sog-mean-2.png](img/sog-mean-2.png)
 
-BLAH
+GPS + Galileo + BeiDou (green) consistently outperformed GPS + Galileo + GLONASS (orange) @ 15 Hz from the perspective of median values.
 
 ![sog-median.png](img/sog-median.png)
 
-BLAH
+The performances from the perspective of standard deviation were ordered in much the same way as the mean values.
 
 ![sog-stddev.png](img/sog-stddev.png)
 
 
 
-### Results
+### Observations
 
-Test 3
+- S3 was intended to be GPS + Galileo + BeiDou B1C
+  - Somehow it was switched to GPS + Galileo
 
-- 38,400 seemed to cope with 15 Hz
-  - SY1
-- B1C is clearly better than GLONASS
-  - Evident when max sats set at 28 and 24
-  - Sadly no data for 20 sats due to incorrect configuration on S3
-- Sat limit can prevent dropped frames
-  - Does not appear to reduce accuracy...
-  - 28 is actually the least accurate
-  - 24 is most accurate, but drops frames
-  - 20 appears to avoid dropped frames, but accuracy slightly worse than 24
-- SY2 is still not working correctly
-  - Perhaps dropping frames due to the default limit of 32 sats
+- 38,400 baud was able to cope with a sample rate of 15 Hz
+  - SY1 did not drop any frames, despite running at 38,400 baud
+
+- All of the devices with more than 20 satellites dropped frames
+  - SY2 dropped a LOT of frames, perhaps because max sats was 32
+
+
+
+
+### Conclusions
+
+- B1C is clearly better than GLONASS, certainly at this latitude
+  - B1C outperformed GLONASS regardless of max sats = 24 or 28
+  - Sadly no data for 20 sats, due to incorrect configuration on S3
+- Reducing max sats does not necessarily reduce accuracy
+  - 24 was the most accurate @ 15 Hz
+  - 28 was the least accurate @ 15 Hz
+- Reducing max sats can potentially prevent dropped frames
+  - 20 had no dropped frames, but without any reduction in accuracy

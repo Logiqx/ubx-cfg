@@ -2,9 +2,9 @@
 
 ### Overview
 
-Optimal 5 Hz vs 10 Hz
+The objective of phase 7 was to compare the optimal 5 Hz and 10 Hz configurations. The SYRAC GPS devices were all intended to use GPS + Galileo + BeiDou B1C (no GLONASS), and a maximum of 28 satellites.
 
-2026-07-14 @ 0031
+The tests were started on 2026-07-14 @ 0031 and the duration was just under 10  hours. The results showed that 5 Hz is far more accurate than 10 Hz, which is consistent with phase 4, 5, and 6. Speed Accuracy (sAcc) can also be quite misleading.
 
 
 
@@ -18,7 +18,7 @@ The following device configurations were tested.
 |   D2   | GPS + Galileo + BeiDou B1C  | 10 Hz |    28    |  160 MHz   | 99: 5, 100: 352086, 101: 5              |   -    |
 |   D3   | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 18, 200: 176100, 201: 18           |   -    |
 |   D5   | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 12, 200: 176461, 201: 12           |   -    |
-| **S3** | **GPS + Galileo + GLONASS** | 5 Hz  |    32    | **80 Mhz** | 199: 4, 200: 176099, **201: 4, 400: 8** |   Y    |
+| **S3** | **GPS + Galileo + GLONASS** | 5 Hz  |  **32**  | **80 Mhz** | 199: 4, 200: 176099, **201: 4, 400: 8** |   Y    |
 |  SY1   | GPS + Galileo + BeiDou B1C  | 10 Hz |    28    |  160 MHz   | 99: 3, 100: 351202, 101: 3              |   -    |
 |  SY2   | GPS + Galileo + BeiDou B1C  | 5 Hz  |    28    |  160 MHz   | 199: 36, 200: 175999, 201: 36           |   -    |
 
@@ -29,73 +29,75 @@ Notes:
 
 
 
-### Charts
-
-The Python charts are best viewed in new tabs... hold the ctrl key when left-clicking the links.
-
-- [D1\_2607140032](png/D1_2607140032.png)
-- [D2\_\_2607140033](png/D2__2607140033.png)
-- [D3\_\_2607140033](png/D3__2607140033.png)
-- [D5\_2607140031](png/D5_2607140031.png)
-- [SY1\_2607140034](png/SY1__2607140034.png)
-- [SY2\_2607140033](png/SY2_2607140033.png)
-- [ubxGPS\_2607140032](png/ubxGPS_2607140032.png)
-
-
-
 ### Statistics
 
-The following statistics were produced by a Python script, although it needed to use an SBP file instead of GPY.
+Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                  | Description                             | Mean  | Median | Stddev |
 | --------------------- | --------------------------------------- | :---: | :----: | :----: |
-| SY2\_2607140033.sbp    | GPS + Galileo + BeiDou, 28 sats @ 5 Hz     | 0.023 | 0.019      | 0.015              |
-| D5\_2607140031.sbp     | GPS + Galileo + BeiDou, 28 sats @ 5 Hz      | 0.024 | 0.019      | 0.015              |
-| ubxGPS\_2607140032.sbp | **GPS + Galileo + GLONASS, 32 sats @ 5 Hz** | 0.024 | 0.019      | 0.015              |
-| D3\_\_2607140033.sbp    | GPS + Galileo + BeiDou, 28 sats @ 5 Hz      | 0.024 | 0.019      | 0.015              |
-| D1\_2607140032.sbp     | GPS + Galileo + BeiDou, 28 sats @ 10 Hz     | 0.041 | 0.039      | 0.023              |
-| D2\_\_2607140033.sbp    | GPS + Galileo + BeiDou, 28 sats @ 10 Hz     | 0.042 | 0.039      | 0.023              |
-| SY1\_\_2607140034.sbp   | GPS + Galileo + BeiDou, 28 sats @ 10 Hz    | 0.047 | 0.039      | 0.025              |
+| [SY2\_2607140033.sbp](png/SY2_2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 5 Hz     | 0.023 | 0.019      | 0.015              |
+| [D5\_2607140031.sbp](png/D5_2607140031.png)     | GPS + Galileo + BeiDou, 28 sats @ 5 Hz      | 0.024 | 0.019      | 0.015              |
+| [ubxGPS\_2607140032.sbp](png/ubxGPS_2607140032.png) | **GPS + Galileo + GLONASS, 32 sats @ 5 Hz** | 0.024 | 0.019      | 0.015              |
+| [D3\_\_2607140033.sbp](png/D3__2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 5 Hz      | 0.024 | 0.019      | 0.015              |
+| [D1\_2607140032.sbp](png/D1_2607140032.png)     | GPS + Galileo + BeiDou, 28 sats @ 10 Hz     | 0.041 | 0.039      | 0.023              |
+| [D2\_\_2607140033.sbp](png/D2__2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 10 Hz     | 0.042 | 0.039      | 0.023              |
+| [SY1\_2607140034.sbp](png/SY1__2607140034.png)   | GPS + Galileo + BeiDou, 28 sats @ 10 Hz    | 0.047 | 0.039      | 0.025              |
 
-BLAH
+
+
+#### Speed Over Ground (SOG)
+
+The 5 Hz devices all performed significantly better than the 10 Hz devices.
 
 ![sog-mean.png](img/sog-mean.png)
 
-BLAH
+The same was also evident in the median values for SOG
 
 ![sog-median.png](img/sog-median.png)
 
-BLAH
+The performances from the perspective of standard deviation were ordered in much the same way as the mean values.
 
 ![sog-stddev.png](img/sog-stddev.png)
 
-BLAH
+
+
+#### Speed Accuracy (sAcc)
+
+The mean "speed accuracy" at 5 Hz is WORSE than 10 Hz.
 
 ![sacc-mean.png](img/sacc-mean.png)
 
-BLAH
+The median "speed accuracy" at 5 Hz is WORSE than 10 Hz.
 
 ![sacc-median.png](img/sacc-median.png)
 
-BLAH
+The standard deviation for "speed accuracy" at 5 Hz is WORSE than 10 Hz.
 
 ![sacc-stddev.png](img/sacc-stddev.png)
 
 
 
-### Results
+### Observations
 
-Test 7
-
-puts equally performing devices up against each other (e.g. D1 and D3) but 5 Hz vs 10 Hz
-
-I have taken into consideration that S3 may use GGB (hopefully it will), and knowing that SY2 could not handle 10 Hz, put it on 5 Hz
-
-Results
-
-- 5 Hz significantly better than 10 Hz
-  - There is no advantage to 10 Hz
-- sAcc is misleading
-  - It says that 10 Hz is performing better
+- S3 (ubxGPS) was intended to be GPS + Galileo + BeiDou B1C
+  - Somehow it was switched to GPS + Galileo
+- S3 (ubxGPS) was also the only device to drop any frames
+  - Presumably caused by the ESP32 running @ 80 MHz
+- SY2 dropped saw quite a few "mini spikes" like in previous tests
+  - Perhaps due to the M10 using "balanced" [power mode](../../../../performance/signal-quality.md)
 - Performance of all 5 Hz devices comparable
-  - SY1 performed less well than D1 and D2 @ 10 Hz, maybe baud rate?
+  - SY1 not as good as D1 and D2 @ 10 Hz, maybe baud rate?
+- 5 Hz significantly better than 10 Hz
+  - There is no obvious advantage to 10 Hz
+- sAcc is very misleading
+  - It says that 10 Hz is most accurate, which is incorrect
+
+
+
+### Conclusions
+
+- 5 Hz is more accurate than 10 Hz
+  - Phase 7 results are consistent with phase 4, 5, and 6
+- Speed Accuracy (sAcc) cannot be taken literally
+  - 5 Hz performs better than 10 Hz, but sAcc says the opposite
+

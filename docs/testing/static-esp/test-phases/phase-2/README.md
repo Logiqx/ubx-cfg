@@ -2,15 +2,15 @@
 
 ### Overview
 
-GLONASS vs BeiDou
+The objective of phase 2 was to determine the relative performances of GLONASS and BeiDou B1C as a third GNSS. The SYRAC GPS devices were configured to use GPS + Galileo + GLONASS or GPS + Galileo + BeiDou B1C, and various sample rates - 10 Hz, 15 Hz, 20 Hz.
 
-2026-07-09 @ 1314
+The tests were started on 2026-07-09 @ 1314 and the duration was more than 7.5 hours. The results showed that GPS + Galileo + BeiDou slightly outperformed GPS + Galileo + GLONASS, and 10 Hz consistently outperformed 15 Hz + 20 Hz
 
 
 
 ### Configurations
 
-The following device configurations were tested.
+The following device configurations were tested, and the time distributions obtained from GPS Speedreader.
 
 |   ID    | Constellations             | Rate  | Max Sats |   ESP   | Observed time distribution (ms)                      | Drops? |
 | :-----: | -------------------------- | :---: | :------: | :-----: | :--------------------------------------------------- | :----: |
@@ -24,70 +24,59 @@ The following device configurations were tested.
 
 Notes:
 
-- SY2 dropped a lot of frames during this test, and the Python charts show clear issues with speed + sAcc
 - S3 was intended to be GPS + Galileo + BeiDou B1C @ 10 Hz, but it somehow switched to GPS + Galileo
-
-
-
-### Charts
-
-The Python charts are best viewed in new tabs... hold the ctrl key when left-clicking the links.
-
-- [D1\_2607091307](png/D1_2607091307.png)
-- [D2\_\_2607091307](png/D2__2607091307.png)
-- [D3\_\_2607091314](png/D3__2607091314.png)
-- [D5\_2607091307](png/D5_2607091307.png)
-- [S3\_\_2607091314](png/S3__2607091314.png)
-- [SY1\_\_2607091314](png/SY1__2607091314.png)
-- [SY2\_2607091314](png/SY2_2607091314.png)
+- SY2 dropped a lot of frames during this test, and the Python charts show clear issues with speed + sAcc, perhaps due to "balanced" [power mode](../../../../performance/signal-quality.md)
+- Various time intervals were observed, due to the way the M10 handles clock drift
 
 
 
 ### Statistics
 
-The following statistics were produced by a Python script, although it needed to use an SBP file instead of GPY.
+Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                 | Description                         | Mean  | Median | Stddev |
 | -------------------- | ---------------------------------- | :---: | :----: | :----: |
-| S3\_\_2607091314.sbp  | GPS + Galileo @ 10 Hz            | 0.044 | 0.039      | 0.025              |
-| SY2\_2607091314.sbp  | GPS + Galileo + GLONASS @ 10 Hz | 0.047 | 0.039      | 0.032              |
-| SY1\_\_2607091314.sbp | GPS + Galileo @ 10 Hz           | 0.047 | 0.039      | 0.026              |
-| D5\_2607091307.sbp   | GPS + Galileo + BeiDou @ 15 Hz   | 0.053 | 0.058      | 0.029              |
-| D3\_\_2607091314.sbp  | GPS + Galileo @ 15 Hz            | 0.054 | 0.058      | 0.030              |
-| D1\_2607091307.sbp   | GPS + Galileo + GLONASS @ 15 Hz  | 0.054 | 0.058      | 0.029              |
-| D2\_\_2607091307.sbp  | GPS + Galileo @ 20 Hz            | 0.058 | 0.058      | 0.031              |
+| [S3\_\_2607091314.sbp](png/S3__2607091314.png) | GPS + Galileo @ 10 Hz            | 0.044 | 0.039      | 0.025              |
+| [SY2\_2607091314.sbp](png/SY2_2607091314.png) | GPS + Galileo + GLONASS @ 10 Hz | 0.047 | 0.039      | 0.032              |
+| [SY1\_\_2607091314.sbp](png/SY1__2607091314.png) | GPS + Galileo @ 10 Hz           | 0.047 | 0.039      | 0.026              |
+| [D5\_2607091307.sbp](png/D5_2607091307.png) | GPS + Galileo + BeiDou @ 15 Hz   | 0.053 | 0.058      | 0.029              |
+| [D3\_\_2607091314.sbp](png/D3__2607091314.png) | GPS + Galileo @ 15 Hz            | 0.054 | 0.058      | 0.030              |
+| [D1\_2607091307.sbp](png/D1_2607091307.png) | GPS + Galileo + GLONASS @ 15 Hz  | 0.054 | 0.058      | 0.029              |
+| [D2\_\_2607091307.sbp](png/D2__2607091307.png) | GPS + Galileo @ 20 Hz            | 0.058 | 0.058      | 0.031              |
 
-BLAH
-
-![sog-mean-1.png](img/sog-mean-1.png)
-
-BLAH
+GPS + Galileo + BeiDou (green) slightly outperformed GPS + Galileo + GLONASS (orange) @ 15 Hz.
 
 ![sog-mean-2.png](img/sog-mean-2.png)
 
-BLAH
+10 Hz (green) consistently outperformed 15 Hz (orange), and 20 Hz (brown).
+
+![sog-mean-1.png](img/sog-mean-1.png)
+
+10 Hz (green) also outperformed 15 Hz (orange) and 20 Hz (brown) from the perspective of median values.
 
 ![sog-median.png](img/sog-median.png)
 
-BLAH
+The standard deviation for SY2 was poor, but otherwise there seemed to be a trend that 10 Hz was better than 15 Hz and 20 Hz.
 
 ![sog-stddev.png](img/sog-stddev.png)
 
 
 
-### Results
-
-Test 2
+### Observations
 
 - S3 was incorrectly configured
-  - Shame because we cannot compare the 10 Hz configurations
-  - Will have to rely on phase 3 for GLONASS vs B1C
-- SY2 (GPS + GAL + B1C) dropped lots of frames and saw quite a few mini spikes
-  - Perhaps due to "balanced" power mode?
-  - Maybe the clock is drifting quickly as well?
+  - Shame because we cannot compare 10 Hz configurations
+  - Will have to rely on phase 3 for comparing GLONASS vs B1C
+- SY2 dropped lots of frames, and saw quite a few "mini spikes"
+  - Perhaps due to the M10 using "balanced" [power mode](../../../../performance/signal-quality.md)
+  - The clock may also be drifting quickly due to intervals of 101 ms
 - Practically no difference between 15 Hz and 20 Hz
   - Arguably, 10 Hz was better
-- Overall GLONASS performed worst, Galileo performed best
-  - GPS + Galileo > GPS + Galileo + GLONASS @ 10 Hz
-  - GPS + Galileo + BeiDou B1C > GPS + Galileo + GLONASS > GPS + Galileo @ 15 Hz
-  - GPS + Galileo > GPS + GLONASS @ 20 Hz
+
+
+
+### Conclusions
+
+- GPS + Galileo + BeiDou slightly outperformed GPS + Galileo + GLONASS
+- 10 Hz consistently outperformed 15 Hz and 20 Hz
+
