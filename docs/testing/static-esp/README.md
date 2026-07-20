@@ -25,11 +25,11 @@ This study identified optimal settings for all ESP GPS users, including derivati
 - CPU Freq = 160 MHz
 - Logging = GPY + TXT
 
-It was slightly surprising to discover that 10 Hz is NOT optimal, but it actually degrades the accuracy of the data. Should anyone be interested in how all of these settings were determined, full details can be found throughout these pages.
+It may be surprising to discover that 10 Hz is NOT optimal, but it actually degrades the accuracy of the data. Should anyone be interested in how these settings were determined, further details can be found in these pages.
 
-It is highly recommended that ESP GPS devices are switched on some time before being used on the water. It can sometimes take between 15 and 30 minutes for an ESP GPS to establish the best possible fix, and utilise the maximum number of available satellites.
+It is also recommended that ESP GPS devices are powered on at least 15 minutes before you take to the water. It can sometimes take between 15 and 30 minutes for an ESP GPS to establish the best possible fix, and use the maximum number of available satellites.
 
-The majority of people do not need to know how the optimal settings were determined for the ESP GPS. Those people can simply use the settings that have been provided on this page (see above), but anyone interested in further details can read the remaining content.
+The majority of people do not need to know how the optimal settings were determined for the ESP GPS. Those people can simply use the settings that have been provided on this page, but anyone interested in further details can read the remainder of the content.
 
 
 
