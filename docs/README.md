@@ -17,18 +17,25 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
   - [Signal Quality](performance/signal-quality.md) - power savings and LNA
   - [Solution Quality](performance/solution-quality.md) - models + filters
   - [Motion GPS](performance/motion-gps.md) - hardware + configuration
-- Testing
-  - [Power Mode](testing/power-mode.md) - "balanced" vs "full power"
-  - [Static Testing](testing/static-5hz-10hz.md) - 5 Hz vs 10 Hz
-  - [Fundamentals](testing/fundamentals.md) - constellations + rates
-  - [ESP-GPS](testing/esp-gps.md) - optimal configuration
-  
 - Troubleshooting
   - [Noisy Data](troubleshooting/noisy-data.md) - "balanced" power mode
   - [Dropped Frames](troubleshooting/dropped-frames.md) - CPU bandwidth limit
   - [Timestamp Variations](troubleshooting/timestamp-variations.md) - TBC
   - [Slow Acquisition](troubleshooting/slow-acquisition.md) - TBC
+  
 
+
+
+### UBX Testing
+
+- Motion GPS
+  - [Power Mode](testing/power-mode.md) - "balanced" vs "full power"
+  - [Static Testing](testing/static-5hz-10hz.md) - 5 Hz vs 10 Hz
+- Generic UBX
+  - [Fundamentals](testing/fundamentals.md) - constellations + rates
+- ESP GPS
+  - [ESP-GPS](testing/esp-gps.md) - constellations + rates
+  - [Static Testing](testing/static-esp/README.md) - optimal configuration
 
 
 
