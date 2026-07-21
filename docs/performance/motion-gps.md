@@ -33,7 +33,7 @@ The original Motions (M8) supported logging rates of 1, 2, 5, and 10 Hz:
 
 The M8 itself limited the Motion to just 2 systems when logging at 10Hz, just like the NEO-M8Q.
 
-GPS + GLONASS was likely to used for 10 Hz, since that combination was the default for the M8.
+GPS + GLONASS may have been used for 10 Hz, since that combination was the default for the M8.
 
 The number of satellites was probably limited to avoid [Dropped Frames](../troubleshooting/dropped-frames.md), and maybe to conserve battery.
 

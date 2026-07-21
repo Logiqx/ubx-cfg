@@ -89,9 +89,9 @@ A variety of other configurations have been dismissed:
 What about SBAS and QZSS?
 
 - SBAS may improve positional accuracy, but must not be used as additional satellites.
-  - Ensure SBAS differential corrections in are used
+  - Ensure SBAS differential corrections are enabled
     - `CFG-SBAS-USE_DIFFCORR = 1`
-  - Ensure SBAS GEOs are not used as a ranging source
+  - Ensure SBAS is not used for ranging
     - `CFG-SBAS-USE_RANGING = 0`
 - QZSS may be useful in the Pacific region, especially Japan and Australia.
   - Use [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html?t=1781765528951) to determine where the QZSS QZO (orbiting) satellites are visible.

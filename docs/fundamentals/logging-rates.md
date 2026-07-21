@@ -133,7 +133,7 @@ It is worth mentioning the MAX M10 data sheet also refers to several update rate
 | 16 Hz |      63       |      1       |
 | 18 Hz |      56       |      1       |
 
-I suspect that these update rates we chosen to illustrate what the MAX M10 is capable of achieving 98% of the time.
+I suspect that these update rates were chosen to illustrate what the MAX M10 is capable of achieving 98% of the time.
 
 
 

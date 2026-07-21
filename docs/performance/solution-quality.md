@@ -80,5 +80,5 @@ Navigation output filters can potentially prevent poor quality solutions (e.g. s
 - `CFG-NAVSPG-OUTFIL_PDOP` - default is 250
 - `CFG-NAVSPG-OUTFIL_TDOP` - default is 250
 - `CFG-NAVSPG-OUTFIL_PACC` - default is 100 m
-- `CFG-NAVSPG-OUTFIL_TACC` - default is 350 m
-- `CFG-NAVSPG-OUTFIL_FACC` -  default is 150 m/s
+- `CFG-NAVSPG-OUTFIL_TACC` - default is 350 ns
+- `CFG-NAVSPG-OUTFIL_SACC` -  default is 150 m/s

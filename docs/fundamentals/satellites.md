@@ -2,7 +2,7 @@
 
 ### Constellations
 
-The table below highlights a few key aspects of the signals supported by the M10. It omits details such as modulation, code frequency / chipping rate, primary PRN / code length, etc. Nevertheless, GLONASS and B1I are clearly the odd ones because of their differing frequencies and use of FDMA. The other signals have all been designed to co-exist on the same central frequency, simplifying receiver design and improving performance. The BeiDou B1C and Galileo E1 signals also benefit from modern signal designs, including individual data and pilot components.
+The table below highlights a few key aspects of the signals supported by the M10. It omits details such as modulation, code frequency / chipping rate, primary PRN / code length, etc. Nevertheless, GLONASS and B1I are clearly the odd ones out because of their differing frequencies and use of FDMA. The other signals have all been designed to co-exist on the same central frequency, simplifying receiver design and improving performance. The BeiDou B1C and Galileo E1 signals also benefit from modern signal designs, including individual data and pilot components.
 
 | Constellation | Signal |        Frequency         | Technique |  Components  |
 | ------------- | :----: | :----------------------: | :-------: | :----------: |

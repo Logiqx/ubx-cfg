@@ -34,7 +34,7 @@ n.b. Under normal circumstances errors will sometimes be higher than the truth, 
 
 The data was exported into Excel and a variety of stats were produced for Speed over Ground (SOG), Speed Accuracy (sAcc) and Horizontal Dilution of Precision (HDOP). These focused on common percentiles of interest; 50, 68, 95, and 99.7. The 100th percentile was ignored because the max values are typically freak outliers.
 
-SOG was significantly lower for the 5 Hz devices, around 40 % lower than the 10 Hz devices, so the errors were smaller.
+SOG was significantly lower for the 5 Hz devices, around 40% lower than the 10 Hz devices, so the errors were smaller.
 
 - It was clearly better on the 5 Hz devices (3 systems, 24 satellites) than 10 Hz devices (2 systems, 16 satellites).
 
