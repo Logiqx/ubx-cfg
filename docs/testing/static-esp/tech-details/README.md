@@ -13,10 +13,10 @@ After each phase the data was processed as follows:
 
 Notes:
 
-- SBP files were used because a GPY loader was not immediately available
-  - Previous studies used UBX or OAO, so this was the first such test using GPY files
-- The SBP format is not ideal because of the [quantization](https://en.wikipedia.org/wiki/Quantization_(signal_processing)) errors, but deemed adequate
-  - There is a desire to add a GPY loader to the Python libraries in the future
+- SBP files were used because the existing Python code does not support GPY
+  - Previous studies have used UBX or OAO, and this was the first study to use GPY
+- The SBP format is not ideal because of the [quantization](https://en.wikipedia.org/wiki/Quantization_(signal_processing)) errors, but still adequate
+  - The intention is to add a GPY loader to the Python code for future studies
 
 
 
@@ -47,7 +47,7 @@ Python code was used to generate charts and statistics.
 - [static_test_charts.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_charts.ipynb) - charts showing SOG, Sats, HDOP, and sAcc
 - [static_test_stats.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_stats.ipynb) - calculate mean, median, stddev, etc.
 
-The charts are relatively crude, but provide a useful summary of each SBP file.
+The charts are relatively simple, but still provide a useful summary of individual SBP files.
 
 
 

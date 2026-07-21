@@ -23,4 +23,4 @@ The online [GNSS View](https://app.qzss.go.jp/GNSSView/gnssview.html) can be use
 
 Suggest the ESP GPS adds support for an elevation mask (i.e. minimum elevation), so that it can be be set to 10°.
 
-My expectation is that it will give the M10 a helping hand, quickly dispensing with poor quality signals.
+My expectation is that it will give the M10 a helping hand, quickly discarding the lowest quality signals.

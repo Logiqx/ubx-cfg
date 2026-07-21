@@ -18,6 +18,6 @@ See section 13.7 in the [u-blox M8 Receiver Description](https://content.u-blox.
 
 ### SY2
 
-Throughout these tests, SY2 exhibited problems reminiscent of an issue that affected some early Motion Mini using the M10. This was resolved by selecting "full power", instead of the default "balanced" power mode.
+Throughout these tests, SY2 exhibited an issue reminiscent of the one that affected some early Motion Mini using the M10. This was resolved by selecting "full power" mode, instead of the default "balanced" power mode.
 
-Suggest the ESP GPS has a "power mode" option added so that "full power" or "balanced" (default) can be selected. It will then be possible to test "full power" mode on SY2, and any other devices that have a similar afflication.
+Suggest the ESP GPS has "power mode" added to the configuration, so that "full power" or "balanced" (default) can be specified. It will then be possible to evaluate the "full power" mode on SY2, and any other devices that exhibit similar issues.

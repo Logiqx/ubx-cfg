@@ -35,7 +35,11 @@ The mean values for Speed Over Ground (SOG) were as follows:
 
 Since 10 Hz has twice as many samples as 5 Hz, 70% of 0.042 kt can be directly compared to 0.024 kt.
 
+i.e. +/- 0.030 kt vs +/- 0.024 kt
+
 Thus, if these magnitudes of error were to be applied to kinematic data, 5 Hz would still be better than 10 Hz.
+
+The differences are small, but there is no reason to double file sizes (and increase processing) for zero benefit.
 
 
 

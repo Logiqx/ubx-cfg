@@ -37,7 +37,7 @@ Possible enhancements
   - HDOP
   - Horizontal Accuracy (hAcc)
   - Speed Accuracy (sAcc)
-  - ... perhaps even latitude, longitude and height above MSL
+  - ... perhaps latitude, longitude, height above MSL, SOG, and COG
 - Rounding results to 2 decimal places, instead of truncation?
   - I have not confirmed what the ESP does, but results should be rounded
 

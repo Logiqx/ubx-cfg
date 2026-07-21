@@ -2,11 +2,11 @@
 
 ### Data Collection
 
-- The tests produced over 400 hours worth of data for analysis.
-- TXT files were useful for confirming the actual configuration (especially S3), and some statistics
+- The tests produced over 400 hours worth of data for analysis
+- TXT files were useful for confirming the actual configuration (especially S3), and summary statistics
   - Distances in TXT files are incorrect, so calculating mean speeds from the TXT can be misleading
-- GPY files were recorded instead of UBX, which is not supported by existing Python libraries
-  - The files were converted to SBP using GPS Speedreader, but that does quantization is evident
+- GPY files were recorded instead of UBX, but GPY is not supported by the existing Python code
+  - GPY files were converted to SBP using GPS Speedreader, but it does incur quantization errors
 
 
 
@@ -14,8 +14,8 @@
 ### Optimal Configuration
 
 - Galileo is better than GLONASS
-  - The latter phases (4 onwards) ignored GLONASS entirely
-- 5 Hz was better than 10 Hz
+  - The latter test phases (4 onwards) ignored GLONASS entirely
+- 5 Hz is better than 10 Hz
   - Max of 28 satellites is the optimal setting for 5 Hz (and 10 Hz)
 
 
@@ -49,7 +49,7 @@ Quick summary:
 
 Need to write up the sAcc issues apparent in test 7 and test 4
 
-- The sAcc in 10 Hz data claimed to be more accurate than 5 Hz, which is untrue
+- The sAcc in 10 Hz data claims it to be more accurate than 5 Hz, which is untrue
 
 
 

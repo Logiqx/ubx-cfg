@@ -10,7 +10,7 @@ Previous tests for devices such as the Locosys GT-11, GT-31, GW-60, Motion GPS, 
 
 ### Duration
 
-It takes approximately 11 to 14 hours for the GNSS satellites to complete their orbits, each system being slightly different because of their altitudes.
+It takes approximately 11 to 14 hours for the GNSS satellites to complete their orbits, each system being slightly different because of their nominal altitudes.
 
 |                      GNSS Constellation                      |     Origin     | Approx Orbital Period | Exact Sidereal Ratio | Nominal Altitude |
 | :----------------------------------------------------------: | :------------: | :-------------------: | :------------------: | :--------------: |
@@ -19,11 +19,11 @@ It takes approximately 11 to 14 hours for the GNSS satellites to complete their 
 | [Galileo](https://en.wikipedia.org/wiki/Galileo_(satellite_navigation_system)) | European Union |      14 h 05 min      |  10/17 sidereal day  |    23,222 km     |
 |    [BeiDou](http://www.astronautix.com/b/beidou-meo.html)    |     China      |      12 h 38 min      |  9/17 sidereal day   |    21,528 km     |
 
-The number of available satellites is constantly changing, and also dependent on which systems have been selected. The image below shows the number of GPS + GLONASS satellites in use by one of the SYRAC GPS devices during the first test, and the corresponding [Horizontal Dilution of Precision](https://en.wikipedia.org/wiki/Dilution_of_precision) (HDOP).
+The number of available satellites is constantly changing, and dependent on which systems are being tracked by the receiver. The image below shows the number of GPS + GLONASS satellites in use by one of the SYRAC GPS devices during the first test, and the corresponding [Horizontal Dilution of Precision](https://en.wikipedia.org/wiki/Dilution_of_precision) (HDOP).
 
 ![D5_2607090004](img/D5_2607090004.png)
 
-When comparing different GNSS configurations (especially different constellations), common practice is to run tests for 12 hours, or even 24 hours. This ensures that results (and statistics) will include a full orbit of the satellites, or even two orbits for 24 hours (night and day).
+When comparing different GNSS configurations (especially different constellations), common practice is to run tests for 12 hours, or even 24 hours. This ensures that results (and statistics) will include the majority of an orbit for each of the satellites, or even two orbits for 24 hours (night and day).
 
 To be pragmatic, 6 hours was chosen as the minimum duration for these tests because there was not enough time for the full 12 hours. Another benefit of using 6 hours is to have enough time to pick up issues such as dropped frames and clock drift, which can be absent within 1 or 2 hours.
 
@@ -31,19 +31,19 @@ To be pragmatic, 6 hours was chosen as the minimum duration for these tests beca
 
 ### Configuration
 
-Each test includes 6 or 7 individual SYRAC GPS devices, often with slightly different GNSS configurations. TXT files from the SYRAC GPS confirm their configuration during each test, and they have been recorded in a [Google Sheet](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing).
+Each test includes 6 or 7 individual SYRAC GPS devices, often with slightly different GNSS configurations. TXT files from the SYRAC devices help to confirm the configurations during each test, and they have been recorded in a [Google Sheet](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing).
 
 
 
 ### Warm Up
 
-Whilst a GPS receiver is acquiring a good lock on all of the satellites, accuracy will improve over time. During the first few minutes the position can be quite inaccurate, and so can the record speeds. The screenshot below shows how this affects the S3 device during the first test.
+Whilst a GPS receiver is acquiring a good lock on all of the satellites, accuracy will improve over time. During the first few minutes the position can be quite inaccurate, and so can the recorded speeds. The screenshot below shows how this affects the one of the SYRAC devices during the first test.
 
 ![speedreader-1](img/speedreader-1.png)
 
 
 
-Simply removing the first 30 minutes of the data has a dramatic effect, and it is also a good idea to remove the last 5 minutes to ensure that any disturbances during the shutdown are excluded from the statistics.
+Simply removing the first 30 minutes of the data has a dramatic effect, and it is also good practice to remove the last 5 minutes to ensure that any disturbances during the shutdown are excluded from the statistics.
 
 ![speedreader-2](img/speedreader-2.png)
 
@@ -53,13 +53,13 @@ Simply removing the first 30 minutes of the data has a dramatic effect, and it i
 
 Dropped frames (aka "missing points") are undesirable in the data, especially in large quantities. Dropped frames can occur because the u-blox receiver does not have enough time to do all of the necessary processing, or because the ESP32 is not consuming it quickly enough.
 
-There are other scenarios which I will not describe so as to not make this document too complicated. [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader) was used to check the time distributions (thus identifying dropped frames), and recorded in a [Google Sheet](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing). The test writeups also include all of the statistics.
+There are other scenarios which I will not describe, so as to not make this document excessively complicated. [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader) was used to check the time distributions (thus identifying dropped frames), and recorded in a [Google Sheet](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing). The test writeups also include all of the statistics.
 
 
 
 ### Charts
 
-A Python script was used to create charts for each test file, ignoring the first 30 minutes and last 5 minutes.
+A Python script was used to create charts for each test file, ignoring the first 30 minutes, and last 5 minutes.
 
 They include Speed Over Ground (SOG), Number of Satellites, Horizontal Dilution of Precision (HDOP), and Speed Accuracy (sAcc).
 

@@ -20,21 +20,21 @@ During the first 20 minutes or so the number of satellites was low, resulting in
 
 
 
-It is true to say that additional satellites improve HDOP, but there is not much improvement beyond 25 satellites. This can be demonstrated using the same S3__2607090003_1 data, comparing HDOP and the number of satellites. It can clearly be seen that dropping below 20 satellites is far from ideal, but there are limited gains between 20 and 30 satellites.
+Additional satellites will generally improve HDOP, but there is typically not much improvement beyond 25 satellites. This can be demonstrated using S3__2607090003_1, comparing HDOP with the number of satellites. It can be seen that dropping below 20 satellites is not desirable, but there are limited gains between 20 and 30 satellites.
 
 ![S3__2607090003_2](img/S3__2607090003_2.png)
 
 
 
-One of the benefits of using a third GNSS is that HDOP can be improved.
+One of the benefits of using a third GNSS is to ensure the best possible HDOP.
 
 - 26-28 satellites appears to be the sweet spot for this particular session
 
-However, you also need to be mindful that some satellites can degrade the signal.
+However, you also need to be mindful that some satellite signals can degrade the NAV solution.
 
 - e.g. GPS + Galileo (20 sats) can outperform GPS + Galileo + GLONASS (>25 sats)
 
-It is important to ensure the best constellations are chosen, and low quality signals (e.g. low elevation) are unused.
+It is important to ensure the best constellations are chosen, and low quality signals (e.g. low elevation) are discarded.
 
 
 
@@ -54,8 +54,8 @@ Locosys switched to the phrase "Standard Deviation of Speed" (SDOS) for the GW-6
 
 When using 3 systems, limiting the maximum number of satellites is necessary to reduce the load on the u-blox M10.
 
-The M10 still has to track every signal for the specified systems, but the limit affects how many satellites are used in the NAV solution.
+The M10 still has to track every signal for the specified systems, but it restricts the number of satellites used in the NAV solution.
 
-Prior to the NAV solution, the M10 must decide which signals to use for navigation, likely based on their C/N<sub>0</sub> and impact on PDOP.
+Prior to the NAV solution, the M10 must choose which signals to use in the calculations, likely based on C/N<sub>0</sub> and optimising PDOP.
 
-One quick way to exclude some of the more problematic signals would be to specify an [elevation mask](../elevation-mask/README.md) of 10<sup>o</sup>.
+One quick way to exclude some of the more problematic signals is specify an [elevation mask](../elevation-mask/README.md) of 10<sup>o</sup>.
