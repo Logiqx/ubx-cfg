@@ -26,12 +26,18 @@ Shell commands were used to review the TXT files from the ESP GPS devices.
 
 ```sh
 grep "^V" txt/* | sort
-grep "Dynamic" txt/* | sort
-grep "Ublox .W" txt/* | sort
+grep "CPU.*Hz" txt/* | sort
 
-grep "Ublox M" txt/* | sort
-grep "GNSS" txt/* | sort
-grep "Hz" txt/* | sort
+grep "Ublox.*bd" txt/* | sort
+grep "Ublox HW" txt/* | sort
+grep "Ublox SW" txt/* | sort
+grep "^M10.*power" txt/* | sort -u
+grep "^M10.*clock" txt/* | sort -u
+
+grep "Sample.*Hz" txt/* | sort
+grep "^GNSS" txt/* | sort
+grep "^Max" txt/* | sort
+grep "Dynamic" txt/* | sort
 
 grep "First fix" txt/* | sort
 grep "Total time" txt/* | sort
