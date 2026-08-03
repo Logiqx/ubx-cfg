@@ -6,17 +6,10 @@ After each phase the data was processed as follows:
 
 1. Download GPY + TXT from the SYRAC
 2. Review TXT using shell commands (see below), and copy into the [Google Sheet](https://docs.google.com/spreadsheets/d/1Uer4QUrVxRfGNcbAIAuh3Rk3f5fuU0N5Dms0RVw1vZA/edit?usp=sharing)
-3. Load GPY into [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader), record the time intervals, and export as SBP
-4. Generate charts from the SBP using [static_test_charts.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_charts.ipynb)
-6. Generate statistics from the SBP using [static_test_stats.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_stats.ipynb)
+3. Load GPY into [GPS Speedreader](https://github.com/prichterich/GPS-Speedreader), record the time intervals
+4. Generate charts from the GPY using [static_test_charts.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_charts.ipynb)
+6. Generate statistics from the GPY using [static_test_stats.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_stats.ipynb)
 7. Copy statistics into Excel, and produce simple summary charts
-
-Notes:
-
-- SBP files were used because the existing Python code does not support GPY
-  - Previous studies have used UBX or OAO, and this was the first study to use GPY
-- The SBP format is not ideal because of the [quantization](https://en.wikipedia.org/wiki/Quantization_(signal_processing)) errors, but still adequate
-  - The intention is to add a GPY loader to the Python code for future studies
 
 
 
@@ -53,7 +46,7 @@ Python code was used to generate charts and statistics.
 - [static_test_charts.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_charts.ipynb) - charts showing SOG, Sats, HDOP, and sAcc
 - [static_test_stats.ipynb](https://github.com/Logiqx/gps-wizard/blob/main/python/adhoc/static_test_stats.ipynb) - calculate mean, median, stddev, etc.
 
-The charts are relatively simple, but still provide a useful summary of individual SBP files.
+The charts are relatively simple, but still provide a useful summary of individual GPY files.
 
 
 

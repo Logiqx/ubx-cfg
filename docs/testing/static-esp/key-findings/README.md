@@ -5,8 +5,8 @@
 - The tests produced over 400 hours worth of data for analysis
 - TXT files were useful for confirming the actual configuration (especially S3), and summary statistics
   - Distances in TXT files are incorrect, so calculating mean speeds from the TXT can be misleading
-- GPY files were recorded instead of UBX, but GPY is not supported by the existing Python code
-  - GPY files were converted to SBP using GPS Speedreader, but it does incur quantization errors
+- GPY files were used for charts and statistics, using Python code in the [GPS Wizard](https://logiqx.github.io/gps-wizard/) project
+  - This study originally used SBP files for charts and statistics, but they now use the GPY files
 
 
 

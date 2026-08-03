@@ -31,7 +31,7 @@ Notes:
 
 ### Statistics
 
-Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
+Click the GPY filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                  | Description                     | Mean  | Median | Stddev |
 | --------------------- | ------------------------------- | :---: | :----: | :----: |
@@ -41,7 +41,7 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 | [D2\_\_2607131349](png/D2__2607131349.png)  | GPS + Galileo + BeiDou, 24 sats @ 10 Hz  | 0.046 | 0.043  | 0.024  |
 | [D5\_2607131349](png/D5_2607131349.png)   | GPS + Galileo + BeiDou, 20 sats @ 10 Hz  | 0.047 | 0.045  | 0.025  |
 | [SY1\_\_2607131350](png/SY1__2607131350.png) | GPS + Galileo + BeiDou, 24 sats @ 10 Hz | 0.050 | 0.047  | 0.027  |
-| [SY2\_2607131349.sbp](png/SY2_2607131349.png)  | GPS + Galileo + BeiDou, 20 sats @ 10 Hz | 0.051 | 0.047  | 0.027  |
+| [SY2\_2607131349.gpy](png/SY2_2607131349.png)  | GPS + Galileo + BeiDou, 20 sats @ 10 Hz | 0.051 | 0.047  | 0.027  |
 
 28 satellites (green) performed best, but it is also noticeable that SY devices may not be as good as D devices.
 

@@ -31,17 +31,17 @@ Notes:
 
 ### Statistics
 
-Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
+Click the GPY filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                  | Description                             | Mean  | Median | Stddev |
 | --------------------- | --------------------------------------- | :---: | :----: | :----: |
-| [SY2\_2607140033.sbp](png/SY2_2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 5 Hz     | 0.024 | 0.021  | 0.013  |
-| [D5\_2607140031.sbp](png/D5_2607140031.png)     | GPS + Galileo + BeiDou, 28 sats @ 5 Hz      | 0.024 | 0.021  | 0.014  |
-| [ubxGPS\_2607140032.sbp](png/ubxGPS_2607140032.png) | **GPS + Galileo + GLONASS, 32 sats @ 5 Hz** | 0.024 | 0.021  | 0.014  |
-| [D3\_\_2607140033.sbp](png/D3__2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 5 Hz      | 0.024 | 0.021  | 0.013  |
-| [D1\_2607140032.sbp](png/D1_2607140032.png)     | GPS + Galileo + BeiDou, 28 sats @ 10 Hz     | 0.042 | 0.039  | 0.022  |
-| [D2\_\_2607140033.sbp](png/D2__2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 10 Hz     | 0.042 | 0.039  | 0.023  |
-| [SY1\_2607140034.sbp](png/SY1__2607140034.png)   | GPS + Galileo + BeiDou, 28 sats @ 10 Hz    | 0.047 | 0.045  | 0.025  |
+| [SY2\_2607140033.gpy](png/SY2_2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 5 Hz     | 0.024 | 0.021  | 0.013  |
+| [D5\_2607140031.gpy](png/D5_2607140031.png)     | GPS + Galileo + BeiDou, 28 sats @ 5 Hz      | 0.024 | 0.021  | 0.014  |
+| [ubxGPS\_2607140032.gpy](png/ubxGPS_2607140032.png) | **GPS + Galileo + GLONASS, 32 sats @ 5 Hz** | 0.024 | 0.021  | 0.014  |
+| [D3\_\_2607140033.gpy](png/D3__2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 5 Hz      | 0.024 | 0.021  | 0.013  |
+| [D1\_2607140032.gpy](png/D1_2607140032.png)     | GPS + Galileo + BeiDou, 28 sats @ 10 Hz     | 0.042 | 0.039  | 0.022  |
+| [D2\_\_2607140033.gpy](png/D2__2607140033.png)    | GPS + Galileo + BeiDou, 28 sats @ 10 Hz     | 0.042 | 0.039  | 0.023  |
+| [SY1\_2607140034.gpy](png/SY1__2607140034.png)   | GPS + Galileo + BeiDou, 28 sats @ 10 Hz    | 0.047 | 0.045  | 0.025  |
 
 
 

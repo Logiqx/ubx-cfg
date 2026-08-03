@@ -31,17 +31,17 @@ Notes:
 
 ### Statistics
 
-Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
+Click the GPY filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File               | Description                  | Mean | Median | Stddev |
 | ------------------- | ---------------------------------- | :---: | :----: | :----: |
-| [SY2_2607090003.sbp](png/SY2_2607090003.png) | GPS + Galileo @ 10 Hz          | 0.043 | 0.039  | 0.024  |
-| [S3\_\_2607090003.sbp](png/S3__2607090003.png) | GPS + Galileo + GLONASS @ 10 Hz | 0.045 | 0.041  | 0.024  |
-| [D1\_2607090003.sbp](png/D1_2607090003.png) | GPS + Galileo @ 15 Hz           | 0.051 | 0.049  | 0.028  |
-| [SY1\_\_2607090003.sbp](png/SY1__2607090003.png) | GPS + GLONASS @ 10 Hz          | 0.054 | 0.051  | 0.029  |
-| [D2\_\_2607090003.sbp](png/D2__2607090003.png) | GPS + Galileo @ 20 Hz           | 0.057 | 0.052  | 0.031  |
-| [D3\_\_2607090003.sbp](png/D3__2607090003.png) | GPS + GLONASS @ 15 Hz           | 0.060 | 0.056  | 0.032  |
-| [D5\_2607090004.sbp](png/D5_2607090004.png) | GPS + GLONASS @ 20 Hz           | 0.064 | 0.060  | 0.034  |
+| [SY2_2607090003.gpy](png/SY2_2607090003.png) | GPS + Galileo @ 10 Hz          | 0.043 | 0.039  | 0.024  |
+| [S3\_\_2607090003.gpy](png/S3__2607090003.png) | GPS + Galileo + GLONASS @ 10 Hz | 0.045 | 0.041  | 0.024  |
+| [D1\_2607090003.gpy](png/D1_2607090003.png) | GPS + Galileo @ 15 Hz           | 0.051 | 0.049  | 0.028  |
+| [SY1\_\_2607090003.gpy](png/SY1__2607090003.png) | GPS + GLONASS @ 10 Hz          | 0.054 | 0.051  | 0.029  |
+| [D2\_\_2607090003.gpy](png/D2__2607090003.png) | GPS + Galileo @ 20 Hz           | 0.057 | 0.052  | 0.031  |
+| [D3\_\_2607090003.gpy](png/D3__2607090003.png) | GPS + GLONASS @ 15 Hz           | 0.060 | 0.056  | 0.032  |
+| [D5\_2607090004.gpy](png/D5_2607090004.png) | GPS + GLONASS @ 20 Hz           | 0.064 | 0.060  | 0.034  |
 
 GPS + Galileo (green) clearly outperformed GPS + GLONASS (orange) @ 10 Hz.
 

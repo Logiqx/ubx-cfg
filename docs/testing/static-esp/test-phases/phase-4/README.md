@@ -34,17 +34,17 @@ Notes:
 
 ### Statistics
 
-Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
+Click the GPY filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                 | Configuration                      | Mean  | Median | Stddev |
 | -------------------- | -------------------------------------------- | :---: | :----: | :----: |
-| [D2\_\_2607112346.sbp](png/D2__2607112346.png)  | GPS + Galileo + BeiDou, 28 sats @ 5 Hz   | 0.021 | 0.019  | 0.011  |
-| [D1\_2607112346.sbp](png/D1_2607112346.png)   | GPS + Galileo + BeiDou, 28 sats @ 5 Hz   | 0.021 | 0.019  | 0.011  |
-| [D5\_2607112346.sbp](png/D5_2607112346.png)   | GPS + Galileo + BeiDou, 32 sats @ 5 Hz   | 0.023 | 0.021  | 0.013  |
-| [D3\_\_2607112345.sbp](png/D3__2607112345.png) | GPS + Galileo + BeiDou, 32 sats @ 5 Hz   | 0.024 | 0.021  | 0.014  |
-| [SY1\_\_2607112345.sbp](png/SY1__2607112345.png) | GPS + Galileo + BeiDou, 24 sats @ 5 Hz  | 0.025 | 0.023  | 0.014  |
-| [S3\_\_2607120443.sbp](png/S3__2607120443.png)  | **GPS + Galileo, 24 sats @ 5 Hz**        | 0.026 | 0.023  | 0.014  |
-| [SY2\_2607112345.sbp](png/SY2_2607112345.png)  | GPS + Galileo + BeiDou, 32 sats @ 10 Hz | 0.045 | 0.043  | 0.024  |
+| [D2\_\_2607112346.gpy](png/D2__2607112346.png)  | GPS + Galileo + BeiDou, 28 sats @ 5 Hz   | 0.021 | 0.019  | 0.011  |
+| [D1\_2607112346.gpy](png/D1_2607112346.png)   | GPS + Galileo + BeiDou, 28 sats @ 5 Hz   | 0.021 | 0.019  | 0.011  |
+| [D5\_2607112346.gpy](png/D5_2607112346.png)   | GPS + Galileo + BeiDou, 32 sats @ 5 Hz   | 0.023 | 0.021  | 0.013  |
+| [D3\_\_2607112345.gpy](png/D3__2607112345.png) | GPS + Galileo + BeiDou, 32 sats @ 5 Hz   | 0.024 | 0.021  | 0.014  |
+| [SY1\_\_2607112345.gpy](png/SY1__2607112345.png) | GPS + Galileo + BeiDou, 24 sats @ 5 Hz  | 0.025 | 0.023  | 0.014  |
+| [S3\_\_2607120443.gpy](png/S3__2607120443.png)  | **GPS + Galileo, 24 sats @ 5 Hz**        | 0.026 | 0.023  | 0.014  |
+| [SY2\_2607112345.gpy](png/SY2_2607112345.png)  | GPS + Galileo + BeiDou, 32 sats @ 10 Hz | 0.045 | 0.043  | 0.024  |
 
 28 satellites @ 5 Hz (green) performed best and 32 satellites @ 10 Hz (orange) performed worst.
 
