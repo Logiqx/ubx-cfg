@@ -51,7 +51,7 @@ GPS + Galileo + BeiDou (green) slightly outperformed GPS + Galileo + GLONASS (or
 
 ![sog-mean-2.png](img/sog-mean-2.png)
 
-GPS + Galileo + BeiDou (green) consistently outperformed GPS + Galileo + GLONASS (orange) @ 15 Hz from the perspective of median values.
+GPS + Galileo + BeiDou (green) slightly outperformed GPS + Galileo + GLONASS (orange) @ 15 Hz from the perspective of median values.
 
 ![sog-median.png](img/sog-median.png)
 

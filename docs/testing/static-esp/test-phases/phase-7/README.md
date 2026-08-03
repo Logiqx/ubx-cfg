@@ -51,7 +51,7 @@ The 5 Hz devices all performed significantly better than the 10 Hz devices.
 
 ![sog-mean.png](img/sog-mean.png)
 
-The same was also evident in the median values for SOG
+The same was also evident in the median values for SOG.
 
 ![sog-median.png](img/sog-median.png)
 
@@ -75,7 +75,7 @@ The standard deviation for "speed accuracy" at 5 Hz is also WORSE than 10 Hz.
 
 ![sacc-stddev.png](img/sacc-stddev.png)
 
-Since we know that the true Speed Over Ground (SOG) we can be sure that the Speed Accuracy (sAcc) is erroneous during these tests.
+Since we know that the true Speed Over Ground (SOG) we can be sure that the Speed Accuracy (sAcc) is misleading during these tests.
 
 
 

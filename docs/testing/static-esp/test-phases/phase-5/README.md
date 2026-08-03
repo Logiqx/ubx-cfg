@@ -48,7 +48,7 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 ![sog-mean.png](img/sog-mean.png)
 
-The medians are all identical, but this is perhaps due to SBP quantization errors.
+The medians also suggest that SY2 and SY1 may not as good as the D devices.
 
 ![sog-median.png](img/sog-median.png)
 
