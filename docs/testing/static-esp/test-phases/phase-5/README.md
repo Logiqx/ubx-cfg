@@ -37,12 +37,12 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                | Configuration                     | Mean  | Median | Stddev |
 | ------------------- | ------------------------------------------- | :---: | :----: | :----: |
-| [D1\_2607130203.sbp](png/D1_2607130203.png)   | GPS + Galileo + BeiDou, 28 sats @ 5 Hz  | 0.021 | 0.019      | 0.014              |
-| [D3\_\_2607130201.sbp](png/D3__2607130201.png)  | GPS + Galileo + BeiDou, 28 sats @ 5 Hz  | 0.021 | 0.019      | 0.014              |
-| [D2\_\_2607130201.sbp](png/D2__2607130201.png)  | GPS + Galileo + BeiDou, 24 sats @ 5 Hz  | 0.022 | 0.019      | 0.014              |
-| [D5\_2607130202.sbp](png/D5_2607130202.png)   | GPS + Galileo + BeiDou, 32 sats @ 5 Hz | 0.022 | 0.019      | 0.014              |
-| [SY2\_2607130203.sbp](png/SY2_2607130203.png)  | GPS + Galileo + BeiDou, 20 sats @ 5 Hz | 0.025 | 0.019      | 0.015              |
-| [SY1\_\_2607130200.sbp](png/SY1__2607130200.png) | GPS + Galileo + BeiDou, 24 sats @ 5 Hz | 0.025 | 0.019      | 0.015              |
+| [D1\_2607130203.sbp](png/D1_2607130203.png)   | GPS + Galileo + BeiDou, 28 sats @ 5 Hz  | 0.021 | 0.019  | 0.012  |
+| [D3\_\_2607130201.sbp](png/D3__2607130201.png)  | GPS + Galileo + BeiDou, 28 sats @ 5 Hz  | 0.021 | 0.019  | 0.012  |
+| [D2\_\_2607130201.sbp](png/D2__2607130201.png)  | GPS + Galileo + BeiDou, 24 sats @ 5 Hz  | 0.022 | 0.019  | 0.012  |
+| [D5\_2607130202.sbp](png/D5_2607130202.png)   | GPS + Galileo + BeiDou, 32 sats @ 5 Hz | 0.022 | 0.019  | 0.012  |
+| [SY2\_2607130203.sbp](png/SY2_2607130203.png)  | GPS + Galileo + BeiDou, 20 sats @ 5 Hz | 0.025 | 0.023  | 0.013  |
+| [SY1\_\_2607130200.sbp](png/SY1__2607130200.png) | GPS + Galileo + BeiDou, 24 sats @ 5 Hz | 0.025 | 0.023  | 0.014  |
 
 28 satellites (green) performed best, but it is also noticeable that SY1 and SY2 may not as good as the D devices.
 

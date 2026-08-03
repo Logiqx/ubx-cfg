@@ -35,13 +35,13 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                  | Description                     | Mean  | Median | Stddev |
 | --------------------- | ------------------------------- | :---: | :----: | :----: |
-| [D3\_\_2607131348](png/D3__2607131348.png)  | GPS + Galileo + BeiDou, 28 sats @ 10 Hz  | 0.043 | 0.039      | 0.024              |
-| [D1\_2607131349](png/D1_2607131349.png)   | GPS + Galileo + BeiDou, 28 sats @ 10 Hz  | 0.044 | 0.039      | 0.024              |
-| [S3\_\_2607131349](png/S3__2607131349.png)  | **GPS + Galileo, 24 sats @ 10 Hz**       | 0.045 | 0.039      | 0.025              |
-| [D2\_\_2607131349](png/D2__2607131349.png)  | GPS + Galileo + BeiDou, 24 sats @ 10 Hz  | 0.045 | 0.039      | 0.025              |
-| [D5\_2607131349](png/D5_2607131349.png)   | GPS + Galileo + BeiDou, 20 sats @ 10 Hz  | 0.047 | 0.039      | 0.025              |
-| [SY1\_\_2607131350](png/SY1__2607131350.png) | GPS + Galileo + BeiDou, 24 sats @ 10 Hz | 0.049 | 0.039      | 0.027              |
-| [SY2\_2607131349.sbp](png/SY2_2607131349.png)  | GPS + Galileo + BeiDou, 20 sats @ 10 Hz | 0.050 | 0.039      | 0.027              |
+| [D3\_\_2607131348](png/D3__2607131348.png)  | GPS + Galileo + BeiDou, 28 sats @ 10 Hz  | 0.044 | 0.041  | 0.023  |
+| [D1\_2607131349](png/D1_2607131349.png)   | GPS + Galileo + BeiDou, 28 sats @ 10 Hz  | 0.045 | 0.041  | 0.024  |
+| [S3\_\_2607131349](png/S3__2607131349.png)  | **GPS + Galileo, 24 sats @ 10 Hz**       | 0.046 | 0.043  | 0.025  |
+| [D2\_\_2607131349](png/D2__2607131349.png)  | GPS + Galileo + BeiDou, 24 sats @ 10 Hz  | 0.046 | 0.043  | 0.024  |
+| [D5\_2607131349](png/D5_2607131349.png)   | GPS + Galileo + BeiDou, 20 sats @ 10 Hz  | 0.047 | 0.045  | 0.025  |
+| [SY1\_\_2607131350](png/SY1__2607131350.png) | GPS + Galileo + BeiDou, 24 sats @ 10 Hz | 0.050 | 0.047  | 0.027  |
+| [SY2\_2607131349.sbp](png/SY2_2607131349.png)  | GPS + Galileo + BeiDou, 20 sats @ 10 Hz | 0.051 | 0.047  | 0.027  |
 
 28 satellites (green) performed best, but it is also noticeable that SY devices may not be as good as D devices.
 

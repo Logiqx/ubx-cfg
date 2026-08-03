@@ -36,13 +36,13 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                 | Description                         | Mean  | Median | Stddev |
 | -------------------- | ---------------------------------- | :---: | :----: | :----: |
-| [S3\_\_2607091314.sbp](png/S3__2607091314.png) | GPS + Galileo @ 10 Hz            | 0.044 | 0.039      | 0.025              |
-| [SY2\_2607091314.sbp](png/SY2_2607091314.png) | GPS + Galileo + GLONASS @ 10 Hz | 0.047 | 0.039      | 0.032              |
-| [SY1\_\_2607091314.sbp](png/SY1__2607091314.png) | GPS + Galileo @ 10 Hz           | 0.047 | 0.039      | 0.026              |
-| [D5\_2607091307.sbp](png/D5_2607091307.png) | GPS + Galileo + BeiDou @ 15 Hz   | 0.053 | 0.058      | 0.029              |
-| [D3\_\_2607091314.sbp](png/D3__2607091314.png) | GPS + Galileo @ 15 Hz            | 0.054 | 0.058      | 0.030              |
-| [D1\_2607091307.sbp](png/D1_2607091307.png) | GPS + Galileo + GLONASS @ 15 Hz  | 0.054 | 0.058      | 0.029              |
-| [D2\_\_2607091307.sbp](png/D2__2607091307.png) | GPS + Galileo @ 20 Hz            | 0.058 | 0.058      | 0.031              |
+| [S3\_\_2607091314.sbp](png/S3__2607091314.png) | GPS + Galileo @ 10 Hz            | 0.045 | 0.041  | 0.024  |
+| [SY2\_2607091314.sbp](png/SY2_2607091314.png) | GPS + Galileo + GLONASS @ 10 Hz | 0.047 | 0.043  | 0.032  |
+| [SY1\_\_2607091314.sbp](png/SY1__2607091314.png) | GPS + Galileo @ 10 Hz           | 0.048 | 0.045  | 0.026  |
+| [D5\_2607091307.sbp](png/D5_2607091307.png) | GPS + Galileo + BeiDou @ 15 Hz   | 0.053 | 0.051  | 0.028  |
+| [D3\_\_2607091314.sbp](png/D3__2607091314.png) | GPS + Galileo @ 15 Hz            | 0.054 | 0.051  | 0.030  |
+| [D1\_2607091307.sbp](png/D1_2607091307.png) | GPS + Galileo + GLONASS @ 15 Hz  | 0.055 | 0.051  | 0.029  |
+| [D2\_\_2607091307.sbp](png/D2__2607091307.png) | GPS + Galileo @ 20 Hz            | 0.059 | 0.054  | 0.031  |
 
 GPS + Galileo + BeiDou (green) slightly outperformed GPS + Galileo + GLONASS (orange) @ 15 Hz.
 

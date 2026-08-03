@@ -35,13 +35,13 @@ Click the SBP filenames for charts showing SOG, Sats, HDOP, and sAcc.
 
 | File                 | Description                                  | Mean  | Median | Stddev |
 | -------------------- | ----------------------------------- | :---: | :----: | :----: |
-| [SY2\_2607102311.sbp](png/SY2_2607102311.png)  | GPS + Galileo + GLONASS, 32 sats @ 10 Hz | 0.045 | 0.039      | 0.025              |
-| [D2\_\_2607102312.sbp.sbp](png/D2__2607102312.png)  | GPS + Galileo + BeiDou, 24 sats @ 15 Hz   | 0.050 | 0.039      | 0.027              |
-| [S3\_\_2607102311.sbp](png/S3__2607102311.png)  | **GPS + Galileo, 20 sats @ 15 Hz**        | 0.051 | 0.039      | 0.028              |
-| [D5\_2607102311.sbp](png/D5_2607102311.png)   | GPS + Galileo + BeiDou, 28 sats @ 15 Hz   | 0.052 | 0.039      | 0.029              |
-| [D1\_2607102311.sbp](png/D1_2607102311.png)   | GPS + Galileo + GLONASS, 24 sats @ 15 Hz  | 0.053 | 0.058      | 0.029              |
-| [SY1\_\_2607102311.sbp](png/SY1__2607102311.png) | GPS + Galileo + GLONASS, 20 sats @ 15 Hz | 0.054 | 0.058      | 0.029              |
-| [D3\_\_2607102311.sbp](png/D3__2607102311.png)  | GPS + Galileo + GLONASS, 28 sats @ 15 Hz  | 0.056 | 0.058      | 0.031              |
+| [SY2\_2607102311.sbp](png/SY2_2607102311.png)  | GPS + Galileo + GLONASS, 32 sats @ 10 Hz | 0.046 | 0.043  | 0.025  |
+| [D2\_\_2607102312.sbp.sbp](png/D2__2607102312.png)  | GPS + Galileo + BeiDou, 24 sats @ 15 Hz   | 0.051 | 0.047  | 0.027  |
+| [S3\_\_2607102311.sbp](png/S3__2607102311.png)  | **GPS + Galileo, 20 sats @ 15 Hz**        | 0.052 | 0.049  | 0.028  |
+| [D5\_2607102311.sbp](png/D5_2607102311.png)   | GPS + Galileo + BeiDou, 28 sats @ 15 Hz   | 0.053 | 0.049  | 0.029  |
+| [D1\_2607102311.sbp](png/D1_2607102311.png)   | GPS + Galileo + GLONASS, 24 sats @ 15 Hz  | 0.053 | 0.051  | 0.028  |
+| [SY1\_\_2607102311.sbp](png/SY1__2607102311.png) | GPS + Galileo + GLONASS, 20 sats @ 15 Hz | 0.054 | 0.051  | 0.029  |
+| [D3\_\_2607102311.sbp](png/D3__2607102311.png)  | GPS + Galileo + GLONASS, 28 sats @ 15 Hz  | 0.057 | 0.052  | 0.031  |
 
 GPS + Galileo + BeiDou (green) slightly outperformed GPS + Galileo + GLONASS (orange) with 24 satellites.
 
