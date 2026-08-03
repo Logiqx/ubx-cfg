@@ -75,7 +75,7 @@ The standard deviation for "speed accuracy" at 5 Hz is also WORSE than 10 Hz.
 
 ![sacc-stddev.png](img/sacc-stddev.png)
 
-Since we know that the true Speed Over Ground (SOG) we can be sure that the Speed Accuracy (sAcc) is misleading during these tests.
+Since we know the true Speed Over Ground (SOG) is zero, we can be sure that the Speed Accuracy (sAcc) is misleading during these tests.
 
 
 
