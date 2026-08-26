@@ -4,7 +4,7 @@ It is very noticeable how much quicker the Motion acquires its satellites in com
 
 Possibly related...
 
->  If your module turns off and loses power completely, it performs a cold start every time. By connecting a battery or a supercapacitor to the \(V_{BCKP}\) pin, the M10 maintains last-known position, time, and almanac data. This drops subsequent fix times to just a few seconds (hot start).
+>  If your module turns off and loses power completely, it performs a cold start every time. By connecting a battery or a supercapacitor to the (V_BCKP) pin, the M10 maintains last-known position, time, and almanac data. This drops subsequent fix times to just a few seconds (hot start).
 
 Something else that may be relevant is AssistNow Autonomous. The AssistNow Autonomous feature runs locally on the receiver and generates mid and long term predicted orbits without an internet connection. The orbit prediction is based on broadcast ephemerides.
 

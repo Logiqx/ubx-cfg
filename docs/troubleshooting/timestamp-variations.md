@@ -1,15 +1,7 @@
 ## Timestamp Variations
 
-Sometimes timestamps are wrong by .001 seconds.
+The ESP GPS logging at 5 Hz includes timestamp intervals of 199 or 201 milliseconds. This is most evident in the GPY + SBP files where the timestamps are in milliseconds, and rarely seen as an issue in UBX files.
 
-According to Google:
+After detailed investigations it transpires that this is due to clock drift within the GNSS receiver. I have lots of interesting examples to show for different chipsets but have not gotten around to documenting this phenomena properly.
 
-> Internal Processing and NCO Jitter:
->
-> The timestamps are generated using a numerically controlled oscillator (NCO) running at an internal reference clock rate (64 MHz in the M10). Dividing this clock down to 10 Hz creates mathematical rounding, causing a natural jitter in the message timestamps.
-
-This does not happen on the Motion, but it is not known whether it rounds the timestamps, or found a solution.
-
-Perhaps it is another consequence of exceeding the CPU bandwidth in the M10, along with dropped frames?
-
-Misaligned timestamps may be an indication that the maximum number of satellites needs to be reduced. TBC
+In the meantime, I have shared a very simple summary within my [gps-details](https://logiqx.github.io/gps-details/general/timestamps/) repository.
