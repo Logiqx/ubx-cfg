@@ -76,7 +76,7 @@ Points with untypical dt (and speed > 5.0 knots):
 2  199 ms at #22170 13:50:58.200 speed: 22.010 sAcc: 0.344
 ```
 
-The "apparent" 201 ms interval occurred first, exactly when the clock bias exceeded 0.5 ms. After the following top-of-the-second epoch, the next navigation solution was scheduled using a 199 ms interval. There was never an interval of 201 ms, but the 199 ms interval was genuine.
+The apparent 201 ms interval occurred first, exactly when the clock bias exceeded 0.5 ms. After the following top-of-the-second epoch, the next navigation solution was scheduled using a 199 ms interval. There was never an interval of 201 ms, but the 199 ms interval was genuine.
 
 
 
@@ -95,30 +95,30 @@ Excessive clock drift is always resolved immediately after the top-of-the-second
 
 The clock drift misleadingly looks like a 201 ms interval, but the subsequent correction really is a 199 ms interval. In reality the 201 ms interval was never any different from the intervals beforehand... which had a median of 200.000036 ms throughout the session. The subsequent correction used a 199 ms interval, but that is just how u-blox ensures that subsequent navigation solutions are close to the intended timings, typically ±0.5 ms.
 
-Warning: Clock drift can result in dropped frames shortly after the top-of-the-second epoch, because the adjustment reduces the time for the navigation solution - e.g. between 13:50:58.001 and 13:50:58.200. This will typically be an issue if too many satellites are being used, or the log rate is too high. The number of satellites and the update rate may be fine for most of a session, but there may be too little time when the clock is corrected.
+Warning: Clock drift can result in dropped frames shortly after the top-of-the-second epoch, because the adjustment reduces the time for the navigation solution - e.g. between 13:50:58.001 and 13:50:58.200. This will typically be an issue if too many satellites are being used, or the log rate is too high. The number of satellites and the update rate may be fine for most of a session, but there may be too little time when the clock is adjusted.
 
 
 
 ### Consequences
 
-There are a number of consequences of clock drift and the periodic adjustments:
+There are a number of consequences of clock drift and the necessary adjustments:
 
 - SBN and GPY may seemingly contain anomalies, due to reduced millisecond precision
-  - UBX files will generally be fine because the original nanosecond precision can be used
+  - UBX files will generally be fine because of the original nanosecond precision
 - Some of the unexpected intervals in GPY and SBN files are completely erroneous
-  - There are no 201 ms intervals in the data, just artefacts of millisecond precision
+  - 201 ms intervals do not exist in the data, only artefacts of millisecond precision
 - It gives the appearance that some records have timestamps that are wrong by 1 ms
   - Timestamps are typically ±0.5 ms, and the few outliers differ by mere nanoseconds
-- Comparisons of files from two devices (or combining the two) is more complicated
-  - The millisecond timestamps may be different, despite being mere nanoseconds apart
+- Comparison of two devices (or combining the data) is trickier when the timestamps differ
+  - The millisecond timestamps may differ, but really nanoseconds apart in reality
 
 
 
 ### Recommendation
 
-It should be noted that u-blox themselves round UTC to the nearest hundredth of a second for NMEA.
+It should be noted that u-blox themselves round UTC to the hundredth of a second for NMEA output.
 
-Divisors of 1000 provide the most useful logging rates, and they all have intervals that are divisible by 5 ms.
+Divisors of 1000 provide the most useful logging rates, and all have intervals that are divisible by 5 ms.
 
 | Rate (Hz) | Interval (ms) |
 | :-------: | :-----------: |
@@ -131,7 +131,7 @@ Divisors of 1000 provide the most useful logging rates, and they all have interv
 |    20     |      50       |
 |    25     |      40       |
 
-Thus the simplest fix is to change the rounding that is present in `gpy.h` and `sbp.h`.
+The simplest fix is to change the rounding that is currently present in `gpy.h` and `sbp.h`.
 
 Current code:
 
@@ -155,13 +155,13 @@ The recommended code uses the exact same trick for integer rounding in C, but ro
 
 ### Benefits
 
-This two line change provides a number of benefits:
+This simple two line change provides a number of benefits:
 
   - Consistency between GPY, SPB, and UBX
-    - Files from the same session can be processed consistently
+    - Files from the same session do not report different errors
   - Consistency with u-blox and the Motion GPS
     - The Motion GPS already implements this logic for 1, 2, 5, 10 Hz
-  - Cleaner data and avoiding the potential for confusion
+  - Cleaner data simplifies processing, and avoids potential confusion
     - Standard intervals also makes missing points more obvious
   - Simplified comparisons and averaging between multiple devices
     - This is particularly useful for multi-device calculations
@@ -190,11 +190,13 @@ This issue is unique to GPS Speedreader, but would also be worth fixing.
 
 
 
-### Wrap Up
+### Summary
 
 The proposed two line change will resolve the timestamp issues in GPY and SBP files from the ESP-GPS.
 
 This will make them consistent with the Motion GPS, and also the NMEA sentences produced by the u-blox chip itself.
+
+Many users will not even be aware of the issue, but it would be good to fix it before the ESP-GPS becomes widespread.
 
 
 
