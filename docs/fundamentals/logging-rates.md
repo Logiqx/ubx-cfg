@@ -62,8 +62,11 @@ The [u-blox M10 SPG 5.30 Interface description](https://content.u-blox.com/sites
 - `CFG-RATE-TIMEREF` - default is 1 (GPS)
   - Time system to which measurements are aligned
 
-
 The default time reference system is GPS, but those milliseconds should be identical to UTC.
+
+2.1.5 Message output configuration of the [Max M10 Integration Manual](https://content.u-blox.com/sites/default/files/MAX-M10S_IntegrationManual_UBX-20053088.pdf) clarifies the use of `CFG-RATE-NAV` greater than 1:
+
+> Set the navigation rate value higher than one when the raw measurement data output rate needs to be higher than the navigation data rate.
 
 
 
