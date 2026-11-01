@@ -2,7 +2,7 @@
 
 ### Background
 
-It has been observed that SBP and GPY files from the ESP GPS can contain unexpected timestamp intervals.
+It has been observed that SBP and GPY files from the ESP-GPS can contain unexpected timestamp intervals.
 
 e.g. 5 Hz files have intervals of 200 ms, but 199 ms and 201 ms are sometimes evident in GPY and SBP files.
 
@@ -32,7 +32,7 @@ Observed time distribution (in ms):
 0 time errors (0 above 5.0 knots), about 0 missing points
 ```
 
-This document discusses the cause of these anomalies, and presents a recommendation for the ESP GPS.
+This document discusses the cause of these anomalies, and presents a recommendation for the ESP-GPS.
 
 
 
@@ -55,7 +55,7 @@ Key points:
 
 The clock bias, clock drift and time accuracy can be observed via `UBX-NAV-CLOCK`. The integration period in the u-blox receiver is some millisecond multiple, so when sufficient bias accumulates the clock is slewed such that the next measurement / correlation period has one more, or less, millisecond so as to get the "measurement" time closer to being "on target" or "top-of-second".
 
-When the UTC values are analysed they can be seen to be within ±0.5 ms nanoseconds of the intended offsets (e.g. multiples of 200 ms for 5 Hz). The example M10_LISA_K888_2605131437 contains a median interval of 200.000036 ms, and the timing of navigation solutions can be seen to drift over time. During the middle of the session the bias is slewed from +0.5 ms to -0.5 ms, thus keeping navigation solutions within ±0.5 ms of the intended times.
+When the UTC values are analysed they can be seen to be within ±0.5 ms of the intended offset (e.g. multiple of 200 ms for 5 Hz). The example M10_LISA_K888_2605131437 contains a median interval of 200.000036 ms, and the timing of navigation solutions can be seen to drift over time. During the middle of the session the bias is slewed from +0.5 ms to -0.5 ms, thus keeping navigation solutions within ±0.5 ms of the intended times.
 
 ![M10_LISA_K888_2605131437](img/M10_LISA_K888_2605131437.png)
 
@@ -93,9 +93,9 @@ Excessive clock drift is always resolved immediately after the top-of-the-second
 | 199500097 | 13:50:58.200 | 0.199 |
 | 399500126 | 13:50:58.400 | 0.200 |
 
-The clock drift misleadingly looks like a 201 ms interval, but the subsequent correction really is a 199 ms interval. In reality the 201 millisecond interval was never any different from the intervals beforehand... which had a median of 200.000036 ms during the session. The correction used a 199 ms interval, but that is how u-blox ensure the subsequent navigation solutions are as close as possible to the intended timings, but ±0.5 ms.
+The clock drift misleadingly looks like a 201 ms interval, but the subsequent correction really is a 199 ms interval. In reality the 201 ms interval was never any different from the intervals beforehand... which had a median of 200.000036 ms throughout the session. The subsequent correction used a 199 ms interval, but that is just how u-blox ensures that subsequent navigation solutions are close to the intended timings, typically ±0.5 ms.
 
-Warning: Clock drift can result in dropped frames shortly after the top-of-the-second epoch, because this limits the time for the navigation solution - e.g. between 13:50:58.001 and 13:50:58.200 with 5 Hz logging. This will typically be an issue if too many satellites are being used, or the log rate is too high. The number of satellites and the update rate may be fine for most of a session, but there may be too little time when the clock is intentionally slewed.
+Warning: Clock drift can result in dropped frames shortly after the top-of-the-second epoch, because the adjustment reduces the time for the navigation solution - e.g. between 13:50:58.001 and 13:50:58.200. This will typically be an issue if too many satellites are being used, or the log rate is too high. The number of satellites and the update rate may be fine for most of a session, but there may be too little time when the clock is corrected.
 
 
 
@@ -106,10 +106,10 @@ There are a number of consequences of clock drift and the periodic adjustments:
 - SBN and GPY may seemingly contain anomalies, due to reduced millisecond precision
   - UBX files will generally be fine because the original nanosecond precision can be used
 - Some of the unexpected intervals in GPY and SBN files are completely erroneous
-  - There are no 201 ms intervals in the data, despite what millisecond precision suggests
+  - There are no 201 ms intervals in the data, just artefacts of millisecond precision
 - It gives the appearance that some records have timestamps that are wrong by 1 ms
-  - Timestamps are ±0.5 ms, and the few outliers differ by mere nanoseconds
-- Comparison of files from two devices (or combining the two) may be problematic
+  - Timestamps are typically ±0.5 ms, and the few outliers differ by mere nanoseconds
+- Comparisons of files from two devices (or combining the two) is more complicated
   - The millisecond timestamps may be different, despite being mere nanoseconds apart
 
 
@@ -118,7 +118,7 @@ There are a number of consequences of clock drift and the periodic adjustments:
 
 It should be noted that u-blox themselves round UTC to the nearest hundredth of a second for NMEA.
 
-Divisors of 1000 provide the most useful logging rates, and they all have intervals that are divisible by 5.
+Divisors of 1000 provide the most useful logging rates, and they all have intervals that are divisible by 5 ms.
 
 | Rate (Hz) | Interval (ms) |
 | :-------: | :-----------: |
@@ -158,43 +158,43 @@ The recommended code uses the exact same trick for integer rounding in C, but ro
 This two line change provides a number of benefits:
 
   - Consistency between GPY, SPB, and UBX
-    - Files from the same session will not report different errors
+    - Files from the same session can be processed consistently
   - Consistency with u-blox and the Motion GPS
-    - The Motion already implements this logic for 1, 2, 5, 10 Hz
+    - The Motion GPS already implements this logic for 1, 2, 5, 10 Hz
   - Cleaner data and avoiding the potential for confusion
-    - Regular timestamp intervals, and missing data is more obvious
-  - Simplifies comparisons and averages between two devices
-    - This provides benefits for multi-device calculations
+    - Standard intervals also makes missing points more obvious
+  - Simplified comparisons and averaging between multiple devices
+    - This is particularly useful for multi-device calculations
 
 
 
 ### Considerations
 
-The internal clock bias is ±0.5 ms and thus has a mean absolute error (MAE) of 0.25 ms. Timestamps such as 0.201, 0.401, 0.601 are only due to a drift <0.1 microsecond, which is 3 or 4 orders of magnitude smaller than the MAE of 0.25 ms. Rounding these timestamps to the intended values is arguably more representative than leaving them unchanged. They are in principle no worse than the many thousands of values that precede them in the file.
+Timestamps are ±0.5 ms and have a mean absolute error (MAE) of 0.25 ms. Timestamps such as 0.201, 0.401, 0.601 have drifted by <0.1 μs, which is 3 or 4 orders of magnitude smaller than the MAE of 0.25 ms. Rounding these timestamps to the intended values is arguably more representative than leaving them unchanged. They are in principle no different to the thousands of timestamps that preceded them in the file.
 
-The proposed fix works well for the most common logging rates, which all have intervals that are divisible by 5. The one exception on the ESP GPS is 15 Hz, but that is rather an ugly rate. Specifying `CFG-RATE-MEAS` as 67 ms will take 67 seconds for the sequence of timestamps to repeat, and applying a suitable rounding fix is not quite so straightforward. My suggestion would be to remove 15 Hz from the ESP GPS.
+The proposed fix works well for all of the common logging rates, which have intervals that are divisible by 5 ms. The one exception on the ESP-GPS is 15 Hz, but that is rather an unusual rate. Setting `CFG-RATE-MEAS` to 67 ms will take 67 seconds for the sequence of timestamps to repeat, and applying a suitable rounding fix is not quite so straightforward. My suggestion would be to just remove 15 Hz from the ESP-GPS.
 
 
 
 ### GPS Speedreader
 
-It should be noted that there is an issue with the way that GPS Speedreader handles some UBX timestamps:
+It should be noted that there is an issue with the way that GPS Speedreader currently handles UBX timestamps:
 
 - 8 Hz issue = 124 ms (25%), 125 ms (50%), 126 ms (25%)... but correct in GPSResults (125 ms)
   - e.g. C:\Users\mwgeo\OneDrive\Documents\GPS Files\Windsurfing\2026\La Nautique, Narbonne\2026-05-03
-- 15 Hz issue = 66 ms (50%) or 68 ms (50%)... but correct in GPSResults (67 ms)
+- 15 Hz issue = alternates between 66 ms (50%) and 68 ms (50%)... but correct in GPSResults (67 ms)
   - C:\Users\mwgeo\OneDrive\Projects\GPS\Logs\Organised\ESP-GPS\Salvador, SYRAC-GPS\2026-04-26, SYRAC-GPS, 15 Hz\
   
 
-This doesn't directly relate to this recommendation, but would also be worth fixing.
+This issue is unique to GPS Speedreader, but would also be worth fixing.
 
 
 
 ### Wrap Up
 
-A simple two line change will tidy up the timestamps that are being recorded in GPY and SBP files.
+The proposed two line change will resolve the timestamp issues in GPY and SBP files from the ESP-GPS.
 
-This will be consistent with the Motion GPS, and also the NMEA sentences of popular rates produces by the u-blox chip itself.
+This will make them consistent with the Motion GPS, and also the NMEA sentences produced by the u-blox chip itself.
 
 
 
@@ -219,7 +219,7 @@ Additional notes:
 - iTOW wraps around every Sunday at 00:00:00, which is 10:00 or 11:00 in Victoria, Australia
 - iTOW is 18 seconds ahead of the UTC representation, which does compensate for leap seconds.
 - The last leap second was on 31 Dec 2016, but there are no plans for further leap seconds.
-- The ESP GPS used to subtract 18 seconds from iTOW, due to an issue in GPSResults.
+- The ESP-GPS used to subtract 18 seconds from iTOW, due to an issue in GPSResults.
 
 
 
