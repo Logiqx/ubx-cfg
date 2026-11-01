@@ -12,6 +12,7 @@ Developers of devices such the the [ESP-GPS](https://github.com/RP6conrad/ESP-GP
   - [Satellites](fundamentals/satellites.md) - constellations + filters
   - [Logging Rates](fundamentals/logging-rates.md) - max rates + accuracy
   - [Suggestions](fundamentals/suggestions.md) - constellations + rates
+  - [Navigation Epochs](fundamentals/navigation-epochs) - timestamps + clock drift
 - Performance
   - [High Logging Rates](performance/high-rates.md) - CPU + baud rates
   - [Signal Quality](performance/signal-quality.md) - power savings and LNA
