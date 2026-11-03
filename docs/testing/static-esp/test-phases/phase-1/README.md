@@ -12,15 +12,15 @@ The tests were started on 2026-07-09 @ 0003 and the duration was more than 9 hou
 
 The following device configurations were tested, and the time distributions obtained from GPS Speedreader.
 
-|  ID  | Constellations          | Rate  | Max Sats |   ESP   | Observed time distribution (ms)       | Drops? |
-| :--: | ----------------------- | :---: | :------: | :-----: | :------------------------------------ | :----: |
-| SY1  | GPS + GLONASS           | 10 Hz |    32    | 160 MHz | 99: 3, 100: 336950, 101: 3            |   -    |
-| SY2  | GPS + Galileo           | 10 Hz |    32    | 160 MHz | 99: 34, 100: 336334, 101: 34          |   -    |
-|  D3  | GPS + GLONASS           | 15 Hz |    32    | 240 MHz | 65: 1, 66: 2280, 67: 498181, 68: 2282 |   -    |
-|  D1  | GPS + Galileo           | 15 Hz |    32    | 240 MHz | 65: 1, 66: 2264, 67: 497605, 68: 2266 |   -    |
-|  D5  | GPS + GLONASS           | 20 Hz |    32    | 240 MHz | 50: 672969, 51: 11, 99: 11            |   Y    |
-|  D2  | GPS + Galileo           | 20 Hz |    32    | 240 MHz | 50: 673429, 51: 4, 99: 4              |   Y    |
-|  S3  | GPS + Galileo + GLONASS | 10 Hz |    32    | 160 MHz | 99: 4, 100: 336891, 101: 4            |        |
+|   ID   | Constellations          | Rate  | Max Sats |   ESP   | Observed time distribution (ms)       | Drops? |
+| :----: | ----------------------- | :---: | :------: | :-----: | :------------------------------------ | :----: |
+|  SY1   | GPS + GLONASS           | 10 Hz |    32    | 160 MHz | 99: 3, 100: 336950, 101: 3            |   -    |
+|  SY2   | GPS + Galileo           | 10 Hz |    32    | 160 MHz | 99: 34, 100: 336334, 101: 34          |   -    |
+|   D3   | GPS + GLONASS           | 15 Hz |    32    | 240 MHz | 65: 1, 66: 2280, 67: 498181, 68: 2282 |   -    |
+|   D1   | GPS + Galileo           | 15 Hz |    32    | 240 MHz | 65: 1, 66: 2264, 67: 497605, 68: 2266 |   -    |
+| **D5** | GPS + GLONASS           | 20 Hz |    32    | 240 MHz | 50: 672969, 51: 11, **99: 11**        |   Y    |
+| **D2** | GPS + Galileo           | 20 Hz |    32    | 240 MHz | 50: 673429, 51: 4, **99: 4**          |   Y    |
+|   S3   | GPS + Galileo + GLONASS | 10 Hz |    32    | 160 MHz | 99: 4, 100: 336891, 101: 4            |        |
 
 Notes:
 
